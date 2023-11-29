@@ -1,6 +1,8 @@
 """The main file for the Pixel Realm OS GUI."""
 
-import pygame, os, sys
+import os, sys, platform, subprocess
+
+import pygame
 from pygame.locals import *
 
 from login import main as login_main
@@ -13,11 +15,13 @@ CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
 FPS = 60
+APPWIDTH = 100
+APPHEIGHT = 100
 
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF
+    global MAINCLOCK, DISPLAYSURF, assets, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -25,9 +29,16 @@ def main():
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    pygame.display.set_caption("Pixel Realm")
 
     # Load in the assets.
-    load_assets()
+    assets = Assets()
+
+    # Load in the apps.
+    browser = App('apps/browser.pyw', assets.browser_logo, 200, 200)
+
+    # Create a list of all the apps.
+    apps = [browser]
 
     # Run the OS GUI
     run_gui()
@@ -50,30 +61,86 @@ def run_gui():
                 if event.key == K_ESCAPE:
                     terminate()
 
+            # Check if the user clicks the mouse.
+            if event.type == MOUSEBUTTONDOWN:
+                # Check if the user click an app.
+                for app in apps:
+                    app.check_click(event.pos)
+
         # Draw the desktop wallpaper.
-        DISPLAYSURF.blit(desktop_wallpaper, (0, 0))
+        DISPLAYSURF.blit(assets.desktop_wallpaper, (0, 0))
+
+        # Draw all of the apps.
+        for app in apps:
+            app.draw()
 
         # Update the display.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
 
 
-def load_assets():
-    """Load the assets for the OS."""
-    global desktop_wallpaper
-    
-    # Load in the desktop wallpaper.
-    desktop_wallpaper = pygame.image.load('assets/images/desktop_wallpaper.png')
-    desktop_wallpaper = pygame.transform.scale(desktop_wallpaper, 
-                                               (WINDOWWIDTH, WINDOWHEIGHT))
+class App():
+    """Represent the apps on the desktop."""
 
-    return
+    def __init__(self, path, logo, x, y):
+        """Initialize the apps."""
+            
+        self.path = path
+        self.logo = logo
+        self.x = x
+        self.y = y
+
+        self.rect = pygame.Rect(0, 0, APPWIDTH, APPHEIGHT)
+        self.rect.center = (self.x, self.y)
+
+    def draw(self):
+        """Draw the app on the screen."""
+
+        DISPLAYSURF.blit(self.logo, self.rect)
+
+    def check_click(self, mouse_pos):
+        """Check if the user clicks the app."""
+
+        if self.rect.collidepoint(mouse_pos):
+            self.open()
+
+    def open(self):
+        """Open the app."""
+
+        # Open the app.
+        start_file(self.path)
+
+
+class Assets():
+    """A class to represent the assets."""
+
+    def __init__(self):
+        """Initialize the assets."""
+
+        self.desktop_wallpaper = pygame.image.load("assets/images/desktop_wallpaper.png")
+        self.desktop_wallpaper = pygame.transform.scale(self.desktop_wallpaper, 
+                                                        (WINDOWWIDTH, WINDOWHEIGHT))
+
+        self.browser_logo = pygame.image.load('assets/images/browser_logo.png')
+        self.browser_logo = pygame.transform.scale(self.browser_logo, 
+                                                   (APPWIDTH, APPHEIGHT))
 
 
 def terminate():
     """Quit the program."""
     pygame.quit()
     sys.exit()
+
+
+def start_file(filepath):
+    """Start the file passed, regardless of your current platform."""
+
+    if platform.system() == 'Darwin':       # macOS
+        subprocess.run(('python3', filepath))
+    elif platform.system() == 'Windows':    # Windows
+        os.startfile(filepath)
+    else:                                   # linux variants
+        subprocess.call(('xdg-open', filepath))
 
 
 if __name__ == "__main__":
