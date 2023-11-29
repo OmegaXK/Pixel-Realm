@@ -3,16 +3,17 @@
 import pygame, os, sys
 from pygame.locals import *
 
-from login import login, sign_up, main as login_main
+from login import main as login_main
 
 # Window constants.
-WINDOWWIDTH = 1920
-WINDOWHEIGHT = 1080
+WINDOWWIDTH = 960
+WINDOWHEIGHT = 540
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
 FPS = 60
+
 
 def main():
     """Main code for the OS GUI."""
@@ -22,11 +23,11 @@ def main():
     pygame.init()
     MAINCLOCK = pygame.time.Clock()
 
-    # Load in the assets.
-    load_assets()
-
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+
+    # Load in the assets.
+    load_assets()
 
     # Run the OS GUI
     run_gui()
