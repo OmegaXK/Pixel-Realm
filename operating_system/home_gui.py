@@ -38,9 +38,10 @@ def main():
     browser = App('apps/browser.pyw', assets.browser_logo, 90, 450)
     notepad = App('apps/notepad.pyw', assets.notepad_logo, 210, 450)
     explorer = App('apps/explorer.pyw', assets.explorer_logo, 330, 450)
+    settings = App('settings.py', assets.settings_logo, 450, 450)
 
     # Create a list of all the apps.
-    apps = [browser, notepad, explorer]
+    apps = [browser, notepad, explorer, settings]
 
     # Run the OS GUI
     run_gui()
@@ -134,6 +135,11 @@ class Assets():
         self.explorer_logo = pygame.image.load('assets/images/file_explorer_logo.png')
         self.explorer_logo = pygame.transform.scale(self.explorer_logo, 
                                                     (APPWIDTH, APPHEIGHT))
+        
+        self.settings_logo = pygame.image.load('assets/images/settings_logo.png')
+        self.settings_logo = pygame.transform.scale(self.settings_logo,
+                                                    (APPWIDTH, APPHEIGHT))
+        
 
 def start_file(filepath):
     """Start the file passed, regardless of your current platform."""

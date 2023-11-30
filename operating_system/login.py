@@ -5,6 +5,7 @@ Pixel Realm OS."""
 # Realm OS.
 
 from pathlib import Path
+from time import sleep
 import json
 
 def sign_up():
@@ -22,6 +23,7 @@ def sign_up():
         confirm_password = input("Confirm your password: ")
 
         if password != confirm_password:
+            sleep(1)
             print("\nYour passwords do not match. Please try again.")
 
     # Create a dictionary for the user's information.
@@ -32,8 +34,10 @@ def sign_up():
     path.write_text(json.dumps(user_info))
 
     # Let the user know that their account was created.
+    sleep(1)
     print("\nYour account was succsesfully created.")
     print("You can now login.")
+    sleep(1)
 
     return
 
@@ -51,9 +55,11 @@ def login():
 
     # Check if the user's username and password are correct.
     if username == user_info['username'] and password == user_info['password']:
+        sleep(1)
         print("\nYou have successfully logged in.")
         return True
     else:
+        sleep(1)
         print("\nYour username or password is incorrect.")
         return False
 
