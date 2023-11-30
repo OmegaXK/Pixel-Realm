@@ -4,7 +4,6 @@ Pixel Realm OS."""
 # The file that lets the user login and create an account for the Pixel 
 # Realm OS.
 
-import sys, os
 from pathlib import Path
 import json
 
