@@ -75,16 +75,20 @@ def main():
         print('[2] Login')
         print('[3] Exit')
 
-        choice = input("\nWhat would you like to do? [1, 2, 3]: ")
+        choice = ''
+        while choice != '1' and choice != '2' and choice != '3':
+            choice = input("\nWhat would you like to do? [1, 2, 3]: ")
 
-        # Check if the user wants to signup, login, or exit.
-        if choice == '1':
-            sign_up()
-        elif choice == '2':
-            if login() == True:
-                return True
-        elif choice == '3':
-            return False
+            # Check if the user wants to signup, login, or exit.
+            if choice == '1':
+                sign_up()
+            elif choice == '2':
+                if login() == True:
+                    return True
+            elif choice == '3':
+                return False
+            else:
+                print('Please enter 1, 2, or 3.')
         
 
 # If the file is run directly, run the main function. (For testing)
