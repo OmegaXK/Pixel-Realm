@@ -8,68 +8,81 @@ import json, sys
 def main():
     """The main function for the settings program."""
 
-    # Load in the user's data.
-    path = Path('user_info/user_info.json')
-    string = path.read_text()
-    user_data = json.dumps(string)
+    while True:
+        # Load in the user's data.
+        path = Path('user_info/user_info.json')
+        user_data = json.loads(path.read_text())
 
-    # Define the user's data.
-    username = user_data['username']
-    email = user_data['email']
-    password = user_data['password']
+        # Define the user's data.
+        username = user_data['username']
+        email = user_data['email']
+        password = user_data['password']
 
-    # Print the user's current data.
-    print('This is your current information: ')
-    print(f"[1] Username: {user_data['username']}")
-    print(f"[2] Email: {user_data['email']}")
-    print(f"[3] Password: {user_data['password']}")
+        # Print the user's current data.
+        print('\nThis is your current information: ')
+        print(f"[1] Username: {user_data['username']}")
+        print(f"[2] Email: {user_data['email']}")
+        print(f"[3] Password: {user_data['password']}")
 
-    print("Input the respective key to change any of your data. (1, 2, 3)")
-    print('Input "exit" to quit out of the settings.')
+        sleep(2)
+        print("\nInput the respective key to change any of your data. (1, 2, 3)")
+        print('Input "exit" to quit out of the settings.')
 
-    choice = ''
+        choice = ''
 
-    while choice != '1' and choice != '2' and choice != '3' \
-        and choice != 'exit':
-        choice = input('[?] ')
+        while choice != '1' and choice != '2' and choice != '3' \
+            and choice != 'exit':
+            choice = input('[?] ')
 
-        if choice == '1':
-            username = get_new_username()
-            save_new_data(username)
+            if choice == '1':
+                username = get_new_username()
+                save_new_data(username, email, password)
 
-        elif choice == '2':
-            email = get_new_email()
-            save_new_data(email)
+            elif choice == '2':
+                email = get_new_email()
+                save_new_data(username, email, password)
 
-        elif choice == '3':
-            password = get_new_password()
-            save_new_data([password])
+            elif choice == '3':
+                password = get_new_password()
 
-        elif choice == 'exit':
-            sys.exit()
+                if password != False:
+                    save_new_data(username, email, password)
 
-        else:
-            print('Please enter 1, 2, 3, or "exit".')
+            elif choice.lower() == 'exit':
+                sys.exit()
+
+            else:
+                print('Please enter 1, 2, 3, or "exit".')
 
 
-def save_new_data(new_data):
+def save_new_data(username, email, password):
     """Save the user's recent data."""
 
+    # Load in the path.
+    path = Path('user_info/user_info.json')
 
+    # Create a dictionary for the user's information.
+    user_info = {"username": username, "email": email, "password": password}
+
+    # Create a new file for the user's information.
+    path.write_text(json.dumps(user_info))
+
+    return
 
 
 def get_new_password():
     """Let the user enter a new password."""
 
     while True:
-        password = input('Please enter a new password: ')
+        password = input('\nPlease enter a new password: ')
         confirm_password = input('Please confirm your password: ')
 
         if password == confirm_password:
             break
         else:
             sleep(1)
-            print('Your passwords do not match.')
+            print('\nYour passwords do not match.')
+            sleep(1)
             return False
     
     sleep(1)
@@ -91,3 +104,7 @@ def get_new_email():
     new_email = input('\nPlease enter a new email: ')
     sleep(1)
     return new_email
+
+
+# Start the file.
+main()

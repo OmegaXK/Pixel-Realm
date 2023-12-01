@@ -27,12 +27,13 @@ def main():
     pygame.init()
     MAINCLOCK = pygame.time.Clock()
 
+    # Load in the assets.
+    assets = Assets()
+
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
-
-    # Load in the assets.
-    assets = Assets()
+    pygame.display.set_icon(assets.pixel_realm_logo)
 
     # Load in the apps.
     browser = App('apps/browser.pyw', assets.browser_logo, 90, 450)
@@ -139,6 +140,10 @@ class Assets():
         self.settings_logo = pygame.image.load('assets/images/settings_logo.png')
         self.settings_logo = pygame.transform.scale(self.settings_logo,
                                                     (APPWIDTH, APPHEIGHT))
+        
+        self.pixel_realm_logo = pygame.image.load('assets/images/pixel_realm_logo.png')
+        self.pixel_realm_logo = pygame.transform.scale(self.pixel_realm_logo,
+                                                       (32, 32))
         
 
 def start_file(filepath):
