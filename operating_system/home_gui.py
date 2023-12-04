@@ -41,8 +41,11 @@ def main():
     explorer = App('apps/explorer.pyw', assets.explorer_logo, 330, 450)
     settings = App('settings.py', assets.settings_logo, 450, 450)
 
+    # Game apps.
+    rps = App('games/rock-paper-scissors.py', assets.rps_logo, 570, 450)
+
     # Create a list of all the apps.
-    apps = [browser, notepad, explorer, settings]
+    apps = [browser, notepad, explorer, settings, rps]
 
     # Run the OS GUI
     run_gui()
@@ -144,6 +147,10 @@ class Assets():
         self.pixel_realm_logo = pygame.image.load('assets/images/pixel_realm_logo.png')
         self.pixel_realm_logo = pygame.transform.scale(self.pixel_realm_logo,
                                                        (32, 32))
+        
+        self.rps_logo = pygame.image.load('assets/images/rps_logo.png')
+        self.rps_logo = pygame.transform.scale(self.rps_logo,
+                                               (APPWIDTH, APPHEIGHT))
         
 
 def start_file(filepath):
