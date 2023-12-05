@@ -42,10 +42,12 @@ def main():
     settings = App('settings.py', assets.settings_logo, 450, 450)
 
     # Game apps.
-    rps = App('games/rock-paper-scissors.py', assets.rps_logo, 570, 450)
+    rps = App('games/cli_games/rock-paper-scissors.py', 
+              assets.rps_logo, 570, 450)
+    ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
 
     # Create a list of all the apps.
-    apps = [browser, notepad, explorer, settings, rps]
+    apps = [browser, notepad, explorer, settings, rps, ttt]
 
     # Run the OS GUI
     run_gui()
@@ -150,6 +152,10 @@ class Assets():
         
         self.rps_logo = pygame.image.load('assets/images/rps_logo.png')
         self.rps_logo = pygame.transform.scale(self.rps_logo,
+                                               (APPWIDTH, APPHEIGHT))
+        
+        self.ttt_logo = pygame.image.load('assets/images/ttt_logo.png')
+        self.ttt_logo = pygame.transform.scale(self.ttt_logo,
                                                (APPWIDTH, APPHEIGHT))
         
 
