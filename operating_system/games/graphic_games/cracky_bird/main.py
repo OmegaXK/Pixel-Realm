@@ -1,4 +1,4 @@
-"""The Crack-OS version of the game Flappy Bird."""
+"""The Crack-OS version of the game Flappy Bird - Cracky Bird."""
 
 # Imports.
 import sys, random
@@ -137,7 +137,7 @@ def spawn_pipe():
 
     new_pipe = assets.pipe_img.get_rect()
     new_pipe.left = WINDOWWIDTH
-    new_pipe.centery = random.randint(100, WINDOWHEIGHT - 100)
+    new_pipe.centery = random.randint(50, 400)
 
     pipes.append(new_pipe)
 
