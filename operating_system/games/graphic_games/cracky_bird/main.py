@@ -1,7 +1,7 @@
 """The Crack-OS version of the game Flappy Bird."""
 
 # Imports.
-import sys
+import sys, random
 
 import pygame
 from pygame.locals import *
@@ -11,6 +11,10 @@ WINDOWWIDTH = 288
 WINDOWHEIGHT = 512
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
+
+# Pipe constants.
+PIPESPAWNRATE = 120
+PIPESPEED = 2
 
 # Define other constants.
 FPS = 60
@@ -42,15 +46,17 @@ def main():
 
 def run_game():
     """Run the actual Cracky-Bird game."""
-    global cracky_bird_rect, fallspeed, gravity, pipe_rect
+    global cracky_bird_rect, fallspeed, gravity, pipe_rect, pipes
 
     # Define game variables.
+    fallspeed = 0
+    gravity = .2
+    pipes = []
+
     cracky_bird_rect = assets.cracky_bird_img.get_rect()
     cracky_bird_rect.center = (CENTERX, CENTERY)
-    fallspeed = 0
-    gravity = .3
     pipe_rect = assets.pipe_img.get_rect()
-    pipe_rect.center = (CENTERX, CENTERY)
+    pipe_frame = 0
 
     while True:
         restart_screen()
@@ -85,8 +91,18 @@ def run_game():
             # Draw the background.
             DISPLAYSURF.blit(assets.background, (0, 0))
 
+            # Update and check the pipe frame.
+            pipe_frame += 1
+            if pipe_frame >= PIPESPAWNRATE:
+                pipe_frame = 0
+                spawn_pipe()
+
+            # Move the pipes.
+            move_pipes()
+
             # Draw the pipes.
-            DISPLAYSURF.blit(assets.pipe_img, pipe_rect)
+            for pipe in pipes:
+                DISPLAYSURF.blit(assets.pipe_img, pipe)
 
             # Update the bird.
             emulate_gravity()
@@ -100,6 +116,30 @@ def run_game():
             # Update the display.
             pygame.display.update()
             MAINCLOCK.tick(FPS)
+
+
+def move_pipes():
+    """Move the pipes."""
+    global pipes
+
+    # Move the pipe.
+    for pipe in pipes:
+        pipe.left -= PIPESPEED
+
+        # Check if the pipe is off the screen.
+        if pipe.right <= 0:
+            pipes.remove(pipe)
+
+
+def spawn_pipe():
+    """Spawn in a new pipe."""
+    global pipes
+
+    new_pipe = assets.pipe_img.get_rect()
+    new_pipe.left = WINDOWWIDTH
+    new_pipe.centery = random.randint(100, WINDOWHEIGHT - 100)
+
+    pipes.append(new_pipe)
 
 
 def restart_screen():
@@ -150,7 +190,7 @@ class Assets():
         
         self.cracky_bird_img = pygame.image.load('images/cracky_bird.png')
         self.cracky_bird_img = pygame.transform.scale(self.cracky_bird_img,
-                                                      (100, 100))
+                                                      (80, 80))
         
         self.pipe_img = pygame.image.load('images/pipe.png')
         self.pipe_img = pygame.transform.scale(self.pipe_img, 
