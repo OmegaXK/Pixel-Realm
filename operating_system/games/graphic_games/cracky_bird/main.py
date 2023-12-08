@@ -55,7 +55,6 @@ def run_game():
 
     cracky_bird_rect = assets.cracky_bird_img.get_rect()
     cracky_bird_rect.center = (CENTERX, CENTERY)
-    pipe_rect = assets.pipe_img.get_rect()
     pipe_frame = 0
 
     while True:
@@ -102,7 +101,7 @@ def run_game():
 
             # Draw the pipes.
             for pipe in pipes:
-                DISPLAYSURF.blit(assets.pipe_img, pipe)
+                DISPLAYSURF.blit(pipe['img'], pipe['rect'])
 
             # Update the bird.
             emulate_gravity()
@@ -124,10 +123,10 @@ def move_pipes():
 
     # Move the pipe.
     for pipe in pipes:
-        pipe.left -= PIPESPEED
+        pipe['rect'].left -= PIPESPEED
 
         # Check if the pipe is off the screen.
-        if pipe.right <= 0:
+        if pipe['rect'].right <= 0:
             pipes.remove(pipe)
 
 
@@ -135,9 +134,13 @@ def spawn_pipe():
     """Spawn in a new pipe."""
     global pipes
 
-    new_pipe = assets.pipe_img.get_rect()
-    new_pipe.left = WINDOWWIDTH
-    new_pipe.centery = random.randint(50, 400)
+    pipe = random.choice([assets.pipe1, assets.pipe2, assets.pipe3, 
+                          assets.pipe4, assets.pipe5])
+    
+    new_pipe = {'img': pipe, 'rect': pipe.get_rect()}
+
+    new_pipe['rect'].top = 0
+    new_pipe['rect'].left = WINDOWWIDTH
 
     pipes.append(new_pipe)
 
@@ -190,11 +193,22 @@ class Assets():
         
         self.cracky_bird_img = pygame.image.load('images/cracky_bird.png')
         self.cracky_bird_img = pygame.transform.scale(self.cracky_bird_img,
-                                                      (80, 80))
+                                                      (60, 60))
         
-        self.pipe_img = pygame.image.load('images/pipe.png')
-        self.pipe_img = pygame.transform.scale(self.pipe_img, 
-                                               (700, 700))
+        self.pipe1 = pygame.image.load('images/pipe1.png')
+        self.pipe1 = pygame.transform.scale(self.pipe1, (60, 400))
+
+        self.pipe2 = pygame.image.load('images/pipe2.png')
+        self.pipe2 = pygame.transform.scale(self.pipe2, (60, 400))
+
+        self.pipe3 = pygame.image.load('images/pipe3.png')
+        self.pipe3 = pygame.transform.scale(self.pipe3, (60, 400))
+
+        self.pipe4 = pygame.image.load('images/pipe4.png')
+        self.pipe4 = pygame.transform.scale(self.pipe4, (60, 400))
+
+        self.pipe5 = pygame.image.load('images/pipe5.png')
+        self.pipe5 = pygame.transform.scale(self.pipe5, (60, 400))
 
 
 # Run flappy bird.
