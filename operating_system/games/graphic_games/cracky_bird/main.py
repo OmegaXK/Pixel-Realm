@@ -14,7 +14,7 @@ CENTERY = WINDOWHEIGHT / 2
 
 # Define other constants.
 FPS = 60
-JUMPHEIGHT = 8
+JUMPHEIGHT = 5
 
 # Define colors.
 BLACK = (0, 0, 0)
@@ -42,13 +42,15 @@ def main():
 
 def run_game():
     """Run the actual Cracky-Bird game."""
-    global cracky_bird_rect, fallspeed, gravity
+    global cracky_bird_rect, fallspeed, gravity, pipe_rect
 
     # Define game variables.
     cracky_bird_rect = assets.cracky_bird_img.get_rect()
     cracky_bird_rect.center = (CENTERX, CENTERY)
     fallspeed = 0
     gravity = .3
+    pipe_rect = assets.pipe_img.get_rect()
+    pipe_rect.center = (CENTERX, CENTERY)
 
     while True:
         restart_screen()
@@ -82,6 +84,9 @@ def run_game():
 
             # Draw the background.
             DISPLAYSURF.blit(assets.background, (0, 0))
+
+            # Draw the pipes.
+            DISPLAYSURF.blit(assets.pipe_img, pipe_rect)
 
             # Update the bird.
             emulate_gravity()
@@ -146,6 +151,10 @@ class Assets():
         self.cracky_bird_img = pygame.image.load('images/cracky_bird.png')
         self.cracky_bird_img = pygame.transform.scale(self.cracky_bird_img,
                                                       (100, 100))
+        
+        self.pipe_img = pygame.image.load('images/pipe.png')
+        self.pipe_img = pygame.transform.scale(self.pipe_img, 
+                                               (700, 700))
 
 
 # Run flappy bird.
