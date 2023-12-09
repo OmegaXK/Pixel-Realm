@@ -1,0 +1,23 @@
+Pixel Realm Credits
+
+
+All coding by Collin Maryniak.
+IDE: Visual Studio Code (VS Code)
+VS Code download: https://code.visualstudio.com/download
+
+
+My resources:
+Image editor: https://pixlr.com/x/
+Image background remover: https://www.remove.bg/
+RGB color picker: https://www.rapidtables.com/web/color/RGB_Color.html
+HTML Favicon generator: https://realfavicongenerator.net/
+Free sound effects: https://freesound.org/
+Canva: https://canva.com
+
+
+Extra help from:
+C. H. (https://youtube.com/@rexymon)
+
+
+Special shoutout to Stack Overflow for solutions to most issues I ran into.
+Link: https://stackoverflow.com
