@@ -42,6 +42,7 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Cracky Bird")
+    pygame.display.set_icon(assets.cracky_bird_img)
     
     # Run the game.
     run_game()
