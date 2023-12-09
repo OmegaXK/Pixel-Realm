@@ -137,10 +137,22 @@ def spawn_pipe():
     global pipes
 
     pipe = assets.pipe_img
-    
-    new_pipe = {'img': pipe, 'rect': pipe.get_rect()}
 
+    gap_size = 100
+    gap_offset = -75  # Offset to align the gap with the visual gap.
+
+    new_pipe = {}
+
+    new_pipe['rect'] = pipe.get_rect()
     new_pipe['rect'].top = random.randint(-400, -100)
+
+    gap_start = new_pipe['rect'].centery - (gap_size / 2) + gap_offset
+    gap_end = new_pipe['rect'].centery + (gap_size / 2) - gap_offset
+
+    new_pipe['img'] = assets.pipe_img
+    new_pipe['gap_start'] = gap_start 
+    new_pipe['gap_end'] = gap_end
+
     new_pipe['rect'].left = WINDOWWIDTH
 
     pipes.append(new_pipe)
@@ -215,6 +227,8 @@ def restart_screen():
 def check_bird_collision():
     """Check if the bird is touching obstacles or edges of screen."""
 
+    hitbox_width = 40
+
     # Check if the bird is touching the floor and ceiling.
     if cracky_bird_rect.centery <= 0:
         return True 
@@ -225,7 +239,16 @@ def check_bird_collision():
     # Check if the bird has hit a pipe.
     for pipe in pipes:
 
-        if cracky_bird_rect.colliderect(pipe['rect']):
+        # Create separate rects for the top and bottom pipes.
+        top_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['rect'].top, 
+                                    hitbox_width, pipe['gap_start'])
+        bottom_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['gap_end'], 
+                                       hitbox_width, 
+                                       pipe['rect'].bottom - pipe['gap_end'])
+
+        # Check if the bird has hit any of the rects.
+        if cracky_bird_rect.colliderect(top_pipe_rect) or \
+            cracky_bird_rect.colliderect(bottom_pipe_rect):
             return True
         
     # The bird has not hit anything.
