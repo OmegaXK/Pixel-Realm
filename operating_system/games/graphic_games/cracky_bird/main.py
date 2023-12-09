@@ -18,7 +18,7 @@ PIPESPEED = 2
 
 # Define other constants.
 FPS = 60
-JUMPHEIGHT = 5
+JUMPHEIGHT = 4.3
 
 # Define colors.
 BLACK = (0, 0, 0)
@@ -138,7 +138,7 @@ def spawn_pipe():
     
     new_pipe = {'img': pipe, 'rect': pipe.get_rect()}
 
-    new_pipe['rect'].top = random.randint(0, WINDOWHEIGHT - 400)
+    new_pipe['rect'].top = random.randint(-400, -100)
     new_pipe['rect'].left = WINDOWWIDTH
 
     pipes.append(new_pipe)
@@ -195,8 +195,7 @@ class Assets():
                                                       (60, 60))
         
         self.pipe_img = pygame.image.load('images/pipe.png')
-        self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 400))
-
+        self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 1000))
 
 
 # Run flappy bird.
