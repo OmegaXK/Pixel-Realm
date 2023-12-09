@@ -115,7 +115,8 @@ def run_game():
             emulate_gravity()
 
             if check_bird_collision() == True:
-                # The bird has hit something.
+                # The bird has hit something. Play the game over sound.
+                assets.game_over.play()
                 pygame.time.wait(500)
                 break
             
@@ -309,6 +310,10 @@ def jump_bird(jump_height):
     """Make the cracky-bird jump."""
     global fallspeed
 
+    # Play the jump sound.
+    assets.jump.play()
+
+    # Make the bird jump.
     fallspeed = -jump_height
 
 
@@ -337,6 +342,7 @@ class Assets():
     def __init__(self):
         """Initialize the assets."""
 
+        # Initialize images.
         self.background = pygame.image.load('images/background.png')
         self.background = pygame.transform.scale(self.background, 
                                                  (WINDOWWIDTH, WINDOWHEIGHT))
@@ -347,6 +353,10 @@ class Assets():
         
         self.pipe_img = pygame.image.load('images/pipe.png')
         self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 1000))
+
+        # Initialize sounds.
+        self.jump = pygame.mixer.Sound('sounds/jump.wav')
+        self.game_over = pygame.mixer.Sound('sounds/game_over.wav')
 
 
 # Run cracky bird.
