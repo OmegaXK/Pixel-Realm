@@ -17,7 +17,7 @@ PIPESPAWNRATE = 120
 PIPESPEED = 2
 PIPEMINY = -400
 PIPEMAXY = -100
-HITBOXWIDTH = 40
+HITBOXWIDTH = 30
 
 # Define other constants.
 FPS = 60
@@ -50,13 +50,15 @@ def main():
 
 def run_game():
     """Run the actual Cracky-Bird game."""
-    global cracky_bird_rect, fallspeed, gravity, pipe_rect, pipes
+    global cracky_bird_rect, fallspeed, gravity, pipe_rect, pipes, score
+    global best_score
 
     # Define game variables.
     fallspeed = 0
     gravity = .2
-
     cracky_bird_rect = assets.cracky_bird_img.get_rect()
+    best_score = 0
+    score = 0
 
     while True:
         restart_screen()
@@ -64,6 +66,7 @@ def run_game():
         # Reset game variables before starting.
         pipe_frame = 0
         pipes = []
+        score = 0
 
         while True:
             # Check for events.
@@ -115,51 +118,19 @@ def run_game():
                 # The bird has hit something.
                 pygame.time.wait(500)
                 break
-
+            
+            # Draw the bird.
             DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
+
+            # Draw the score.
+            draw_score(score)
+
+            # Draw the best score.
+            draw_best_score(best_score)
 
             # Update the display.
             pygame.display.update()
             MAINCLOCK.tick(FPS)
-
-
-def move_pipes():
-    """Move the pipes."""
-    global pipes
-
-    # Move the pipe.
-    for pipe in pipes:
-        pipe['rect'].left -= PIPESPEED
-
-        # Check if the pipe is off the screen.
-        if pipe['rect'].right <= 0:
-            pipes.remove(pipe)
-
-
-def spawn_pipe():
-    """Spawn in a new pipe."""
-    global pipes
-
-    pipe = assets.pipe_img
-
-    gap_size = 100
-    gap_offset = -58  # Offset to align the gap with the visual gap.
-
-    new_pipe = {}
-
-    new_pipe['rect'] = pipe.get_rect()
-    new_pipe['rect'].top = random.randint(PIPEMINY, PIPEMAXY)
-
-    gap_start = new_pipe['rect'].centery - (gap_size / 2) - 30
-    gap_end = new_pipe['rect'].centery + (gap_size / 2) - gap_offset
-
-    new_pipe['img'] = assets.pipe_img
-    new_pipe['gap_start'] = gap_start 
-    new_pipe['gap_end'] = gap_end
-
-    new_pipe['rect'].left = WINDOWWIDTH
-
-    pipes.append(new_pipe)
 
 
 def restart_screen():
@@ -169,7 +140,11 @@ def restart_screen():
     2. Holds that position until the player presses a jump button
     3. Returns to start the game."""
 
-    global cracky_bird_rect
+    global cracky_bird_rect, score, best_score
+
+    # Calculate the player's best score.
+    if score >= best_score:
+        best_score = score
 
     # Position the bird.
     cracky_bird_rect.center = (CENTERX, CENTERY)
@@ -179,6 +154,12 @@ def restart_screen():
 
     # Draw the player.
     DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
+
+    # Draw the score as 0.
+    draw_score(0)
+
+    # Draw the best score.
+    draw_best_score(best_score)
 
     # Update.
     pygame.display.update()
@@ -223,9 +204,75 @@ def restart_screen():
         # Draw the player.
         DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
 
+        # Draw the score as 0.
+        draw_score(0)
+
+        # Draw the best score.
+        draw_best_score(best_score)
+
         # Update the screen.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
+
+
+def draw_best_score(best_score):
+    """Draw the player's best score."""
+    scorefont = create_font(30)
+    bestscoresurf = scorefont.render(f'Best score: {best_score}', True, BLACK)
+    bestscorerect = bestscoresurf.get_rect()
+    bestscorerect.bottomleft = (0, WINDOWHEIGHT)
+    DISPLAYSURF.blit(bestscoresurf, bestscorerect)
+
+
+def draw_score(score):
+    """Draw the current score text on the screen."""
+    scorefont = create_font(30)
+    scoresurf = scorefont.render(f'Score: {score}', True, BLACK)
+    scorerect = scoresurf.get_rect()
+    scorerect.topleft = (0, 0)
+    DISPLAYSURF.blit(scoresurf, scorerect)
+
+
+def move_pipes():
+    """Move the pipes."""
+    global pipes, score
+
+    # Move the pipe.
+    for pipe in pipes:
+        pipe['rect'].left -= PIPESPEED
+
+        # Check if the pipe is off the screen.
+        if pipe['rect'].right <= 0:
+            pipes.remove(pipe)
+
+            # Update the score.
+            score += 1
+
+
+def spawn_pipe():
+    """Spawn in a new pipe."""
+    global pipes
+
+    pipe = assets.pipe_img
+
+    gap_size = 100
+    gap_offset = -58  # Offset to align the gap with the visual gap.
+
+    new_pipe = {}
+
+    new_pipe['rect'] = pipe.get_rect()
+    new_pipe['rect'].top = random.randint(PIPEMINY, PIPEMAXY)
+
+    gap_start = new_pipe['rect'].centery - (gap_size / 2) - 30
+    gap_end = new_pipe['rect'].centery + (gap_size / 2) - gap_offset
+
+    new_pipe['img'] = assets.pipe_img
+    new_pipe['gap_start'] = gap_start 
+    new_pipe['gap_end'] = gap_end
+
+    new_pipe['rect'].left = WINDOWWIDTH
+
+    pipes.append(new_pipe)
 
                 
 def check_bird_collision():
@@ -273,6 +320,11 @@ def emulate_gravity():
     fallspeed += gravity
 
 
+def create_font(size):
+    """Return a font of the given size."""
+    return pygame.font.Font('freesansbold.ttf', size)
+
+
 def terminate():
     """Quit out of the program."""
     pygame.quit()
@@ -297,5 +349,5 @@ class Assets():
         self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 1000))
 
 
-# Run flappy bird.
+# Run cracky bird.
 main()
