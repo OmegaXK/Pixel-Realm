@@ -51,14 +51,15 @@ def run_game():
     # Define game variables.
     fallspeed = 0
     gravity = .2
-    pipes = []
 
     cracky_bird_rect = assets.cracky_bird_img.get_rect()
-    cracky_bird_rect.center = (CENTERX, CENTERY)
-    pipe_frame = 0
 
     while True:
         restart_screen()
+
+        # Reset game variables before starting.
+        pipe_frame = 0
+        pipes = []
 
         while True:
             # Check for events.
@@ -108,6 +109,7 @@ def run_game():
 
             if check_bird_collision() == True:
                 # The bird has hit something.
+                pygame.time.wait(500)
                 break
 
             DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
@@ -145,18 +147,89 @@ def spawn_pipe():
 
 
 def restart_screen():
-    """Show this screen before each round starts."""
-    pass
+    """Show this screen before each round starts.
+    This screen performs the following:
+    1. Positions the bird in the center of the screen
+    2. Holds that position until the player presses a jump button
+    3. Returns to start the game."""
 
+    global cracky_bird_rect
 
+    # Position the bird.
+    cracky_bird_rect.center = (CENTERX, CENTERY)
+
+    # Draw the basic background.
+    DISPLAYSURF.blit(assets.background, (0, 0))
+
+    # Draw the player.
+    DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
+
+    # Update.
+    pygame.display.update()
+
+    # Give the player a second to react.
+    pygame.time.wait(500)
+
+    # Repeat until the player presses a jump key.
+    while True:
+
+        # Check for events.
+        for event in pygame.event.get():
+
+            # Check for quit.
+            if event.type == QUIT:
+                terminate()
+
+            # Check if the player is pressing a key.
+            if event.type == KEYDOWN:
+
+                # Check if the player is pressing the ESCAPE key.
+                if event.key == K_ESCAPE:
+                    terminate()
+
+            # Check if the player has released a key.
+            if event.type == KEYUP:
+
+                # Check if the player wants to jump.
+                    if event.key == K_SPACE or event.key == K_UP or \
+                        event.key == K_w:
+                        jump_bird(JUMPHEIGHT + 2)
+                        return
+
+            # Check if the player has released the mouse.
+            if event.type == MOUSEBUTTONUP:
+                jump_bird(JUMPHEIGHT + 2)
+                return
+            
+        # Draw the basic background.
+        DISPLAYSURF.blit(assets.background, (0, 0))
+
+        # Draw the player.
+        DISPLAYSURF.blit(assets.cracky_bird_img, cracky_bird_rect)
+
+        # Update the screen.
+        pygame.display.update()
+        MAINCLOCK.tick(FPS)
+
+                
 def check_bird_collision():
     """Check if the bird is touching obstacles or edges of screen."""
 
+    # Check if the bird is touching the floor and ceiling.
     if cracky_bird_rect.centery <= 0:
         return True 
     
     elif cracky_bird_rect.centery >= WINDOWHEIGHT:
         return True
+    
+    # Check if the bird has hit a pipe.
+    for pipe in pipes:
+
+        if cracky_bird_rect.colliderect(pipe['rect']):
+            return True
+        
+    # The bird has not hit anything.
+    return False
 
 
 def jump_bird(jump_height):
