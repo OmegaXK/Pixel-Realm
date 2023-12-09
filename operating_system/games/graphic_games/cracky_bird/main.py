@@ -15,6 +15,9 @@ CENTERY = WINDOWHEIGHT / 2
 # Pipe constants.
 PIPESPAWNRATE = 120
 PIPESPEED = 2
+PIPEMINY = -400
+PIPEMAXY = -100
+HITBOXWIDTH = 40
 
 # Define other constants.
 FPS = 60
@@ -144,7 +147,7 @@ def spawn_pipe():
     new_pipe = {}
 
     new_pipe['rect'] = pipe.get_rect()
-    new_pipe['rect'].top = random.randint(-400, -100)
+    new_pipe['rect'].top = random.randint(PIPEMINY, PIPEMAXY)
 
     gap_start = new_pipe['rect'].centery - (gap_size / 2) - 30
     gap_end = new_pipe['rect'].centery + (gap_size / 2) - gap_offset
@@ -227,8 +230,6 @@ def restart_screen():
 def check_bird_collision():
     """Check if the bird is touching obstacles or edges of screen."""
 
-    hitbox_width = 40
-
     # Check if the bird is touching the floor and ceiling.
     if cracky_bird_rect.centery <= 0:
         return True 
@@ -241,10 +242,10 @@ def check_bird_collision():
 
         # Create separate rects for the top and bottom pipes.
         top_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['rect'].top, 
-                                    hitbox_width, 
+                                    HITBOXWIDTH, 
                                     pipe['gap_start'] - pipe['rect'].top)
         bottom_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['gap_end'], 
-                                       hitbox_width, 
+                                       HITBOXWIDTH, 
                                        pipe['rect'].bottom - pipe['gap_end'])
 
         # Check if the bird has hit any of the rects.
