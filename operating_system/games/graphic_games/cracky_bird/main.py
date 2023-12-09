@@ -134,12 +134,11 @@ def spawn_pipe():
     """Spawn in a new pipe."""
     global pipes
 
-    pipe = random.choice([assets.pipe1, assets.pipe2, assets.pipe3, 
-                          assets.pipe4, assets.pipe5])
+    pipe = assets.pipe_img
     
     new_pipe = {'img': pipe, 'rect': pipe.get_rect()}
 
-    new_pipe['rect'].top = 0
+    new_pipe['rect'].top = random.randint(0, WINDOWHEIGHT - 400)
     new_pipe['rect'].left = WINDOWWIDTH
 
     pipes.append(new_pipe)
@@ -195,20 +194,9 @@ class Assets():
         self.cracky_bird_img = pygame.transform.scale(self.cracky_bird_img,
                                                       (60, 60))
         
-        self.pipe1 = pygame.image.load('images/pipe1.png')
-        self.pipe1 = pygame.transform.scale(self.pipe1, (60, 400))
+        self.pipe_img = pygame.image.load('images/pipe.png')
+        self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 400))
 
-        self.pipe2 = pygame.image.load('images/pipe2.png')
-        self.pipe2 = pygame.transform.scale(self.pipe2, (60, 400))
-
-        self.pipe3 = pygame.image.load('images/pipe3.png')
-        self.pipe3 = pygame.transform.scale(self.pipe3, (60, 400))
-
-        self.pipe4 = pygame.image.load('images/pipe4.png')
-        self.pipe4 = pygame.transform.scale(self.pipe4, (60, 400))
-
-        self.pipe5 = pygame.image.load('images/pipe5.png')
-        self.pipe5 = pygame.transform.scale(self.pipe5, (60, 400))
 
 
 # Run flappy bird.
