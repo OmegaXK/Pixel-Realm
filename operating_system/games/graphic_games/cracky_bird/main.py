@@ -139,14 +139,14 @@ def spawn_pipe():
     pipe = assets.pipe_img
 
     gap_size = 100
-    gap_offset = -75  # Offset to align the gap with the visual gap.
+    gap_offset = -58  # Offset to align the gap with the visual gap.
 
     new_pipe = {}
 
     new_pipe['rect'] = pipe.get_rect()
     new_pipe['rect'].top = random.randint(-400, -100)
 
-    gap_start = new_pipe['rect'].centery - (gap_size / 2) + gap_offset
+    gap_start = new_pipe['rect'].centery - (gap_size / 2) - 30
     gap_end = new_pipe['rect'].centery + (gap_size / 2) - gap_offset
 
     new_pipe['img'] = assets.pipe_img
@@ -241,7 +241,8 @@ def check_bird_collision():
 
         # Create separate rects for the top and bottom pipes.
         top_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['rect'].top, 
-                                    hitbox_width, pipe['gap_start'])
+                                    hitbox_width, 
+                                    pipe['gap_start'] - pipe['rect'].top)
         bottom_pipe_rect = pygame.Rect(pipe['rect'].left, pipe['gap_end'], 
                                        hitbox_width, 
                                        pipe['rect'].bottom - pipe['gap_end'])
