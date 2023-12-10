@@ -165,7 +165,9 @@ def start_file(filepath):
     if platform.system() == 'Darwin':       # macOS
         subprocess.run(('python3', filepath))
     elif platform.system() == 'Windows':    # Windows
-        os.startfile(filepath)
+        cwd = os.getcwd()
+        file_path = os.path.join(cwd, filepath)
+        os.startfile(file_path)
     else:                                   # linux variants
         subprocess.call(('xdg-open', filepath))
 
