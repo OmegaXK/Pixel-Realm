@@ -6,7 +6,7 @@ def drawBoard(board):
     # This function prints out the board that it was passed.
 
     # "board" is a list of 10 strings representing the board (ignore index 0)
-    print(board[7] + '|' + board[8] + '|' + board[9])
+    print('\n' + board[7] + '|' + board[8] + '|' + board[9])
     print('-+-+-')
     print(board[4] + '|' + board[5] + '|' + board[6])
     print('-+-+-')
@@ -131,7 +131,7 @@ while True:
     theBoard = [' '] * 10
     playerLetter, computerLetter = inputPlayerLetter()
     turn = whoGoesFirst()
-    print('The ' + turn + ' will go first.')
+    print('\nThe ' + turn + ' will go first.')
     gameIsPlaying = True
 
     while gameIsPlaying:
@@ -143,7 +143,7 @@ while True:
 
             if isWinner(theBoard, playerLetter):
                 drawBoard(theBoard)
-                print('Hooray! You have won the game!')
+                print('\nHooray! You have won the game!')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
@@ -160,7 +160,7 @@ while True:
 
             if isWinner(theBoard, computerLetter):
                 drawBoard(theBoard)
-                print('The computer has beaten you! You lose.')
+                print('\nThe computer has beaten you! You lose.')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
@@ -170,6 +170,6 @@ while True:
                 else:
                     turn = 'player'
 
-    print('Do you want to play again? (yes or no)')
+    print('\nDo you want to play again? (yes or no)')
     if not input().lower().startswith('y'):
         break

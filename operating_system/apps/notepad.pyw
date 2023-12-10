@@ -216,7 +216,7 @@ class TextEditor:
       messagebox.showerror("Exception",e)
   # Defining About Funtion
   def infoabout(self):
-    messagebox.showinfo("About Text Editor","Rudolf-Pad is a simple text editor included with the Rudolf-OS")
+    messagebox.showinfo("About Text Editor","Crack-Edit is a simple text editor included with Crack-OS" + "\n" + "It allows you to edit and create various text files")
   # Defining shortcuts Funtion
   def shortcuts(self):
     # Binding Ctrl+n to newfile funtion

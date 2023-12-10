@@ -18,8 +18,7 @@ def get_player_choice():
     """Return the player's choice."""
 
     # Print out the choices.
-    time.sleep(1)
-    print('\nMake your decision:')
+    print('\nChoose rock, paper, or scissors:')
     print('\n[r] Rock')
     print('[p] Paper')
     print('[s] Scissors')
@@ -86,7 +85,7 @@ def play_again():
     """Print out the current scores, and ask the player if they would
     like to play again."""
 
-    time.sleep(2.5)
+    time.sleep(2.0)
     print('\nWould you like to play another round? (yes/no)')
     
     # Get the player's choice.
@@ -116,7 +115,6 @@ def main():
 
     # Print the introduction.
     print('\nWelcome to Rock-Paper-Scissors!')
-    time.sleep(1)
     input('Press enter when you are ready to play: ')
 
     # Game loop.
@@ -132,10 +130,9 @@ def main():
             time.sleep(1)
             print(f'\nYou chose {player_choice}.')
 
-            time.sleep(1)
             print(f'The computer chose {computer_choice}.')
 
-            time.sleep(1.5)
+            time.sleep(2)
             print('\nYou beat the computer!')
 
             player_score += 1
@@ -144,10 +141,9 @@ def main():
             time.sleep(1)
             print(f'\nYou chose {player_choice}.')
 
-            time.sleep(1)
             print(f'\nThe computer chose {computer_choice}.')
 
-            time.sleep(1.5)
+            time.sleep(2)
             print('\nThe computer destroyed you!')
 
             computer_score += 1
@@ -156,10 +152,9 @@ def main():
             time.sleep(1)
             print(f'\nYou chose {player_choice}.')
 
-            time.sleep(1)
             print(f'The computer chose {computer_choice}.')
 
-            time.sleep(1.5)
+            time.sleep(1)
             print('It was a tie! Nobody gets a point.')
 
         # Print out the current scores.
