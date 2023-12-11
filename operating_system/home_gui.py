@@ -158,6 +158,10 @@ class Assets():
         self.ttt_logo = pygame.transform.scale(self.ttt_logo,
                                                (APPWIDTH, APPHEIGHT))
         
+        self.cracky_bird_logo = pygame.image.load('assets/images/cracky_bird_logo.png')
+        self.cracky_bird_logo = pygame.transform.scale(self.cracky_bird_logo,
+                                                       (APPWIDTH, APPHEIGHT))
+        
 
 def start_file(filepath):
     """Start the file passed, regardless of your current platform."""
