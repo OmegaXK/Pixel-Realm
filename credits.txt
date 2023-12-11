@@ -17,4 +17,4 @@ Canva: https://canva.com
 
 
 Special shoutout to Stack Overflow for solutions to most issues I ran into.
-Link: https://stackoverflow.com
+Link: <a href='https://stackoverflow.com' target='blank'>Stack Overflow</a>
