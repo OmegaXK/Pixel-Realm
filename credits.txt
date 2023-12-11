@@ -1,7 +1,8 @@
 Pixel Realm Credits
 
 
-All coding by Collin Maryniak.
+most coding by Collin Maryniak.
+some coding by T.G.M.
 IDE: Visual Studio Code (VS Code)
 VS Code download: https://code.visualstudio.com/download
 
