@@ -1,8 +1,8 @@
 Pixel Realm Credits
 
 
-most coding by Collin Maryniak.
-some coding by T.G.M.
+Most coding by Collin Maryniak.
+Additional coding by T.G.M. (https:youtube.com/@rexymon)
 IDE: Visual Studio Code (VS Code)
 VS Code download: https://code.visualstudio.com/download
 
@@ -14,10 +14,6 @@ RGB color picker: https://www.rapidtables.com/web/color/RGB_Color.html
 HTML Favicon generator: https://realfavicongenerator.net/
 Free sound effects: https://freesound.org/
 Canva: https://canva.com
-
-
-Extra help from:
-C. H. (https://youtube.com/@rexymon)
 
 
 Special shoutout to Stack Overflow for solutions to most issues I ran into.
