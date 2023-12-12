@@ -1,5 +1,7 @@
 """The Crack-OS version of the game Flappy Bird - Cracky Bird."""
 
+# Path: games/graphic_games/cracky_bird/
+
 # Imports.
 import sys, random
 
@@ -22,6 +24,7 @@ HITBOXWIDTH = 40
 # Define other constants.
 FPS = 60
 JUMPHEIGHT = 4.3
+PATH = 'games/graphic_games/cracky_bird/'
 
 # Define colors.
 BLACK = (0, 0, 0)
@@ -343,20 +346,20 @@ class Assets():
         """Initialize the assets."""
 
         # Initialize images.
-        self.background = pygame.image.load('images/background.png')
+        self.background = pygame.image.load(f'{PATH}images/background.png')
         self.background = pygame.transform.scale(self.background, 
                                                  (WINDOWWIDTH, WINDOWHEIGHT))
         
-        self.cracky_bird_img = pygame.image.load('images/cracky_bird.png')
+        self.cracky_bird_img = pygame.image.load(f'{PATH}images/cracky_bird.png')
         self.cracky_bird_img = pygame.transform.scale(self.cracky_bird_img,
                                                       (60, 60))
         
-        self.pipe_img = pygame.image.load('images/pipe.png')
+        self.pipe_img = pygame.image.load(f'{PATH}images/pipe.png')
         self.pipe_img = pygame.transform.scale(self.pipe_img, (60, 1000))
 
         # Initialize sounds.
-        self.jump = pygame.mixer.Sound('sounds/jump.wav')
-        self.game_over = pygame.mixer.Sound('sounds/game_over.wav')
+        self.jump = pygame.mixer.Sound(f'{PATH}sounds/jump.wav')
+        self.game_over = pygame.mixer.Sound(f'{PATH}sounds/game_over.wav')
 
 
 # Run cracky bird.
