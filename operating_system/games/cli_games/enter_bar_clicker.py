@@ -1,7 +1,7 @@
 #welp here we go
-import pygame
+
 #var
-money = 200000
+money = 0
 rock = 0
 monkey = 0
 gernade = 0
@@ -9,74 +9,86 @@ thomas = 0
 cock = 0
 russian = 0
 fat = 0
+pc = 0
 money_per_click = 1
-frag = False
-clock = pygame.time.Clock()
-fps = 60
+
 #enter click code
+print('\nEnter Bar Clicker, coded by T. G. M.')
+print('Type in "shop" to enter the shop. Type in "quit" to exit the game.')
+
 print('\nPress enter to start')
 input()
-frag2 = 0.0167
+
 #store
 while True:
-    responce = input('enter clicker:')
+    responce = input('\nEnter Clicker:')
     if responce == 'shop':
-        print('welcome to the shop if you want to leave just press enter')
+        print('\n\nWelcome to the shop. If you want to leave just press enter.')
         print('to buy somthing just type the firs word of the product')
-        print('rock 10$ 1 per click')
-        print('monkey 35$ 2 per click')
-        print('gernade 157$ 5 per click')
-        print('thomas the thermo nucler bomb $420 10 per click')
-        print('cock plane $69,000 50 per click')
-        print('russian fighter jet $30,000 20 per click')
-        print('fat @$$ bomb $74,000 25 per click')
-        print('frag granade 1 clicks per sec $20000')
+        print('Rock - costs 10$ - 1$ per click')
+        print('monkey - costs 35$ - 2$ per click')
+        print('gernade - costs 157$ - 5$ per click')
+        print('thomas - costs $420 - 10$ per click')
+        print('cock plane - costs $6000 - 100$ per click')
+        print('russian fighter jet - costs $15000 - 500$ per click')
+        print('fat @$$ bomb - costs $50,000 - 2000$ per click')
+        print('python console - costs $250,000 - 100,000$ per click')
+
     if responce == 'rock':
-        if money > 9:
-            money = money-10
+        if money >= 10:
+            money = money - 10
             rock = rock + 1
             money_per_click = money_per_click + 1
+
     if responce == 'monkey':
-        if money > 34:
-            money = money-35
+        if money >= 35:
+            money = money - 35
             monkey = monkey + 1
             money_per_click = money_per_click + 2
+
     if responce == 'gernade':
-        if money > 156:
-            money = money-157
+        if money >= 157:
+            money = money - 157
             gernade = gernade + 1
             money_per_click = money_per_click + 5
-            if responce == 'thomas':
-                if money > 419:
-                    money = money-420
-                    money_per_click = money_per_click + 10
+
+    if responce == 'thomas':
+        if money >= 420:
+            money = money - 420
+            money_per_click = money_per_click + 10
             thomas = thomas + 1
-            if responce == 'cock':
-                if money > 68999:
-                    money = money-69000
-                    money_per_click = money_per_click + 50
+
+    if responce == 'cock plane':
+        if money >= 6000:
+            money = money - 6000
+            money_per_click = money_per_click + 50
             cock = cock + 1
-            if responce == 'russian':
-                if money > 29999:
-                 money = money-30000
+            
+    if responce == 'russian fighter jet':
+        if money >= 15000:
+            money = money - 15000
             russian = russian +1
-            money_per_click = money_per_click + 20
-            if responce == 'fat':
-             if money > 73999:
-                money = money-74000
-            fat = fat +1
-            money_per_click = money_per_click + 25
-            if responce == 'frag':
-                if money > 19999:
-                    money = money -20000
-                frag =+ True
+            money_per_click = money_per_click + 200
+
+    if responce == 'fat @$$ bomb':
+        if money >= 50000:
+            money = money - 50000
+            fat = fat + 1
+            money_per_click = money_per_click + 1000
+
+    if responce == 'python console':
+        if money >= 250000:
+            money = money - 250000
+            money_per_click += 100000
+            pc += 1
+
     money = money + money_per_click
-    clock.tick(fps)
-    money = money + frag2
+
     #rounding out
     round(money)
+
    #printing numbers
-    print('money')
+    print('\n\nmoney')
     print(round(money))
     print('rock')
     print(rock)
@@ -92,8 +104,8 @@ while True:
     print(russian)
     print('fat')
     print(fat)
-    print('frag')
-    print(frag)
+    print('python console')
+    print(pc)
 
 #quit code
     if responce == 'quit':

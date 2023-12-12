@@ -45,9 +45,11 @@ def main():
     rps = App('games/cli_games/rock-paper-scissors.py', 
               assets.rps_logo, 570, 450)
     ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
+    cracky_bird = App('games/graphic_games/cracky_bird/main.py', 
+                      assets.cracky_bird_logo, 690, 60)
 
     # Create a list of all the apps.
-    apps = [browser, notepad, explorer, settings, rps, ttt]
+    apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird]
 
     # Run the OS GUI
     run_gui()
