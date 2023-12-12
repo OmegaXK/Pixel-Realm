@@ -47,9 +47,11 @@ def main():
     ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
     cracky_bird = App('games/graphic_games/cracky_bird/main.py', 
                       assets.cracky_bird_logo, 690, 60)
+    enter = App('games/cli_games/enter_bar_clicker.py', assets.enter_logo, 810, 60)
 
     # Create a list of all the apps.
-    apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird]
+    apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
+            enter]
 
     # Run the OS GUI
     run_gui()
@@ -163,6 +165,10 @@ class Assets():
         self.cracky_bird_logo = pygame.image.load('assets/images/cracky_bird_logo.png')
         self.cracky_bird_logo = pygame.transform.scale(self.cracky_bird_logo,
                                                        (APPWIDTH, APPHEIGHT))
+        
+        self.enter_logo = pygame.image.load('assets/images/enter_logo.png')
+        self.enter_logo = pygame.transform.scale(self.enter_logo,
+                                                 (APPWIDTH, APPHEIGHT))
         
 
 def start_file(filepath):
