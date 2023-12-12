@@ -1,7 +1,8 @@
 #welp here we go
 import pygame
+
 #var
-money = 200000
+money = 0
 rock = 0
 monkey = 0
 gernade = 0
@@ -13,10 +14,12 @@ money_per_click = 1
 frag = False
 clock = pygame.time.Clock()
 fps = 60
+
 #enter click code
 print('\nPress enter to start')
 input()
 frag2 = 0.0167
+
 #store
 while True:
     responce = input('enter clicker:')
@@ -73,8 +76,10 @@ while True:
     money = money + money_per_click
     clock.tick(fps)
     money = money + frag2
+
     #rounding out
     round(money)
+    
    #printing numbers
     print('money')
     print(round(money))
