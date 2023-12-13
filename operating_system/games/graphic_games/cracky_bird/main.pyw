@@ -19,7 +19,7 @@ PIPESPAWNRATE = 120
 PIPESPEED = 2
 PIPEMINY = -400
 PIPEMAXY = -100
-HITBOXWIDTH = 40
+HITBOXWIDTH = 50
 
 # Define other constants.
 FPS = 60
@@ -259,7 +259,7 @@ def spawn_pipe():
 
     pipe = assets.pipe_img
 
-    gap_size = 100
+    gap_size = 80
     gap_offset = -58  # Offset to align the gap with the visual gap.
 
     new_pipe = {}
@@ -293,10 +293,10 @@ def check_bird_collision():
     for pipe in pipes:
 
         # Create separate rects for the top and bottom pipes.
-        top_pipe_rect = pygame.Rect(pipe['rect'].centerx, pipe['rect'].top, 
+        top_pipe_rect = pygame.Rect(pipe['rect'].centerx - 20, pipe['rect'].top, 
                                     HITBOXWIDTH, 
                                     pipe['gap_start'] - pipe['rect'].top)
-        bottom_pipe_rect = pygame.Rect(pipe['rect'].centerx, pipe['gap_end'], 
+        bottom_pipe_rect = pygame.Rect(pipe['rect'].centerx - 20, pipe['gap_end'], 
                                        HITBOXWIDTH, 
                                        pipe['rect'].bottom - pipe['gap_end'])
 

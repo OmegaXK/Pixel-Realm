@@ -45,13 +45,16 @@ def main():
     rps = App('games/cli_games/rock-paper-scissors.py', 
               assets.rps_logo, 570, 450)
     ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
-    cracky_bird = App('games/graphic_games/cracky_bird/main.py', 
+    cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
                       assets.cracky_bird_logo, 690, 60)
     enter = App('games/cli_games/enter_bar_clicker.py', assets.enter_logo, 810, 60)
 
+    # Entertainment apps.
+    crack_tube = App('apps/crack_tube.pyw', assets.crack_tube_logo, 690, 185)
+
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter]
+            enter, crack_tube]
 
     # Run the OS GUI
     run_gui()
@@ -169,6 +172,10 @@ class Assets():
         self.enter_logo = pygame.image.load('assets/images/enter_logo.png')
         self.enter_logo = pygame.transform.scale(self.enter_logo,
                                                  (APPWIDTH, APPHEIGHT))
+
+        self.crack_tube_logo = pygame.image.load('assets/images/crack_tube_logo.png')
+        self.crack_tube_logo = pygame.transform.scale(self.crack_tube_logo,
+                                                      (APPWIDTH, APPHEIGHT))
         
 
 def start_file(filepath):
