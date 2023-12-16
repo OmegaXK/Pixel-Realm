@@ -45,7 +45,7 @@ def main():
     rps = App('games/cli_games/rock-paper-scissors.py', 
               assets.rps_logo, 570, 450)
     ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
-    cracky_bird = App('games/graphic_games/cracky_bird/main.py', 
+    cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
                       assets.cracky_bird_logo, 690, 60)
     enter = App('games/cli_games/enter_bar_clicker.py', assets.enter_logo, 810, 60)
 
