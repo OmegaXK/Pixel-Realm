@@ -48,13 +48,14 @@ def main():
     cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
                       assets.cracky_bird_logo, 690, 60)
     enter = App('games/cli_games/enter_bar_clicker.py', assets.enter_logo, 810, 60)
+    hangman = App('games/cli_games/hangman.py', assets.hangman_logo, 810, 185)
 
     # Entertainment apps.
     crack_tube = App('apps/crack_tube.pyw', assets.crack_tube_logo, 690, 185)
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, crack_tube]
+            enter, crack_tube, hangman]
 
     # Run the OS GUI
     run_gui()
@@ -176,6 +177,10 @@ class Assets():
         self.crack_tube_logo = pygame.image.load('assets/images/crack_tube_logo.png')
         self.crack_tube_logo = pygame.transform.scale(self.crack_tube_logo,
                                                       (APPWIDTH, APPHEIGHT))
+        
+        self.hangman_logo = pygame.image.load('assets/images/hangman_logo.png')
+        self.hangman_logo = pygame.transform.scale(self.hangman_logo, 
+                                                   (APPWIDTH, APPHEIGHT))
         
 
 def start_file(filepath):
