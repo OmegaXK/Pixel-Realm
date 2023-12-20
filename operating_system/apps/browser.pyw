@@ -1,4 +1,4 @@
-"""Code for the Pixel Realm Browser."""
+"""Code for Crack Browser."""
 
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
@@ -13,8 +13,8 @@ import sys
 def main():
     """Main function for the browser."""
     app = QApplication(sys.argv)
-    app.setApplicationName("Pixel Realm Browser")
-    app.setOrganizationName("Pixel Realm")
+    app.setApplicationName("Crack Browser")
+    app.setOrganizationName("Crack OS")
     app.setOrganizationDomain("google.com")
 
     window = MainWindow()
@@ -33,7 +33,7 @@ class AboutDialog(QDialog):
 
         layout = QVBoxLayout()
 
-        title = QLabel("Pixel Realm Browser")
+        title = QLabel("Crack Browser")
         font = title.font()
         font.setPointSize(20)
         title.setFont(font)
@@ -129,8 +129,8 @@ class MainWindow(QMainWindow):
 
         help_menu = self.menuBar().addMenu("&Help")
 
-        about_action = QAction(QIcon(os.path.join('images', 'question.png')), "About Pixel Realm Browser", self)
-        about_action.setStatusTip("Find out more about Pixel Realm")
+        about_action = QAction(QIcon(os.path.join('images', 'question.png')), "About Crack Browser", self)
+        about_action.setStatusTip("Find out more about Crack Browser")
         about_action.triggered.connect(self.about)
         help_menu.addAction(about_action)
 
@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
 
     def update_title(self):
         title = self.browser.page().title()
-        self.setWindowTitle("%s - Pixel Realm Browser" % title)
+        self.setWindowTitle("%s - Crack Browser" % title)
 
     def navigate_mozarella(self):
         self.browser.setUrl(QUrl("https://www.google.com"))

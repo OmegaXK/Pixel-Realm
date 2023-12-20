@@ -53,9 +53,12 @@ def main():
     # Entertainment apps.
     crack_tube = App('apps/crack_tube.pyw', assets.crack_tube_logo, 690, 185)
 
+    # Useful apps.
+    crackai = App('apps/crackai.pyw', assets.crackai_logo, 690, 310)
+
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, crack_tube, hangman]
+            enter, crack_tube, hangman, crackai]
 
     # Run the OS GUI
     run_gui()
@@ -180,6 +183,10 @@ class Assets():
         
         self.hangman_logo = pygame.image.load('assets/images/hangman_logo.png')
         self.hangman_logo = pygame.transform.scale(self.hangman_logo, 
+                                                   (APPWIDTH, APPHEIGHT))
+        
+        self.crackai_logo = pygame.image.load('assets/images/crackai_logo.png')
+        self.crackai_logo = pygame.transform.scale(self.crackai_logo,
                                                    (APPWIDTH, APPHEIGHT))
         
 
