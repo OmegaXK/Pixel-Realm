@@ -21,46 +21,48 @@ APPHEIGHT = 100
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF, assets, apps
+    global MAINCLOCK, DISPLAYSURF, images, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the assets.
-    assets = Assets()
+    images = Images()
+    sounds = Sounds()
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
-    pygame.display.set_icon(assets.pixel_realm_logo)
+    pygame.display.set_icon(images.pixel_realm_logo)
 
     # Load in the apps.
-    browser = App('apps/browser.pyw', assets.browser_logo, 90, 450)
-    notepad = App('apps/notepad.pyw', assets.notepad_logo, 210, 450)
-    explorer = App('apps/explorer.pyw', assets.explorer_logo, 330, 450)
-    settings = App('settings.py', assets.settings_logo, 450, 450)
+    browser = App('apps/browser.pyw', images.browser_logo, 90, 450)
+    notepad = App('apps/notepad.pyw', images.notepad_logo, 210, 450)
+    explorer = App('apps/explorer.pyw', images.explorer_logo, 330, 450)
+    settings = App('settings.py', images.settings_logo, 450, 450)
 
     # Game apps.
     rps = App('games/cli_games/rock-paper-scissors.py', 
-              assets.rps_logo, 570, 450)
-    ttt = App('games/cli_games/tic-tac-toe.py', assets.ttt_logo, 690, 450)
+              images.rps_logo, 570, 450)
+    ttt = App('games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 450)
     cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
-                      assets.cracky_bird_logo, 690, 60)
-    enter = App('games/cli_games/enter_bar_clicker.py', assets.enter_logo, 810, 60)
-    hangman = App('games/cli_games/hangman.py', assets.hangman_logo, 810, 185)
+                      images.cracky_bird_logo, 690, 60)
+    enter = App('games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 60)
+    hangman = App('games/cli_games/hangman.py', images.hangman_logo, 810, 185)
 
     # Entertainment apps.
-    crack_tube = App('apps/crack_tube.pyw', assets.crack_tube_logo, 690, 185)
+    crack_tube = App('apps/crack_tube.pyw', images.crack_tube_logo, 690, 185)
 
     # Useful apps.
-    crackai = App('apps/crackai.pyw', assets.crackai_logo, 690, 310)
+    crackai = App('apps/crackai.pyw', images.crackai_logo, 690, 310)
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
             enter, crack_tube, hangman, crackai]
 
-    # Run the OS GUI
+    # Run the OS GUI, and the play the startup sound.
+    sounds.startup.play()
     run_gui()
 
 
@@ -88,7 +90,7 @@ def run_gui():
                     app.check_click(event.pos)
 
         # Draw the desktop wallpaper.
-        DISPLAYSURF.blit(assets.desktop_wallpaper, (0, 0))
+        DISPLAYSURF.blit(images.desktop_wallpaper, (0, 0))
 
         # Draw all of the apps.
         for app in apps:
@@ -131,11 +133,11 @@ class App():
         start_file(self.path)
 
 
-class Assets():
-    """A class to represent the assets."""
+class Images():
+    """A class to represent the images."""
 
     def __init__(self):
-        """Initialize the assets."""
+        """Initialize the images."""
 
         self.desktop_wallpaper = pygame.image.load("assets/images/desktop_wallpaper.png")
         self.desktop_wallpaper = pygame.transform.scale(self.desktop_wallpaper, 
@@ -190,6 +192,15 @@ class Assets():
                                                    (APPWIDTH, APPHEIGHT))
         
 
+class Sounds:
+    """A class to represent the sounds."""
+
+    def __init__(self):
+        """Initialize the sounds."""
+
+        self.startup = pygame.mixer.Sound('assets/sounds/startup.wav')
+        
+
 def start_file(filepath):
     """Start the file passed, regardless of your current platform."""
 
@@ -206,6 +217,8 @@ def start_file(filepath):
 def terminate():
     """Quit the program."""
     pygame.quit()
+
+    print('\nTerminate')
     sys.exit()
 
 
