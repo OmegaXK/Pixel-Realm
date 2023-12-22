@@ -1,0 +1,36 @@
+# Simulate texting but Crack Chat always insults you.
+
+# Imports.
+from pathlib import Path
+import json
+import random, time
+
+# Load insults.
+insults = json.loads(Path('apps/resources/insults.json').read_text())
+
+# Print an introduction.
+print('\nWelcome to Crack Chat!')
+time.sleep(1)
+
+# Start the main loop.
+while True:
+
+    # Print instructions.
+    print('\nEnter your message at the ">>>" prompt.')
+    print('Type "quit" to exit.')
+
+    # Get the user's message.
+    message = input('\n>>> ')
+
+    # If the user wants to quit, break out of the loop.
+    if message == 'quit':
+        break
+
+    # Otherwise, print a random insult.
+    print(f"\n{random.choice(insults)}")
+
+    # Wait a second.
+    time.sleep(1)
+
+# Print a goodbye message.
+print('\nGoodbye!')
