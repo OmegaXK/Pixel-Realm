@@ -53,6 +53,7 @@ def main():
 
     # Entertainment apps.
     crack_tube = App('apps/crack_tube.pyw', images.crack_tube_logo, 690, 185)
+    crack_chat = App('apps/crack_chat.py', images.crack_chat_logo, 570, 330)
 
     # Useful apps.
     crackai = App('apps/crackai.pyw', images.crackai_logo, 690, 310)
@@ -60,7 +61,7 @@ def main():
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, crack_tube, hangman, crackai, crackazon]
+            enter, crack_tube, hangman, crackai, crackazon, crack_chat]
 
     # Run the OS GUI, and the play the startup sound.
     sounds.startup.play()
@@ -195,6 +196,10 @@ class Images():
         self.crackazon_logo = pygame.image.load('assets/images/crackazon_logo.png')
         self.crackazon_logo = pygame.transform.scale(self.crackazon_logo,
                                                      (APPWIDTH, APPHEIGHT))
+        
+        self.crack_chat_logo = pygame.image.load('assets/images/crack_chat_logo.png')
+        self.crack_chat_logo = pygame.transform.scale(self.crack_chat_logo,
+                                                      (APPWIDTH, APPHEIGHT))
         
 
 class Sounds:
