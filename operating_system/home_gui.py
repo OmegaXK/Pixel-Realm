@@ -21,7 +21,7 @@ APPHEIGHT = 100
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF, images, apps
+    global MAINCLOCK, DISPLAYSURF, MORESURF, images, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -37,6 +37,11 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
+    pygame.display.set_icon(images.pixel_realm_logo)
+
+    # Set up the secondary window.
+    MORESURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    pygame.display.set_caption("More Apps")
     pygame.display.set_icon(images.pixel_realm_logo)
 
     # Load in the apps.
@@ -69,7 +74,7 @@ def main():
     # Run the OS GUI, and the play the startup sound.
     if not disable_sound:
         sounds.startup.play()
-        
+
     run_gui()
 
 
