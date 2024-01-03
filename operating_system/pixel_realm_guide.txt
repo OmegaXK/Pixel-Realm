@@ -1,0 +1,20 @@
+Thank you for downloading Pixel Realm!
+
+About Pixel Realm:
+Pixel Realm is an independently developed gaming platform developed by
+the Omega development team, based out of Pennsylvania in the US. With
+Pixel Realm, you can enjoy a variety of different games and other
+applications, all compressed into one neat window. Pixel Realm was
+programmed mainly using the Python coding language. Pixel Realm was also
+designed to provide an enjoyable gaming experience even on devices with
+restricted settings, which will hopefully allow a greater array of
+the population to enjoy peak gaming. Thank you - C L Maryniak and the
+Pixel Realm team.
+
+Running and Troubleshooting:
+# Put some stuff here about actually running the program.
+
+IMPORTANT:
+- You can modify the settings of this app through the "preferences.json"
+file. This file contains multiple options to change and optimize your
+experience with Pixel Realm.
