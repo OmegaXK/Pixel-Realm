@@ -31,6 +31,9 @@ def main():
     images = Images()
     sounds = Sounds()
 
+    # Options.
+    disable_sound = True
+
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
@@ -64,7 +67,9 @@ def main():
             enter, crack_tube, hangman, crackai, crackazon, crack_chat]
 
     # Run the OS GUI, and the play the startup sound.
-    sounds.startup.play()
+    if not disable_sound:
+        sounds.startup.play()
+        
     run_gui()
 
 
