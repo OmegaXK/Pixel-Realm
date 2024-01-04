@@ -1,12 +1,17 @@
 """The Crack-OS version of the game Flappy Bird - Cracky Bird."""
 
-# Path: games/graphic_games/cracky_bird/
+# Path: games/graphic_games/cracky_bird
 
 # Imports.
-import sys, random
+import sys, random, json 
+from pathlib import Path
 
 import pygame
 from pygame.locals import *
+
+# Load in the preferences file.
+path = Path('preferences.json')
+preferences = json.loads(path.read_text())
 
 # Define window constants.
 WINDOWWIDTH = 288
@@ -22,7 +27,7 @@ PIPEMAXY = -100
 HITBOXWIDTH = 50
 
 # Define other constants.
-FPS = 60
+FPS = int(preferences['FPS'])
 JUMPHEIGHT = 4.3
 PATH = 'games/graphic_games/cracky_bird/'
 
@@ -119,7 +124,9 @@ def run_game():
 
             if check_bird_collision() == True:
                 # The bird has hit something. Play the game over sound.
-                assets.game_over.play()
+                if preferences['audio'].lower() == "true":
+                    assets.game_over.play()
+                    
                 pygame.time.wait(500)
                 break
             
@@ -314,7 +321,8 @@ def jump_bird(jump_height):
     global fallspeed
 
     # Play the jump sound.
-    assets.jump.play()
+    if preferences['audio'].lower() == "true":
+        assets.jump.play()
 
     # Make the bird jump.
     fallspeed = -jump_height

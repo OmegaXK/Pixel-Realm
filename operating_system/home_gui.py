@@ -38,7 +38,7 @@ def main():
 
     # Options.
     if preferences['audio'].lower() == "true":
-        disable_sound = True
+        disable_sound = False
     else:
         disable_sound = True
 
