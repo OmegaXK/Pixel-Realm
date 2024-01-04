@@ -8,6 +8,10 @@ from pygame.locals import *
 
 from utilities.login import main as login_main
 
+# Load in the preferences file.
+path = Path('preferences.json')
+preferences = json.loads(path.read_text())
+
 # Window constants.
 WINDOWWIDTH = 960
 WINDOWHEIGHT = 540
@@ -15,13 +19,9 @@ CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
-FPS = 60
+FPS = int(preferences["FPS"])
 APPWIDTH = 100
 APPHEIGHT = 100
-
-# Load in the preferences file.
-path = Path('preferences.json')
-preferences = json.loads(path.read_text())
 
 
 def main():
@@ -37,7 +37,10 @@ def main():
     sounds = Sounds()
 
     # Options.
-    disable_sound = True
+    if preferences['audio'].lower() == "true":
+        disable_sound = True
+    else:
+        disable_sound = True
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))

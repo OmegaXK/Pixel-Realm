@@ -1,3 +1,4 @@
 {
-    "audio": "True"
+    "audio": "True",
+    "FPS": "60"
 }
