@@ -5,7 +5,7 @@ import os, sys, platform, subprocess
 import pygame
 from pygame.locals import *
 
-from login import main as login_main
+from utilities.login import main as login_main
 
 # Window constants.
 WINDOWWIDTH = 960
@@ -48,7 +48,7 @@ def main():
     browser = App('apps/browser.pyw', images.browser_logo, 90, 450)
     notepad = App('apps/notepad.pyw', images.notepad_logo, 210, 450)
     explorer = App('apps/explorer.pyw', images.explorer_logo, 330, 450)
-    settings = App('settings.py', images.settings_logo, 450, 450)
+    settings = App('utilities/settings.py', images.settings_logo, 450, 450)
 
     # Game apps.
     rps = App('games/cli_games/rock-paper-scissors.py', 
