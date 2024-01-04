@@ -1,6 +1,7 @@
 """The main file for the Pixel Realm OS GUI."""
 
-import os, sys, platform, subprocess
+import os, sys, platform, subprocess, json
+from pathlib import Path
 
 import pygame
 from pygame.locals import *
@@ -17,6 +18,10 @@ CENTERY = WINDOWHEIGHT / 2
 FPS = 60
 APPWIDTH = 100
 APPHEIGHT = 100
+
+# Load in the preferences file.
+path = Path('preferences.json')
+preferences = json.loads(path.read_text())
 
 
 def main():
