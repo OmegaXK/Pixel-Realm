@@ -14,7 +14,16 @@ Pixel Realm team.
 Running and Troubleshooting:
 # Put some stuff here about actually running the program.
 
-IMPORTANT:
+IMPORTANT (HOW TO CHANGE THE SETTINGS OF THE PROGRAM.):
 - You can modify the settings of this app through the "preferences.json"
 file. This file contains multiple options to change and optimize your
-experience with Pixel Realm.
+experience with Pixel Realm. When you open the file, it might ask you 
+what app you want to open it with. You should open it with your text
+editor (notepad for Windows, and TextEdit for Mac). The file contains 
+multiple "keys", which are on the left side of the file. These keys tell 
+you what they are modifying. After the key is a colon (:), which 
+seperates it from the "value", which is on the right side. If the value 
+contains "True" or "False", then you can change it to the other option 
+if you want. Make sure to capitalize True and False, or else the code 
+will not work. If the value is a number, then you can change the number 
+to a different number if you want to change this setting.
