@@ -26,7 +26,7 @@ APPHEIGHT = 100
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF, MORESURF, images, apps
+    global MAINCLOCK, DISPLAYSURF, images, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -45,11 +45,6 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
-    pygame.display.set_icon(images.pixel_realm_logo)
-
-    # Set up the secondary window.
-    MORESURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
-    pygame.display.set_caption("More Apps")
     pygame.display.set_icon(images.pixel_realm_logo)
 
     # Load in the apps.
@@ -218,6 +213,10 @@ class Images():
         self.crack_chat_logo = pygame.image.load('assets/images/crack_chat_logo.png')
         self.crack_chat_logo = pygame.transform.scale(self.crack_chat_logo,
                                                       (APPWIDTH, APPHEIGHT))
+        
+        self.more_apps_logo = pygame.image.load('assets/images/more_apps.png')
+        self.more_apps_logo = pygame.transform.scale(self.more_apps_logo,
+                                                     APPWIDTH, APPHEIGHT)
         
 
 class Sounds:
