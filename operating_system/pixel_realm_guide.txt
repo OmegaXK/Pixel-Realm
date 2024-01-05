@@ -14,7 +14,7 @@ Pixel Realm team.
 Running and Troubleshooting:
 # Put some stuff here about actually running the program.
 
-IMPORTANT (HOW TO CHANGE THE SETTINGS OF THE PROGRAM.):
+IMPORTANT (HOW TO CHANGE THE SETTINGS OF THE PROGRAM):
 - You can modify the settings of this app through the "preferences.json"
 file. This file contains multiple options to change and optimize your
 experience with Pixel Realm. When you open the file, it might ask you 
@@ -26,4 +26,6 @@ seperates it from the "value", which is on the right side. If the value
 contains "True" or "False", then you can change it to the other option 
 if you want. Make sure to capitalize True and False, or else the code 
 will not work. If the value is a number, then you can change the number 
-to a different number if you want to change this setting.
+to a different number if you want to change this setting. I wouldn't
+change the FPS though, unless you want to prank your friends using this 
+app or want to make the games unplayable.
