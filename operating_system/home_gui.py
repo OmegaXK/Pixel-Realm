@@ -26,7 +26,7 @@ APPHEIGHT = 100
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF, images, apps
+    global MAINCLOCK, DISPLAYSURF, images, sounds, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()

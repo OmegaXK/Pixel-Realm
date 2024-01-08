@@ -2,6 +2,7 @@
 
 # A lot of this code is the same as in the main GUI file.
 
+# Imports.
 import os, sys, platform, subprocess, json
 from pathlib import Path
 
@@ -23,10 +24,13 @@ FPS = int(preferences["FPS"])
 APPWIDTH = 100
 APPHEIGHT = 100
 
+# Colors.
+BGCOLOR = (160, 160, 160) # Light gray color.
+
 
 def main():
     """Main code for the More Apps window."""
-    global MAINCLOCK, DISPLAYSURF, images, sounds
+    global MAINCLOCK, DISPLAYSURF, images, sounds, apps
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -44,8 +48,50 @@ def main():
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
-    pygame.display.set_caption("Pixel Realm")
+    pygame.display.set_caption("More Apps")
     pygame.display.set_icon(images.pixel_realm_logo)
+
+    # Load in the apps.
+    
+    # Create a list of all the apps.
+    apps = []
+
+    run_gui()
+
+
+def run_gui():
+    """Run the More Apps GUI."""
+
+    # Run the main loop.
+    while True:
+        # Check for events.
+        for event in pygame.event.get():
+            # Quit the program if the user closes the window.
+            if event.type == QUIT:
+                terminate()
+
+            # Check if the user presses a key.
+            if event.type == KEYDOWN:
+                # Check if the user presses the escape key.
+                if event.key == K_ESCAPE:
+                    terminate()
+
+            # Check if the user clicks the mouse.
+            if event.type == MOUSEBUTTONDOWN:
+                # Check if the user click an app.
+                for app in apps:
+                    app.check_click(event.pos)
+
+        # Draw the desktop wallpaper.
+        DISPLAYSURF.fill(BGCOLOR)
+
+        # Draw all of the apps.
+        for app in apps:
+            app.draw()
+
+        # Update the display.
+        pygame.display.update()
+        MAINCLOCK.tick(FPS)
 
 
 class App():
@@ -85,8 +131,10 @@ class Images:
 
     def __init__(self):
         """Initialize the images."""
-        pass 
 
+        self.pixel_realm_logo = pygame.image.load('assets/images/pixel_realm_logo.png')
+        self.pixel_realm_logo = pygame.transform.scale(self.pixel_realm_logo,
+                                                       (32, 32))
 
 class Sounds:
     """The sounds needed for the More Apps page."""
