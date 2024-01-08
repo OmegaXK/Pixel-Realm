@@ -30,3 +30,13 @@ if you want. Make sure to capitalize True and False, or else the code
 will not work. If the value is a number, then you can change the number 
 to a different number if you want to change this setting. I wouldn't
 change the FPS though, as that will drastically change the game speed.
+
+How to Restore Default Settings:
+In the "utilities" folder, you can find a file called "defaults.json".
+Open up this file with your text editor (notepad on Windows, TextEdit 
+for Mac). Once you have opened the file, press control-A (command-A on
+Mac) and it should highlight the entire file. Now press control-C (
+command-C on Mac). Next, open the "preferences.json" file with your text 
+editor, and press control-A again. Now press delete or backspace to
+delete the contents of the file. Finally press control-V to paste the 
+default settings back into the file.
