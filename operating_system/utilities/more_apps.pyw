@@ -14,7 +14,7 @@ path = Path('preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants. (Same as main GUI)
-WINDOWWIDTH = 960
+WINDOWWIDTH = 540
 WINDOWHEIGHT = 540
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2

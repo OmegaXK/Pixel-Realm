@@ -48,6 +48,7 @@ def main():
     pygame.display.set_icon(images.pixel_realm_logo)
 
     # Load in the apps.
+    # Basic OS apps.
     browser = App('apps/browser.pyw', images.browser_logo, 90, 450)
     notepad = App('apps/notepad.pyw', images.notepad_logo, 210, 450)
     explorer = App('apps/explorer.pyw', images.explorer_logo, 330, 450)
@@ -69,10 +70,12 @@ def main():
     # Useful apps.
     crackai = App('apps/crackai.pyw', images.crackai_logo, 690, 310)
     crackazon = App('apps/crackazon.py', images.crackazon_logo, 810, 310)
+    more_apps = App('utilities/more_apps.pyw', images.more_apps_logo, 570, 60)
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, crack_tube, hangman, crackai, crackazon, crack_chat]
+            enter, crack_tube, hangman, crackai, crackazon, crack_chat, 
+            more_apps]
 
     # Run the OS GUI, and the play the startup sound.
     if not disable_sound:
@@ -216,7 +219,7 @@ class Images():
         
         self.more_apps_logo = pygame.image.load('assets/images/more_apps.png')
         self.more_apps_logo = pygame.transform.scale(self.more_apps_logo,
-                                                     APPWIDTH, APPHEIGHT)
+                                                     (APPWIDTH, APPHEIGHT))
         
 
 class Sounds:
