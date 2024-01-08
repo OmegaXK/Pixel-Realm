@@ -1,4 +1,6 @@
 Thank you for downloading Pixel Realm!
+I would highly recomend reading this, as it will help your experience 
+with Pixel Realm be as smooth as possible.
 
 About Pixel Realm:
 Pixel Realm is an independently developed gaming platform developed by
@@ -8,13 +10,13 @@ applications, all compressed into one neat window. Pixel Realm was
 programmed mainly using the Python coding language. Pixel Realm was also
 designed to provide an enjoyable gaming experience even on devices with
 restricted settings, which will hopefully allow a greater array of
-the population to enjoy peak gaming. Thank you - C L Maryniak and the
-Pixel Realm team.
+the population to enjoy peak gaming. Thank you. 
+- C L M and the Pixel Realm team.
 
 Running and Troubleshooting:
 # Put some stuff here about actually running the program.
 
-IMPORTANT (HOW TO CHANGE THE SETTINGS OF THE PROGRAM):
+How to Change the Settings of the App:
 - You can modify the settings of this app through the "preferences.json"
 file. This file contains multiple options to change and optimize your
 experience with Pixel Realm. When you open the file, it might ask you 
@@ -27,5 +29,4 @@ contains "True" or "False", then you can change it to the other option
 if you want. Make sure to capitalize True and False, or else the code 
 will not work. If the value is a number, then you can change the number 
 to a different number if you want to change this setting. I wouldn't
-change the FPS though, unless you want to prank your friends using this 
-app or want to make the games unplayable.
+change the FPS though, as that will drastically change the game speed.
