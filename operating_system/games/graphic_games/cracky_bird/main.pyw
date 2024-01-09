@@ -367,7 +367,10 @@ class Assets():
 
         # Initialize sounds.
         self.jump = pygame.mixer.Sound(f'{PATH}sounds/jump.wav')
+        self.jump.set_volume(.4)
+
         self.game_over = pygame.mixer.Sound(f'{PATH}sounds/game_over.wav')
+        self.game_over.set_volume(1.0)
 
 
 # Run cracky bird.

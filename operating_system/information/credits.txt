@@ -1,0 +1,29 @@
+Pixel Realm Credits
+
+
+Most coding by Collin Maryniak. (https://youtube.com/@Omega_XK)
+Additional coding by T.G.M. (https://youtube.com/@rexymon)
+My IDE: Visual Studio Code (VS Code)
+VS Code download: https://code.visualstudio.com/download
+
+
+My Resources:
+Image editor: https://pixlr.com/x/
+Image background remover: https://www.remove.bg/
+RGB color picker: https://www.rapidtables.com/web/color/RGB_Color.html
+HTML Favicon generator: https://realfavicongenerator.net/
+Free sound effects: https://freesound.org/
+Canva: https://canva.com
+
+
+Special shoutout to Stack Overflow for solutions to most issues I ran into.
+Link: https://stackoverflow.com
+
+Image Credits:
+(A majority of the images were made by me in Canva, so the ones that
+were not made by me will be listed here.)
+
+
+Cracky Bird Background:
+Credit: https://opengameart.org/content/flappy-bird-background
+Download: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosKwFBqf0vfexg8Z0eJ55yejPEUHRC3qN_me24sBWgg&s
