@@ -19,11 +19,22 @@ Canva: https://canva.com
 Special shoutout to Stack Overflow for solutions to most issues I ran into.
 Link: https://stackoverflow.com
 
+
 Image Credits:
 (A majority of the images were made by me in Canva, so the ones that
-were not made by me will be listed here.)
+were not made by me will be listed here. (Canva link above))
 
 
 Cracky Bird Background:
 Credit: https://opengameart.org/content/flappy-bird-background
 Download: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosKwFBqf0vfexg8Z0eJ55yejPEUHRC3qN_me24sBWgg&s
+
+
+Sound Credits:
+(Some of the sounds were downloaded from FreeSound(link above))
+
+
+Cracky Bird Game Over Sound:
+This sound was downloaded from the Scratch (https://scratch.mit.edu)
+sound library. To download it, you have to export the sound from the
+scratch sound menu.
