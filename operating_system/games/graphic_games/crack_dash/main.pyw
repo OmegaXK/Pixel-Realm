@@ -21,6 +21,13 @@ CENTERY = WINDOWHEIGHT / 2
 
 # General constants.
 FPS = int(preferences["FPS"])
+PATH = "games/graphic_games/crack_dash"
+
+# Check if audio is on or off.
+if preferences["audio"].lower() == "false":
+    AUDIO = False 
+else:
+    AUDIO = True
 
 
 def main():
@@ -32,6 +39,7 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the images and sounds.
+    images = Images()
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -55,11 +63,18 @@ def run_game():
                 terminate()
 
             # Check if the player is pressing a key.
-            if event.type == K_DOWN:
+            if event.type == KEYDOWN:
 
                 # Check for the ESCAPE key.
                 if event.key == K_ESCAPE:
                     terminate()
+
+        # Draw the game on the screen.
+        DISPLAYSURF.blit(images.bg_img, (0, 0))
+
+        # Update the game.
+        pygame.display.update()
+        MAINCLOCK.tick(FPS)
 
 
 def terminate():
@@ -67,6 +82,15 @@ def terminate():
 
     pygame.quit()
     sys.exit()
+
+
+class Images:
+    """Load in the images for the file as attributes."""
+
+    def __init__(self):
+        """Initialize the images."""
+
+        self.bg_img = pygame.image.load(f"{PATH}/images/background.png")
 
 
 main()
