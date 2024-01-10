@@ -18,6 +18,11 @@ WINDOWWIDTH = 600
 WINDOWHEIGHT = 450
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
+GROUNDHEIGHT = 121
+
+# Cube constants.
+CUBEWIDTH = 65
+CUBEHEIGHT = CUBEWIDTH
 
 # General constants.
 FPS = int(preferences["FPS"])
@@ -52,6 +57,14 @@ def main():
 def run_game():
     """Run the main game."""
 
+    # Define the game variables.
+    score = 0
+    cube_rect = images.cube_img.get_rect()
+
+    # Set up the player.
+    cube_rect.centerx = CENTERX 
+    cube_rect.bottom = WINDOWHEIGHT - GROUNDHEIGHT
+
     # Main loop.
     while True:
 
@@ -72,6 +85,9 @@ def run_game():
         # Draw the game on the screen.
         DISPLAYSURF.blit(images.bg_img, (0, 0))
 
+        # Draw the cube.
+        DISPLAYSURF.blit(images.cube_img, cube_rect)
+
         # Update the game.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
@@ -91,6 +107,10 @@ class Images:
         """Initialize the images."""
 
         self.bg_img = pygame.image.load(f"{PATH}/images/background.png")
+        # The background was custom made to be the right size to start.
+
+        self.cube_img = pygame.image.load(f"{PATH}/images/cube.png")
+        self.cube_img = pygame.transform.scale(self.cube_img, (CUBEWIDTH, CUBEHEIGHT))
 
 
 main()
