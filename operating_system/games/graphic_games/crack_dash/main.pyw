@@ -23,10 +23,12 @@ GROUNDHEIGHT = 121
 # Cube constants.
 CUBEWIDTH = 65
 CUBEHEIGHT = CUBEWIDTH
+JUMPHEIGHT = 16
 
 # General constants.
 FPS = int(preferences["FPS"])
 PATH = "games/graphic_games/crack_dash"
+GRAVITY = -1
 
 # Check if audio is on or off.
 if preferences["audio"].lower() == "false":
@@ -56,10 +58,12 @@ def main():
 
 def run_game():
     """Run the main game."""
+    global cube_rect, fallspeed
 
     # Define the game variables.
     score = 0
     cube_rect = images.cube_img.get_rect()
+    fallspeed = 0
 
     # Set up the player.
     cube_rect.centerx = CENTERX 
@@ -82,8 +86,23 @@ def run_game():
                 if event.key == K_ESCAPE:
                     terminate()
 
+            if event.type == KEYUP:
+
+                # Check if the player is pressing a jump key.
+                if event.key == K_UP or event.key == K_w:
+                    cube_jump()
+                
+                if event.key == K_SPACE or event.key == K_RSHIFT:
+                    cube_jump()
+
+            if event.type == MOUSEBUTTONUP:
+                cube_jump()
+
         # Draw the game on the screen.
         DISPLAYSURF.blit(images.bg_img, (0, 0))
+
+        # Update the cube.
+        gravity()
 
         # Draw the cube.
         DISPLAYSURF.blit(images.cube_img, cube_rect)
@@ -91,6 +110,31 @@ def run_game():
         # Update the game.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
+
+
+def gravity():
+    """Simulate gravity."""
+    global fallspeed
+
+    cube_rect.y += fallspeed
+
+    if cube_rect.bottom >= WINDOWHEIGHT - GROUNDHEIGHT:
+
+        # Push the cube out of the ground.
+        while cube_rect.bottom >= WINDOWHEIGHT - GROUNDHEIGHT:
+            cube_rect.y -= 1
+        
+    else:
+        # The cube falls.
+        fallspeed -= GRAVITY
+
+
+def cube_jump():
+    """Make the cube jump."""
+    global fallspeed 
+
+    if cube_rect.bottom >= WINDOWHEIGHT - GROUNDHEIGHT:
+        fallspeed = -JUMPHEIGHT
 
 
 def terminate():
