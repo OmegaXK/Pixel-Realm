@@ -7,6 +7,7 @@ import pygame
 from pygame.locals import *
 
 from utilities.login import main as login_main
+import utilities.loading as loading
 
 # Load in the preferences file.
 path = Path('preferences.json')
@@ -20,8 +21,6 @@ CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
 FPS = int(preferences["FPS"])
-APPWIDTH = 100
-APPHEIGHT = 100
 
 
 def main():
@@ -33,8 +32,8 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the assets.
-    images = Images()
-    sounds = Sounds()
+    images = loading.Images()
+    sounds = loading.Sounds()
 
     # Options.
     if preferences['audio'].lower() == "true":
@@ -149,86 +148,6 @@ class App():
 
         # Open the app.
         start_file(self.path)
-
-
-class Images():
-    """A class to represent the images."""
-
-    def __init__(self):
-        """Initialize the images."""
-
-        self.desktop_wallpaper = pygame.image.load("assets/images/desktop_wallpaper.png")
-        self.desktop_wallpaper = pygame.transform.scale(self.desktop_wallpaper, 
-                                                        (WINDOWWIDTH, WINDOWHEIGHT))
-
-        self.browser_logo = pygame.image.load('assets/images/browser_logo.png')
-        self.browser_logo = pygame.transform.scale(self.browser_logo, 
-                                                   (APPWIDTH, APPHEIGHT))
-
-        self.notepad_logo = pygame.image.load('assets/images/notepad_logo.png')
-        self.notepad_logo = pygame.transform.scale(self.notepad_logo, 
-                                                   (APPWIDTH, APPHEIGHT))
-        
-        self.explorer_logo = pygame.image.load('assets/images/file_explorer_logo.png')
-        self.explorer_logo = pygame.transform.scale(self.explorer_logo, 
-                                                    (APPWIDTH, APPHEIGHT))
-        
-        self.settings_logo = pygame.image.load('assets/images/settings_logo.png')
-        self.settings_logo = pygame.transform.scale(self.settings_logo,
-                                                    (APPWIDTH, APPHEIGHT))
-        
-        self.pixel_realm_logo = pygame.image.load('assets/images/pixel_realm_logo.png')
-        self.pixel_realm_logo = pygame.transform.scale(self.pixel_realm_logo,
-                                                       (32, 32))
-        
-        self.rps_logo = pygame.image.load('assets/images/rps_logo.png')
-        self.rps_logo = pygame.transform.scale(self.rps_logo,
-                                               (APPWIDTH, APPHEIGHT))
-        
-        self.ttt_logo = pygame.image.load('assets/images/ttt_logo.png')
-        self.ttt_logo = pygame.transform.scale(self.ttt_logo,
-                                               (APPWIDTH, APPHEIGHT))
-        
-        self.cracky_bird_logo = pygame.image.load('assets/images/cracky_bird_logo.png')
-        self.cracky_bird_logo = pygame.transform.scale(self.cracky_bird_logo,
-                                                       (APPWIDTH, APPHEIGHT))
-        
-        self.enter_logo = pygame.image.load('assets/images/enter_logo.png')
-        self.enter_logo = pygame.transform.scale(self.enter_logo,
-                                                 (APPWIDTH, APPHEIGHT))
-
-        self.crack_tube_logo = pygame.image.load('assets/images/crack_tube_logo.png')
-        self.crack_tube_logo = pygame.transform.scale(self.crack_tube_logo,
-                                                      (APPWIDTH, APPHEIGHT))
-        
-        self.hangman_logo = pygame.image.load('assets/images/hangman_logo.png')
-        self.hangman_logo = pygame.transform.scale(self.hangman_logo, 
-                                                   (APPWIDTH, APPHEIGHT))
-        
-        self.crackai_logo = pygame.image.load('assets/images/crackai_logo.png')
-        self.crackai_logo = pygame.transform.scale(self.crackai_logo,
-                                                   (APPWIDTH, APPHEIGHT))
-        
-        self.crackazon_logo = pygame.image.load('assets/images/crackazon_logo.png')
-        self.crackazon_logo = pygame.transform.scale(self.crackazon_logo,
-                                                     (APPWIDTH, APPHEIGHT))
-        
-        self.crack_chat_logo = pygame.image.load('assets/images/crack_chat_logo.png')
-        self.crack_chat_logo = pygame.transform.scale(self.crack_chat_logo,
-                                                      (APPWIDTH, APPHEIGHT))
-        
-        self.more_apps_logo = pygame.image.load('assets/images/more_apps.png')
-        self.more_apps_logo = pygame.transform.scale(self.more_apps_logo,
-                                                     (APPWIDTH, APPHEIGHT))
-        
-
-class Sounds:
-    """A class to represent the sounds."""
-
-    def __init__(self):
-        """Initialize the sounds."""
-
-        self.startup = pygame.mixer.Sound('assets/sounds/startup.wav')
         
 
 def start_file(filepath):

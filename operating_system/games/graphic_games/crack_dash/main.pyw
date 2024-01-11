@@ -109,6 +109,10 @@ def run_game():
         MAINCLOCK.tick(FPS)
 
 
+def spawn_spike():
+    """Spawn in a spike."""
+
+
 def gravity():
     """Simulate gravity."""
     global fallspeed
