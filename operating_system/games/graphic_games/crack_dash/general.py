@@ -29,5 +29,13 @@ class Images:
         self.bg_img = pygame.image.load(f"{PATH}/images/background.png")
         # The background was custom made to be the right size to start.
 
+        # Load in the cube.
         self.cube_img = pygame.image.load(f"{PATH}/images/cube.png")
         self.cube_img = pygame.transform.scale(self.cube_img, (CUBEWIDTH, CUBEHEIGHT))
+
+        # Load in the spikes.
+        self.spike_img = pygame.image.load(f"{PATH}/images/spike.png")
+        self.spike_img = pygame.transform.scale(self.spike_img, (65, 65))
+
+        self.double_spike_img = pygame.image.load(f"{PATH}/images/double_spike.png")
+        self.double_spike_img = pygame.transform.scale(self.double_spike_img, (65, 65))

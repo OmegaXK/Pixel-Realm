@@ -52,17 +52,24 @@ def main():
     pygame.display.set_caption("Crack Dash")
 
     # Run the game.
-    run_game()
+    while True:
+        run_game()
+        pygame.time.wait(1000)
 
 
 def run_game():
     """Run the main game."""
-    global cube_rect, fallspeed
+    global cube_rect, fallspeed, spikes, doubles, spike_speed
 
     # Define the game variables.
     score = 0
     cube_rect = images.cube_img.get_rect()
     fallspeed = 0
+    spike_frame = 0
+    spikes = []
+    spike_rate = 100
+    doubles = False
+    spike_speed = 5
 
     # Set up the player.
     cube_rect.centerx = CENTERX 
@@ -98,8 +105,14 @@ def run_game():
         # Draw the game on the screen.
         DISPLAYSURF.blit(images.bg_img, (0, 0))
 
+        # Update the spikes.
+        if spike_frame > spike_rate:
+            spawn_spike()
+        else:
+            spike_frame += 1
+
         # Update the cube.
-        gravity()
+        cube_gravity()
 
         # Draw the cube.
         DISPLAYSURF.blit(images.cube_img, cube_rect)
@@ -111,9 +124,33 @@ def run_game():
 
 def spawn_spike():
     """Spawn in a spike."""
+    global spikes
+
+    # Set up the new spike.
+    new_spike = {}
+    
+    # Decide if the spike will be a double spike instead.
+    if doubles:
+        if random.randint(1, 4) == 1:
+            new_spike['img'] == images.double_spike_img
+        else:
+            new_spike['img'] == images.spike_img
+    else:
+        new_spike['img'] == images.spike_img
+
+    # Create the rect object.
+    new_spike['rect'] == new_spike['img'].get_rect()
+
+    # Add the spike to the list.
+    spikes.append(new_spike)
 
 
-def gravity():
+def update_spikes():
+    """Update the spikes."""
+    pass
+
+
+def cube_gravity():
     """Simulate gravity."""
     global fallspeed
 
