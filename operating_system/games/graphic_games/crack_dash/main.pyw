@@ -23,7 +23,7 @@ GROUNDHEIGHT = 121
 # Cube constants.
 CUBEWIDTH = 65
 CUBEHEIGHT = CUBEWIDTH
-JUMPHEIGHT = 16
+JUMPHEIGHT = 14
 
 # General constants.
 FPS = int(preferences["FPS"])
@@ -132,8 +132,8 @@ def gravity():
 def cube_jump():
     """Make the cube jump."""
     global fallspeed 
-
-    if cube_rect.bottom >= WINDOWHEIGHT - GROUNDHEIGHT:
+    
+    if cube_rect.y > 250:
         fallspeed = -JUMPHEIGHT
 
 
