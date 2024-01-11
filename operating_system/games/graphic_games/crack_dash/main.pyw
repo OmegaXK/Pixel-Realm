@@ -3,11 +3,13 @@
 # Path: games/graphic_games/crack_dash
 
 # Imports.
-import sys, random, json 
+import random, json 
 from pathlib import Path
 
 import pygame
 from pygame.locals import *
+
+import general
 
 # Load in the preferences file.
 path = Path('preferences.json')
@@ -21,13 +23,10 @@ CENTERY = WINDOWHEIGHT / 2
 GROUNDHEIGHT = 121
 
 # Cube constants.
-CUBEWIDTH = 65
-CUBEHEIGHT = CUBEWIDTH
 JUMPHEIGHT = 14
 
 # General constants.
 FPS = int(preferences["FPS"])
-PATH = "games/graphic_games/crack_dash"
 GRAVITY = -1
 
 # Check if audio is on or off.
@@ -46,7 +45,7 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the images and sounds.
-    images = Images()
+    images = general.Images()
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -77,16 +76,14 @@ def run_game():
 
             # Check for quit.
             if event.type == QUIT:
-                terminate()
+                general.terminate()
 
             # Check if the player is pressing a key.
             if event.type == KEYDOWN:
 
                 # Check for the ESCAPE key.
                 if event.key == K_ESCAPE:
-                    terminate()
-
-            if event.type == KEYUP:
+                    general.terminate()
 
                 # Check if the player is pressing a jump key.
                 if event.key == K_UP or event.key == K_w:
@@ -95,7 +92,7 @@ def run_game():
                 if event.key == K_SPACE or event.key == K_RSHIFT:
                     cube_jump()
 
-            if event.type == MOUSEBUTTONUP:
+            if event.type == MOUSEBUTTONDOWN:
                 cube_jump()
 
         # Draw the game on the screen.
@@ -135,26 +132,6 @@ def cube_jump():
     
     if cube_rect.y > 250:
         fallspeed = -JUMPHEIGHT
-
-
-def terminate():
-    """Quit out of the game."""
-
-    pygame.quit()
-    sys.exit()
-
-
-class Images:
-    """Load in the images for the file as attributes."""
-
-    def __init__(self):
-        """Initialize the images."""
-
-        self.bg_img = pygame.image.load(f"{PATH}/images/background.png")
-        # The background was custom made to be the right size to start.
-
-        self.cube_img = pygame.image.load(f"{PATH}/images/cube.png")
-        self.cube_img = pygame.transform.scale(self.cube_img, (CUBEWIDTH, CUBEHEIGHT))
 
 
 main()
