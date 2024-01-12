@@ -10,7 +10,7 @@ from system.login import main as login_main
 import system.loading as loading
 
 # Load in the preferences file.
-path = Path('preferences.json')
+path = Path('utilities/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
@@ -60,23 +60,19 @@ def main():
               images.rps_logo, 570, 450)
     ttt = App('games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 450)
     cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
-                      images.cracky_bird_logo, 690, 60)
+                      images.cracky_bird_logo, 690, 310)
     enter = App('games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 60)
     hangman = App('games/cli_games/hangman.py', images.hangman_logo, 810, 185)
+    crack_dash = App('games/graphic_games/crack_dash/main.pyw', 
+                     images.crack_dash_logo, 810, 310)
 
-    # Entertainment apps.
+    # Other apps.
     crack_tube = App('apps/crack_tube.pyw', images.crack_tube_logo, 690, 185)
-    crack_chat = App('apps/crack_chat.py', images.crack_chat_logo, 570, 330)
-
-    # Useful apps.
-    crackai = App('apps/crackai.pyw', images.crackai_logo, 690, 310)
-    crackazon = App('apps/crackazon.py', images.crackazon_logo, 810, 310)
-    more_apps = App('system/more_apps.pyw', images.more_apps_logo, 570, 60)
+    more_apps = App('system/more_apps.pyw', images.more_apps_logo, 690, 60)
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, crack_tube, hangman, crackai, crackazon, crack_chat, 
-            more_apps]
+            enter, crack_tube, hangman, more_apps, crack_dash]
 
     # Run the OS GUI, and the play the startup sound.
     if not disable_sound:

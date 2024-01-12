@@ -12,7 +12,7 @@ from pygame.locals import *
 import data.assets as assets
 
 # Load in the preferences file.
-path = Path('preferences.json')
+path = Path(f'utilities/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
@@ -175,20 +175,20 @@ def update_level(score):
     global doubles, spike_speed, spike_rate
 
     if score >= 50:
-        spike_rate = 70
+        spike_rate = 60
         spike_speed = 8
     
     if score >= 100:
-        spike_rate = 60
+        spike_rate = 50
         spike_speed = 8.5
         doubles = True 
 
     if score >= 150:
-        spike_rate = 50
+        spike_rate = 30
         spike_speed = 9
     
     if score >= 200:
-        spike_rate = 40
+        spike_rate = 25
         spike_speed = 10
     
     if score >= 250:

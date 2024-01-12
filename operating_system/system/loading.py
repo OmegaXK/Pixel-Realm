@@ -82,6 +82,10 @@ class Images():
         self.more_apps_logo = pygame.transform.scale(self.more_apps_logo,
                                                      (APPWIDTH, APPHEIGHT))
         
+        self.crack_dash_logo = pygame.image.load('assets/images/crack_dash_logo.png')
+        self.crack_dash_logo = pygame.transform.scale(self.crack_dash_logo,
+                                                      (APPWIDTH, APPHEIGHT))
+        
 
 class Sounds:
     """A class to represent the sounds."""

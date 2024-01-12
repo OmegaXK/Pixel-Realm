@@ -10,7 +10,7 @@ import pygame
 from pygame.locals import *
 
 # Load in the preferences file.
-path = Path('preferences.json')
+path = Path('utilities/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Define window constants.
