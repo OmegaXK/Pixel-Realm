@@ -6,7 +6,7 @@ import pygame
 from pygame.locals import *
 
 # Constants.
-PATH = "games/graphic_games/crack_dash"
+PATH = "games/graphic_games/crack_dash/"
 CUBEWIDTH = 65
 CUBEHEIGHT = CUBEWIDTH
 
@@ -17,6 +17,11 @@ def terminate():
 
     pygame.quit()
     sys.exit()
+
+
+def create_font(size):
+    """Return a font with the correct size."""
+    return pygame.font.Font('freesansbold.ttf', size)
 
 
 # Classes.
@@ -38,4 +43,4 @@ class Images:
         self.spike_img = pygame.transform.scale(self.spike_img, (40, 40))
 
         self.double_spike_img = pygame.image.load(f"{PATH}/images/double_spike.png")
-        self.double_spike_img = pygame.transform.scale(self.double_spike_img, (60, 40))
+        self.double_spike_img = pygame.transform.scale(self.double_spike_img, (80, 70))

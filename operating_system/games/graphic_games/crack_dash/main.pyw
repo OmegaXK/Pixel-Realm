@@ -9,7 +9,7 @@ from pathlib import Path
 import pygame
 from pygame.locals import *
 
-import general
+import data.assets as assets
 
 # Load in the preferences file.
 path = Path('preferences.json')
@@ -29,6 +29,9 @@ JUMPHEIGHT = 18
 FPS = int(preferences["FPS"])
 GRAVITY = -1.5
 
+# Colors.
+BLACK = (0, 0, 0)
+
 # Check if audio is on or off.
 if preferences["audio"].lower() == "false":
     AUDIO = False 
@@ -45,7 +48,7 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the images and sounds.
-    images = general.Images()
+    images = assets.Images()
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -59,7 +62,8 @@ def main():
 
 def run_game():
     """Run the main game."""
-    global cube_rect, fallspeed, spikes, doubles, spike_speed
+    global cube_rect, fallspeed, spikes, doubles, spike_speed, score
+    global spike_rate
 
     # Define the game variables.
     score = 0
@@ -85,14 +89,14 @@ def run_game():
 
             # Check for quit.
             if event.type == QUIT:
-                general.terminate()
+                assets.terminate()
 
             # Check if the player is pressing a key.
             if event.type == KEYDOWN:
 
                 # Check for the ESCAPE key.
                 if event.key == K_ESCAPE:
-                    general.terminate()
+                    assets.terminate()
 
                 # Check if the player is pressing a jump key.
                 if event.key == K_UP or event.key == K_w:
@@ -107,7 +111,7 @@ def run_game():
         # Draw the game on the screen.
         DISPLAYSURF.blit(images.bg_img, (0, 0))
 
-        # Chekc to see if it's time to spawn a new spike.
+        # Check to see if it's time to spawn a new spike.
         if spike_frame > spike_rate:
             spike_frame = 0
             spawn_spike()
@@ -124,9 +128,55 @@ def run_game():
         # Draw the cube.
         DISPLAYSURF.blit(images.cube_img, cube_rect)
 
+        # Update the score.
+        score += .1
+        draw_score()
+
+        # Update the level.
+        update_level(score)
+
         # Update the game.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
+
+
+def update_level(score):
+    """Update the variables based on the level."""
+    global doubles, spike_speed, spike_rate
+
+    if score >= 50:
+        spike_rate = 70
+        spike_speed = 8
+    
+    if score >= 100:
+        spike_rate = 60
+        spike_speed = 8.5
+        doubles = True 
+
+    if score >= 150:
+        spike_rate = 50
+        spike_speed = 9
+    
+    if score >= 200:
+        spike_rate = 40
+        spike_speed = 10
+    
+    if score >= 250:
+        spike_speed = 12
+
+    if score >= 300:
+        spike_speed = 14
+
+
+def draw_score():
+    """Draw the score on the screen."""
+    global score
+
+    score_font = assets.create_font(30)
+    score_surf = score_font.render(f"Score: {round(score)}", True, BLACK)
+    score_rect = score_surf.get_rect()
+    score_rect.topleft = (0, 0)
+    DISPLAYSURF.blit(score_surf, score_rect)
 
 
 def spawn_spike():
@@ -138,7 +188,7 @@ def spawn_spike():
     
     # Decide if the spike will be a double spike instead.
     if doubles:
-        if random.randint(1, 4) == 1:
+        if random.randint(1, 2) == 1:
             new_spike['img'] = images.double_spike_img
         else:
             new_spike['img'] = images.spike_img
