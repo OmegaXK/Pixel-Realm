@@ -9,8 +9,10 @@ from pathlib import Path
 import pygame
 from pygame.locals import *
 
+import assets
+
 # Load in the preferences file.
-path = Path('preferences.json')
+path = Path('utilities/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants. (Same as main GUI)
@@ -21,8 +23,13 @@ CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
 FPS = int(preferences["FPS"])
+
+# App constants.
 APPWIDTH = 100
 APPHEIGHT = 100
+GAPX = 160
+GAPY = 160
+STARTX = 108
 
 # Colors.
 BGCOLOR = (160, 160, 160) # Light gray color.
@@ -37,8 +44,8 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the assets.
-    images = Images()
-    sounds = Sounds()
+    images = assets.Images()
+    sounds = assets.Sounds()
 
     # Options.
     if preferences['audio'].lower() == "true":
@@ -52,9 +59,12 @@ def main():
     pygame.display.set_icon(images.pixel_realm_logo)
 
     # Load in the apps.
+    crack_chat = App('apps/crack_chat.py', images.crack_chat_logo, STARTX, 70)
+    crack_ai = App('apps/crackai.pyw', images.crackai_logo, STARTX + GAPX, 70)
+    crackazon = App('apps/crackazon.py', images.crackazon_logo, STARTX + GAPX * 2, 70)
     
     # Create a list of all the apps.
-    apps = []
+    apps = [crack_chat, crack_ai, crackazon]
 
     run_gui()
 
@@ -124,24 +134,6 @@ class App():
 
         # Open the app.
         start_file(self.path)
-
-
-class Images:
-    """The images needed for the More Apps page."""
-
-    def __init__(self):
-        """Initialize the images."""
-
-        self.pixel_realm_logo = pygame.image.load('assets/images/pixel_realm_logo.png')
-        self.pixel_realm_logo = pygame.transform.scale(self.pixel_realm_logo,
-                                                       (32, 32))
-
-class Sounds:
-    """The sounds needed for the More Apps page."""
-
-    def __init__(self):
-        """Initialize the sounds."""
-        pass 
 
 
 def start_file(filepath):

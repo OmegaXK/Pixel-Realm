@@ -7,7 +7,7 @@ import pygame
 from pygame.locals import *
 
 from system.login import main as login_main
-import system.loading as loading
+import system.assets as assets
 
 # Load in the preferences file.
 path = Path('utilities/preferences.json')
@@ -34,8 +34,8 @@ def main():
     MAINCLOCK = pygame.time.Clock()
 
     # Load in the assets.
-    images = loading.Images()
-    sounds = loading.Sounds()
+    images = assets.Images()
+    sounds = assets.Sounds()
 
     # Options.
     if preferences['audio'].lower() == "true":
