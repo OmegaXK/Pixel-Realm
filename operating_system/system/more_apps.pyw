@@ -62,9 +62,10 @@ def main():
     crack_chat = App('apps/crack_chat.py', images.crack_chat_logo, STARTX, 70)
     crack_ai = App('apps/crackai.pyw', images.crackai_logo, STARTX + GAPX, 70)
     crackazon = App('apps/crackazon.py', images.crackazon_logo, STARTX + GAPX * 2, 70)
+    crack_tube = App('apps/crack_tube.pyw', images.crack_tube_logo, STARTX, 70 + GAPY)
     
     # Create a list of all the apps.
-    apps = [crack_chat, crack_ai, crackazon]
+    apps = [crack_chat, crack_ai, crackazon, crack_tube]
 
     run_gui()
 
