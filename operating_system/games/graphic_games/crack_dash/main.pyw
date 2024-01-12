@@ -28,6 +28,7 @@ JUMPHEIGHT = 18
 # General constants.
 FPS = int(preferences["FPS"])
 GRAVITY = -1.5
+PATH = "games/graphic_games/crack_dash/"
 
 # Colors.
 BLACK = (0, 0, 0)
@@ -41,7 +42,7 @@ else:
 
 def main():
     """Main code for Crack Dash."""
-    global DISPLAYSURF, MAINCLOCK, images, sounds
+    global DISPLAYSURF, MAINCLOCK, images, sounds, current_pb
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -56,8 +57,10 @@ def main():
 
     # Run the game.
     while True:
-        run_game()
-        pygame.time.wait(1000)
+        current_pb = load_pb()
+        current_score = run_game()
+        check_pb(current_score)
+        pygame.time.wait(500)
 
 
 def run_game():
@@ -120,7 +123,7 @@ def run_game():
 
         # Update the spikes, and check if we need to return.
         if update_spikes():
-            return
+            return score
 
         # Update the cube.
         cube_gravity()
@@ -132,12 +135,39 @@ def run_game():
         score += .1
         draw_score()
 
+        # Draw the current pb.
+        draw_pb(current_pb)
+
         # Update the level.
         update_level(score)
 
         # Update the game.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
+
+
+def check_pb(score):
+    """Check for a new PB."""
+
+    current_pb = load_pb()
+    if int(score) >= current_pb:
+        write_pb(score)
+
+
+def write_pb(new_score):
+    """Write a new PB to the file."""
+
+    path = Path(f'{PATH}/data/personal_best.txt')
+    path.write_text(str(new_score))
+
+
+def load_pb():
+    """Load in the current PB."""
+    
+    path = Path(f'{PATH}/data/personal_best.txt')
+    personal_best = path.read_text()
+    personal_best = int(round(float(personal_best)))
+    return personal_best
 
 
 def update_level(score):
@@ -166,6 +196,16 @@ def update_level(score):
 
     if score >= 300:
         spike_speed = 14
+
+
+def draw_pb(pb):
+    """Draw the current PB on the screen."""
+
+    pb_font = assets.create_font(30)
+    pb_surf = pb_font.render(f"Best Score: {pb}", True, BLACK)
+    pb_rect = pb_surf.get_rect()
+    pb_rect.topright = (WINDOWWIDTH - 15, 0)
+    DISPLAYSURF.blit(pb_surf, pb_rect)
 
 
 def draw_score():
