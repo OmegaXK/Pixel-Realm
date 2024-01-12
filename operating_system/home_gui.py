@@ -6,8 +6,8 @@ from pathlib import Path
 import pygame
 from pygame.locals import *
 
-from utilities.login import main as login_main
-import utilities.loading as loading
+from system.login import main as login_main
+import system.loading as loading
 
 # Load in the preferences file.
 path = Path('preferences.json')
@@ -21,6 +21,8 @@ CENTERY = WINDOWHEIGHT / 2
 
 # Other constants.
 FPS = int(preferences["FPS"])
+APPWIDTH = 100
+APPHEIGHT = 100
 
 
 def main():
@@ -51,7 +53,7 @@ def main():
     browser = App('apps/browser.pyw', images.browser_logo, 90, 450)
     notepad = App('apps/notepad.pyw', images.notepad_logo, 210, 450)
     explorer = App('apps/explorer.pyw', images.explorer_logo, 330, 450)
-    settings = App('utilities/settings.py', images.settings_logo, 450, 450)
+    settings = App('system/settings.py', images.settings_logo, 450, 450)
 
     # Game apps.
     rps = App('games/cli_games/rock-paper-scissors.py', 
@@ -69,7 +71,7 @@ def main():
     # Useful apps.
     crackai = App('apps/crackai.pyw', images.crackai_logo, 690, 310)
     crackazon = App('apps/crackazon.py', images.crackazon_logo, 810, 310)
-    more_apps = App('utilities/more_apps.pyw', images.more_apps_logo, 570, 60)
+    more_apps = App('system/more_apps.pyw', images.more_apps_logo, 570, 60)
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,

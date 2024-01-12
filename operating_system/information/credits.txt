@@ -9,6 +9,7 @@ VS Code download: https://code.visualstudio.com/download
 
 My Resources:
 Image editor: https://pixlr.com/x/
+Image croper and resizer: https://picresize.com/
 Image background remover: https://www.remove.bg/
 RGB color picker: https://www.rapidtables.com/web/color/RGB_Color.html
 HTML Favicon generator: https://realfavicongenerator.net/

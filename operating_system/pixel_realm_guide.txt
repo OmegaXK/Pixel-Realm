@@ -17,7 +17,7 @@ Running and Troubleshooting:
 # Put some stuff here about actually running the program.
 
 How to Change the Settings of the App:
-- You can modify the settings of this app through the "preferences.json"
+You can modify the settings of this app through the "preferences.json"
 file. This file contains multiple options to change and optimize your
 experience with Pixel Realm. When you open the file, it might ask you 
 what app you want to open it with. You should open it with your text
@@ -31,7 +31,11 @@ will not work. If the value is a number, then you can change the number
 to a different number if you want to change this setting. I wouldn't
 change the FPS though, as that will drastically change the game speed.
 
-How to Restore Default Settings:
+How to Reset Pixel Realm:
+Resetting Pixel Realm restores all default settings, resets all of the 
+data we have stored about you, and deletes your current account.
+
+How to Restore Default Settings Without Resetting (very technical):
 In the "utilities" folder, you can find a file called "defaults.json".
 Open up this file with your text editor (notepad on Windows, TextEdit 
 for Mac). Once you have opened the file, press control-A (command-A on

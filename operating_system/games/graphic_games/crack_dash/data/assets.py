@@ -43,4 +43,4 @@ class Images:
         self.spike_img = pygame.transform.scale(self.spike_img, (40, 40))
 
         self.double_spike_img = pygame.image.load(f"{PATH}/images/double_spike.png")
-        self.double_spike_img = pygame.transform.scale(self.double_spike_img, (80, 70))
+        self.double_spike_img = pygame.transform.scale(self.double_spike_img, (80, 40))
