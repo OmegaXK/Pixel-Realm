@@ -23,11 +23,11 @@ CENTERY = WINDOWHEIGHT / 2
 GROUNDHEIGHT = 121
 
 # Cube constants.
-JUMPHEIGHT = 14
+JUMPHEIGHT = 18
 
 # General constants.
 FPS = int(preferences["FPS"])
-GRAVITY = -1
+GRAVITY = -1.5
 
 # Check if audio is on or off.
 if preferences["audio"].lower() == "false":
@@ -67,12 +67,14 @@ def run_game():
     fallspeed = 0
     spike_frame = 0
     spikes = []
+
+    # These variables will update as the game progresses.
     spike_rate = 100
     doubles = False
-    spike_speed = 5
+    spike_speed = 7
 
     # Set up the player.
-    cube_rect.centerx = CENTERX 
+    cube_rect.centerx = CENTERX - 100
     cube_rect.bottom = WINDOWHEIGHT - GROUNDHEIGHT
 
     # Main loop.
@@ -105,11 +107,16 @@ def run_game():
         # Draw the game on the screen.
         DISPLAYSURF.blit(images.bg_img, (0, 0))
 
-        # Update the spikes.
+        # Chekc to see if it's time to spawn a new spike.
         if spike_frame > spike_rate:
+            spike_frame = 0
             spawn_spike()
         else:
             spike_frame += 1
+
+        # Update the spikes, and check if we need to return.
+        if update_spikes():
+            return
 
         # Update the cube.
         cube_gravity()
@@ -132,14 +139,16 @@ def spawn_spike():
     # Decide if the spike will be a double spike instead.
     if doubles:
         if random.randint(1, 4) == 1:
-            new_spike['img'] == images.double_spike_img
+            new_spike['img'] = images.double_spike_img
         else:
-            new_spike['img'] == images.spike_img
+            new_spike['img'] = images.spike_img
     else:
-        new_spike['img'] == images.spike_img
+        new_spike['img'] = images.spike_img
 
     # Create the rect object.
-    new_spike['rect'] == new_spike['img'].get_rect()
+    new_spike['rect'] = new_spike['img'].get_rect()
+    new_spike['rect'].left = WINDOWWIDTH
+    new_spike['rect'].bottom = WINDOWHEIGHT - GROUNDHEIGHT
 
     # Add the spike to the list.
     spikes.append(new_spike)
@@ -147,7 +156,29 @@ def spawn_spike():
 
 def update_spikes():
     """Update the spikes."""
-    pass
+    global spikes
+    
+    # Loop through all of the spikes.
+    for spike in spikes[:]:
+
+        # Move the spike.
+        spike['rect'].x -= spike_speed
+
+        # Check if the spike is offscreen.
+        if spike['rect'].right <= 0:
+            spikes.remove(spike)
+
+        # Check if the spike is touching the player.
+        if spike['rect'].colliderect(cube_rect):
+            hit_player = True 
+        else:
+            hit_player = False
+        
+        # Draw the spike on the screen.
+        DISPLAYSURF.blit(spike['img'], spike['rect'])
+
+        # Return.
+        return hit_player
 
 
 def cube_gravity():
