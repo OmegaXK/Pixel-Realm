@@ -45,12 +45,20 @@ def sign_up():
 def login():
     """Lets the user login to their account."""
 
+    # Open the file that contains the user's information.
+    path = Path('user_info/user_info.json')
+
+    # Check if the player actually has an account.
+    if not path.exists():
+        print("\nYou need to make an account before you log in.")
+        sleep(1)
+        return
+
     # Let the user enter their username and password.
     username = input("\nEnter your username: ")
     password = input("Enter your password: ")
 
-    # Open the file that contains the user's information.
-    path = Path('user_info/user_info.json')
+    # Load in the user's information.
     user_info = json.loads(path.read_text())
 
     # Check if the user's username and password are correct.
