@@ -1,7 +1,7 @@
 """This file resets Pixel Realm."""
 
 # Imports.
-import json, sys
+import json, sys, os
 from pathlib import Path
 
 import pygame 
@@ -56,6 +56,18 @@ def reset():
 
 def reset_account():
     """Reset the user's current account."""
+
+    # Load in the path.
+    path = Path('user_info/user_info.json')
+
+    # Check if the user doesn't have an account.
+    if not path.exists():
+        # The user doesn't have an account.
+        return 
+    
+    # Delete the path if it does exist.
+    os.remove(path)
+    return
 
 
 def draw_text(text, font, x, y):
