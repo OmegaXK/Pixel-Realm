@@ -128,6 +128,7 @@ def run_game():
                     assets.game_over.play()
                     
                 pygame.time.wait(500)
+                check_new_best(score)
                 break
             
             # Draw the bird.
@@ -137,11 +138,21 @@ def run_game():
             draw_score(score)
 
             # Draw the best score.
-            draw_best_score(best_score)
+            draw_best_score()
 
             # Update the display.
             pygame.display.update()
             MAINCLOCK.tick(FPS)
+
+
+def check_new_best(score):
+    """Check if the player has gotten a new best score."""
+
+    path = Path(f"{PATH}/data/personal_best.txt")
+    personal_best = path.read_text()
+
+    if int(score) >= int(personal_best):
+        path.write_text(str(score))
 
 
 def restart_screen():
@@ -170,7 +181,7 @@ def restart_screen():
     draw_score(0)
 
     # Draw the best score.
-    draw_best_score(best_score)
+    draw_best_score()
 
     # Update.
     pygame.display.update()
@@ -219,15 +230,19 @@ def restart_screen():
         draw_score(0)
 
         # Draw the best score.
-        draw_best_score(best_score)
+        draw_best_score()
 
         # Update the screen.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
 
 
-def draw_best_score(best_score):
+def draw_best_score():
     """Draw the player's best score."""
+
+    path = Path(f"{PATH}/data/personal_best.txt")
+    best_score = path.read_text()
+
     scorefont = create_font(30)
     bestscoresurf = scorefont.render(f'Best score: {best_score}', True, BLACK)
     bestscorerect = bestscoresurf.get_rect()
@@ -237,6 +252,7 @@ def draw_best_score(best_score):
 
 def draw_score(score):
     """Draw the current score text on the screen."""
+
     scorefont = create_font(30)
     scoresurf = scorefont.render(f'Score: {score}', True, BLACK)
     scorerect = scoresurf.get_rect()
