@@ -156,6 +156,7 @@ def start_file(filepath):
 
 def terminate():
     """Quit the program."""
+    
     pygame.quit()
     sys.exit()
 

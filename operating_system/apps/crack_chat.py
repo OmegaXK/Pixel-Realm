@@ -8,6 +8,10 @@ import random, time
 # Load insults.
 insults = json.loads(Path('apps/resources/insults.json').read_text())
 
+# Load user info.
+user_info = json.loads(Path('user_info/user_info.json').read_text())
+name = user_info['username']
+
 # Print an introduction.
 print('\nWelcome to Crack Chat!')
 time.sleep(1)
@@ -27,7 +31,7 @@ while True:
         break
 
     # Otherwise, print a random insult.
-    print(f"\n{random.choice(insults)}")
+    print(f"\n{name}, {random.choice(insults)}")
 
     # Wait a second.
     time.sleep(1)
