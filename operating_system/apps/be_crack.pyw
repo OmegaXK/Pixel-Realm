@@ -15,6 +15,8 @@ CENTERY = WINDOWHEIGHT / 2
 # Colors.
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+RED = (180, 0, 0)
+BLUE = (0, 0, 210)
 
 
 def main():
@@ -55,10 +57,10 @@ def run_app():
                     terminate()
 
         # Draw the screen.
-        DISPLAYSURF.fill(WHITE)
+        DISPLAYSURF.fill(RED)
 
         # Draw the title text.
-        draw_text("It is time for Crack", 80, BLACK, CENTERX, 140)
+        draw_text("It is time for Crack", 80, BLUE, CENTERX, 140)
 
         # Check if it's time to update the time.
         if time_frame >= 3600:
@@ -68,7 +70,7 @@ def run_app():
             time_frame += 1
 
         # Draw the time text.
-        draw_text(f"Current Time:  {time}", 55, BLACK, CENTERX, 300)
+        draw_text(f"Current Time:  {time}", 55, BLUE, CENTERX, 300)
 
         # Update the game.
         pygame.display.update()
