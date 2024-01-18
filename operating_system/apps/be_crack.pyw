@@ -35,6 +35,9 @@ def main():
 def run_app():
     """Run the main Be-Crack loop."""
 
+    time_frame = 0
+    time = get_random_time()
+
     while True:
 
         # Check for events.
@@ -55,10 +58,36 @@ def run_app():
         DISPLAYSURF.fill(WHITE)
 
         # Draw the title text.
-        draw_text("It is time for Crack", 80, BLACK, CENTERX, 60)
+        draw_text("It is time for Crack", 80, BLACK, CENTERX, 140)
+
+        # Check if it's time to update the time.
+        if time_frame >= 3600:
+            time = get_random_time()
+            time_frame = 0
+        else:
+            time_frame += 1
+
+        # Draw the time text.
+        draw_text(f"Current Time:  {time}", 55, BLACK, CENTERX, 300)
 
         # Update the game.
         pygame.display.update()
+
+
+def get_random_time():
+    """Return a random time."""
+
+    # Choose a random hour and minute.
+    hour = random.randint(1, 12)
+    minute = random.randint(1, 60)
+
+    # Choose PM or AM.
+    if random.randint(1, 2) == 1:
+        day = "PM"
+    else:
+        day = "AM"
+
+    return f'{hour} : {minute} {day}'
 
 
 def draw_text(text, size, color, x, y):
