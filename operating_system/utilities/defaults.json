@@ -1,4 +1,5 @@
 {
     "audio": "True",
-    "FPS": "60"
+    "FPS": "60",
+    "Use Name": "True"
 }

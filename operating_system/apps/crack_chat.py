@@ -12,6 +12,10 @@ insults = json.loads(Path('apps/resources/insults.json').read_text())
 user_info = json.loads(Path('user_info/user_info.json').read_text())
 name = user_info['username']
 
+# Load preferences.
+preferences = json.loads(Path('utilities/preferences.json').read_text())
+use_name = preferences['Use Name']
+
 # Print an introduction.
 print('\nWelcome to Crack Chat!')
 time.sleep(1)
@@ -31,7 +35,10 @@ while True:
         break
 
     # Otherwise, print a random insult.
-    print(f"\n{name}, {random.choice(insults)}")
+    if use_name.lower() == "true":
+        print(f"\n{name}, {random.choice(insults)}")
+    else:
+        print(f"\n{random.choice(insults)}")
 
     # Wait a second.
     time.sleep(1)
