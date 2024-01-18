@@ -1,7 +1,7 @@
 """This file resets Pixel Realm."""
 
 # Imports.
-import sys, os
+import sys, os, json
 from pathlib import Path
 
 import pygame 
@@ -72,6 +72,16 @@ def reset():
     pygame.display.update()
     pygame.time.wait(1000)
 
+    draw_text("Resetting Preferences...", SMALLFONT, CENTERX, CENTERY, BLACK)
+    reset_preferences()
+    pygame.display.update()
+    pygame.time.wait(2000)
+
+    DISPLAYSURF.fill(WHITE)
+    draw_text("Reset Pixel Realm", BIGFONT, CENTERX, 50, BLACK)
+    pygame.display.update()
+    pygame.time.wait(1000)
+
     # Draw text indicating the reset is complete.
     draw_text("Reset Complete.", BIGFONT, CENTERX, CENTERY, BLACK)
     pygame.display.update()
@@ -133,6 +143,21 @@ def confirmation():
         draw_text("Exit", button_font, quit_button.centerx, quit_button.centery, WHITE)
 
         pygame.display.update()
+
+
+def reset_preferences():
+    """Reset the preferences of Pixel Realm."""
+
+    # Load in the default settings.
+    path = Path("information/defaults.json")
+    defaults = json.loads(path.read_text())
+
+    # Load in the current settings.
+    path = Path("utilities/preferences.json")
+
+    # Replace the current settings with the defaults.
+    path.write_text(json.dumps(defaults, indent=4))
+    return
 
 
 def reset_data():
