@@ -15,7 +15,7 @@ def main():
     app = QApplication(sys.argv)
     app.setApplicationName("CrackGPT AI")
     app.setOrganizationName("Crack OS")
-    app.setOrganizationDomain("chatgpt.bestim.org/chat/")
+    app.setOrganizationDomain("gptchatly.com/")
 
     window = MainWindow()
 
@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
 
         self.browser = QWebEngineView()
-        self.browser.setUrl(QUrl("https://chatgpt.bestim.org/chat/"))
+        self.browser.setUrl(QUrl("https://gptchatly.com/"))
 
         self.browser.urlChanged.connect(self.update_urlbar)
         self.browser.loadFinished.connect(self.update_title)
@@ -145,7 +145,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("%s - Crack AI" % title)
 
     def navigate_mozarella(self):
-        self.browser.setUrl(QUrl("https://www.chatgpt.bestim.org/chat/"))
+        self.browser.setUrl(QUrl("https://gptchatly.com/"))
 
     def about(self):
         dlg = AboutDialog()
@@ -179,7 +179,7 @@ class MainWindow(QMainWindow):
         dlg.exec_()
 
     def navigate_home(self):
-        self.browser.setUrl(QUrl("https://chatgpt.bestim.org/chat/"))
+        self.browser.setUrl(QUrl("https://gptchatly.com/"))
 
     def navigate_to_url(self):  # Does not receive the Url
         q = QUrl(self.urlbar.text())
