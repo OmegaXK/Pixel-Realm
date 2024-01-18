@@ -78,8 +78,12 @@ def get_random_time():
     """Return a random time."""
 
     # Choose a random hour and minute.
-    hour = random.randint(1, 12)
-    minute = random.randint(1, 60)
+    hour = str(random.randint(1, 12))
+    minute = str(random.randint(1, 60))
+
+    # Check to see if there needs to be a zero before the minute.
+    if len(minute) == 1:
+        minute = f"0{minute}"
 
     # Choose PM or AM.
     if random.randint(1, 2) == 1:
