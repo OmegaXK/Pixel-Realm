@@ -60,7 +60,7 @@ def run_app():
         DISPLAYSURF.fill(RED)
 
         # Draw the title text.
-        draw_text("It is time for Crack", 80, BLUE, CENTERX, 140)
+        draw_text("It is Time for Crack", 80, BLUE, CENTERX, 140)
 
         # Check if it's time to update the time.
         if time_frame >= 3600:
