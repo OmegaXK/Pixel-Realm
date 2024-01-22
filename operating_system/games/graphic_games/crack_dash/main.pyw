@@ -56,10 +56,16 @@ def main():
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Crack Dash")
 
+    # Check if there needs to be music.
+    if preferences['Background Music'].lower() != "true":
+        music = True 
+    else:
+        music = False
+
     # Play the music.
     pygame.mixer.music.load(f'{PATH}/sounds/stereo_crackness.mp3')
 
-    if AUDIO:
+    if music:
         pygame.mixer.music.play(-1, 0.0)
 
     # Run the game.
