@@ -56,6 +56,12 @@ def main():
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Crack Dash")
 
+    # Play the music.
+    pygame.mixer.music.load(f'{PATH}/sounds/stereo_crackness.mp3')
+
+    if AUDIO:
+        pygame.mixer.music.play(-1, 0.0)
+
     # Run the game.
     while True:
         current_pb = load_pb()
