@@ -50,6 +50,7 @@ def main():
 
     # Load in the images and sounds.
     images = assets.Images()
+    sounds = assets.Sounds()
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -293,6 +294,11 @@ def cube_jump():
     global fallspeed 
     
     if cube_rect.y > 250:
+        # Play the jump sound.
+        if AUDIO:
+            sounds.jump_sound.play()
+
+        # Make the cube jump.
         fallspeed = -JUMPHEIGHT
 
 

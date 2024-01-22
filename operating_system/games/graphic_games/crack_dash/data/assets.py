@@ -44,3 +44,12 @@ class Images:
 
         self.double_spike_img = pygame.image.load(f"{PATH}/images/double_spike.png")
         self.double_spike_img = pygame.transform.scale(self.double_spike_img, (80, 40))
+
+
+class Sounds:
+    """Load in the sounds for the file as attributes."""
+
+    def __init__(self):
+        """Initialize the sounds."""
+
+        self.jump_sound = pygame.mixer.Sound(f'{PATH}/sounds/jump.wav')
