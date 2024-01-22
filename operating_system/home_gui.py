@@ -43,6 +43,11 @@ def main():
     else:
         disable_sound = True
 
+    if preferences['Background Music'].lower() == "true":
+        bg_music = True
+    else:
+        bg_music = False
+
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Pixel Realm")
@@ -71,10 +76,17 @@ def main():
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
             enter, hangman, more_apps, crack_dash]
 
-    # Run the OS GUI, and the play the startup sound.
+    # Play the startup sound.
     if not disable_sound:
         sounds.startup.play()
 
+    # Start the music.
+    pygame.mixer.music.load('assets/sounds/background_music.mp3')
+
+    if bg_music:
+        pygame.mixer.music.play(-1, 0.0)
+
+    # Run the OS GUI.
     run_gui()
 
 

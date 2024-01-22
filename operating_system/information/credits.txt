@@ -25,17 +25,25 @@ Image Credits:
 (A majority of the images were made by me in Canva, so the ones that
 were not made by me will be listed here. (Canva link above))
 
-
 Cracky Bird Background:
 Credit: https://opengameart.org/content/flappy-bird-background
 Download: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosKwFBqf0vfexg8Z0eJ55yejPEUHRC3qN_me24sBWgg&s
 
 
 Sound Credits:
-(Some of the sounds were downloaded from FreeSound(link above))
-
+(Some of the sounds were downloaded from FreeSound (link above))
 
 Cracky Bird Game Over Sound:
 This sound was downloaded from the Scratch (https://scratch.mit.edu)
 sound library. To download it, you have to export the sound from the
 scratch sound menu.
+
+
+Music Credits:
+Huge shoutout to Kevin MacLeod, what a legend.
+
+Pixel Realm Background Music.
+Fluffing a Duck Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/
+Music promoted by https://www.chosic.com/free-music/all/
