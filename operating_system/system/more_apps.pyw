@@ -63,6 +63,7 @@ def main():
     crack_chat = App('apps/crack_chat.py', images.crack_chat_logo, STARTX, 70)
     crack_tube = App('apps/crack_tube.pyw', images.crack_tube_logo, STARTX, 70 + GAPY)
     be_crack = App('apps/be_crack.pyw', images.be_crack_logo, STARTX + GAPX, 70 + GAPY)
+    mine_crack = App('apps/mine_crack.pyw', images.mine_crack_logo, STARTX, 70 + GAPY * 2)
 
     # Useful apps.
     crack_ai = App('apps/crackai.pyw', images.crackai_logo, STARTX + GAPX, 70)
@@ -70,7 +71,8 @@ def main():
     crackle_maps = App('apps/crackle_maps.pyw', images.crackle_maps_logo, STARTX + GAPX * 2, 70 + GAPY)
     
     # Create a list of all the apps.
-    apps = [crack_chat, crack_ai, crackazon, crack_tube, be_crack, crackle_maps]
+    apps = [crack_chat, crack_ai, crackazon, crack_tube, be_crack, crackle_maps,
+            mine_crack]
 
     run_gui()
 

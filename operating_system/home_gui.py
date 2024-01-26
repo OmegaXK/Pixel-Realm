@@ -95,8 +95,10 @@ def run_gui():
 
     # Run the main loop.
     while True:
+
         # Check for events.
         for event in pygame.event.get():
+
             # Quit the program if the user closes the window.
             if event.type == QUIT:
                 terminate()

@@ -94,6 +94,10 @@ class Images():
         self.crackle_maps_logo = pygame.transform.scale(self.crackle_maps_logo,
                                                         (APPWIDTH, APPHEIGHT))
         
+        self.mine_crack_logo = pygame.image.load('assets/images/mine_crack_logo.png')
+        self.mine_crack_logo = pygame.transform.scale(self.mine_crack_logo,
+                                                      (APPWIDTH, APPHEIGHT))
+        
 
 class Sounds:
     """A class to represent the sounds."""
