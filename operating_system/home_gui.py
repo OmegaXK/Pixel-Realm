@@ -55,9 +55,9 @@ def main():
 
     # Load in the apps.
     # Basic OS apps.
-    browser = App('apps/browser.pyw', images.browser_logo, 90, 450)
-    notepad = App('apps/notepad.pyw', images.notepad_logo, 210, 450)
-    explorer = App('apps/explorer.pyw', images.explorer_logo, 330, 450)
+    browser = App('apps/system_apps/browser.pyw', images.browser_logo, 90, 450)
+    notepad = App('apps/system_apps/notepad.pyw', images.notepad_logo, 210, 450)
+    explorer = App('apps/system_apps/explorer.pyw', images.explorer_logo, 330, 450)
     settings = App('system/settings.py', images.settings_logo, 450, 450)
     more_apps = App('system/more_apps.pyw', images.more_apps_logo, 570, 450)
 

@@ -6,7 +6,7 @@ import json
 import random, time
 
 # Load insults.
-insults = json.loads(Path('apps/resources/insults.json').read_text())
+insults = json.loads(Path('apps/entertainment/insults.json').read_text())
 
 # Load user info.
 user_info = json.loads(Path('user_info/user_info.json').read_text())

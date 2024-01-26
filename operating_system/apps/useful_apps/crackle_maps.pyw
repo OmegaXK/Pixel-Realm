@@ -20,7 +20,7 @@ def main():
     pygame.display.set_caption("Crackle Maps")
 
     # Load in the background image.
-    bg_img = pygame.image.load("apps/resources/crack_map.png")
+    bg_img = pygame.image.load("apps/useful_apps/crack_map.png")
     bg_img = pygame.transform.scale(bg_img, (WINDOWWIDTH, WINDOWHEIGHT))
 
     # Run the main loop.
