@@ -29,6 +29,7 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Be Crack")
+    pygame.display.set_icon(pygame.image.load('apps/entertainment/be_crack_logo.png'))
 
     # Run the main loop.
     run_app()

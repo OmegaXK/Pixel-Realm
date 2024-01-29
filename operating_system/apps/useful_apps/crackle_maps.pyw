@@ -15,13 +15,14 @@ def main():
     """Main function for Crackle Maps."""
     global DISPLAYSURF, bg_img
 
-    # Set up the window.
-    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
-    pygame.display.set_caption("Crackle Maps")
-
     # Load in the background image.
     bg_img = pygame.image.load("apps/useful_apps/crack_map.png")
     bg_img = pygame.transform.scale(bg_img, (WINDOWWIDTH, WINDOWHEIGHT))
+
+    # Set up the window.
+    DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+    pygame.display.set_caption("Crackle Maps")
+    pygame.display.set_icon(bg_img)
 
     # Run the main loop.
     run_map()

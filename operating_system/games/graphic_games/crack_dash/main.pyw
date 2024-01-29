@@ -55,6 +55,7 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Crack Dash")
+    pygame.display.set_icon(images.cube_img)
 
     # Check if there needs to be music.
     if preferences['Background Music'].lower() != "true":
