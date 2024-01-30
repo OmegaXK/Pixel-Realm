@@ -148,8 +148,9 @@ def confirmation():
 def reset_preferences():
     """Reset the preferences of Pixel Realm."""
 
-    # Load in the default settings.
-    path = Path("information/defaults.json")
+    # Load in the default settings. 
+    # Hopefully these weren't modified lol.
+    path = Path("information/donotmodify_defaults.txt")
     defaults = json.loads(path.read_text())
 
     # Load in the current settings.
