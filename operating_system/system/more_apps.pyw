@@ -33,6 +33,7 @@ STARTX = 108
 
 # Colors.
 BGCOLOR = (160, 160, 160) # Light gray color.
+BLACK = (0, 0, 0)
 
 
 def main():
@@ -107,6 +108,9 @@ def run_gui():
         for app in apps:
             app.draw()
 
+        # Draw some text at the bottom of the screen.
+        draw_pr_text()
+
         # Update the display.
         pygame.display.update()
         MAINCLOCK.tick(FPS)
@@ -142,6 +146,21 @@ class App():
 
         # Open the app.
         start_file(self.path)
+
+
+def draw_pr_text():
+    """Draw the Copyright Pixel Realm text."""
+
+    # Create the font.
+    font = pygame.font.Font('freesansbold.ttf', 30)
+
+    # Make the text and position it.
+    textsurf = font.render('Copyright Pixel Realm 2024', True, BLACK)
+    textrect = textsurf.get_rect()
+    textrect.midbottom = (CENTERX, WINDOWHEIGHT - 15)
+
+    # Draw the text on the screen.
+    DISPLAYSURF.blit(textsurf, textrect)
 
 
 def start_file(filepath):
