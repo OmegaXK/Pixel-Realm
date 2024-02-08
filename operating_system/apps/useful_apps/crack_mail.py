@@ -2,6 +2,7 @@
 
 # Imports.
 from time import sleep
+import sys
 
 """
 The EMAILS dictionary stores your emails in this form:
@@ -14,7 +15,8 @@ EMAILS = {
     "[2] Crack Deals": "Buy our Crack because it's good.",
     "[3] Try Crack": "You should try Crack!",
     "[4] You Need Crack": "We highly recommend Crack.",
-    "[5] Discount Crack": "Our Crack deals are the best,"
+    "[5] Discount Crack": "Our Crack deals are the best.",
+    "[q] Quit": "Goodbye"
 }
 
 
@@ -36,14 +38,19 @@ def read_emails():
     while True:
         response = input("\nType the email you want to read. (1 - 5): ")
 
-        if response in ["1", "2", "3", "4", "5"]:
+        if response in ["1", "2", "3", "4", "5", "q"]:
             break 
         else:
-            print('Please enter a number between 1 and 5.')
+            print('Please enter a number between 1 and 5, or "q".')
             sleep(1)
+
+    # Check if the user has quit.
+    if response == 'q':
+        sys.exit()
 
     # Figure out which email to print the contents of.
     for subject, contents in EMAILS.items():
+
 
         if subject.startswith(f'[{response}]'):
 
