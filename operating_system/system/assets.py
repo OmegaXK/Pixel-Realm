@@ -98,6 +98,10 @@ class Images():
         self.mine_crack_logo = pygame.transform.scale(self.mine_crack_logo,
                                                       (APPWIDTH, APPHEIGHT))
         
+        self.crack_mail_logo = pygame.image.load('assets/images/crack_mail_logo.png')
+        self.crack_mail_logo = pygame.transform.scale(self.crack_mail_logo,
+                                                      (APPWIDTH, APPHEIGHT))
+        
 
 class Sounds:
     """A class to represent the sounds."""

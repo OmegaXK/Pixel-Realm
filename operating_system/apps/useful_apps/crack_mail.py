@@ -7,7 +7,7 @@ import sys
 """
 The EMAILS dictionary stores your emails in this form:
 - Every key is the email's subject
-- Every value is the email's contents.
+- Every value is the email's contents
 """
 
 EMAILS = {
@@ -50,7 +50,6 @@ def read_emails():
 
     # Figure out which email to print the contents of.
     for subject, contents in EMAILS.items():
-
 
         if subject.startswith(f'[{response}]'):
 
