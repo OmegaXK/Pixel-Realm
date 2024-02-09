@@ -12,7 +12,7 @@ from pygame.locals import *
 import data.assets as assets
 
 # Load in the preferences file.
-path = Path(f'utilities/preferences.json')
+path = Path(f'user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.

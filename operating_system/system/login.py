@@ -1,8 +1,7 @@
 """Contains the main functions to login and create an account for the
 Pixel Realm OS."""
 
-# The file that lets the user login and create an account for the Pixel 
-# Realm OS.
+# The file that lets the user login and make an account for Pixel Realm.
 
 from pathlib import Path
 from time import sleep
@@ -77,7 +76,7 @@ def main():
 
     while True:
         # Let the user choose if they want to signup, login, or exit.
-        print("\n\nWelcome to the Pixel Realm OS.")
+        print("\n\nWelcome to Pixel Realm! Make an account and log in.")
 
         print('\n[1] Sign up')
         print('[2] Login')

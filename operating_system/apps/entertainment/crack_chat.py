@@ -13,7 +13,7 @@ user_info = json.loads(Path('user_info/user_info.json').read_text())
 name = user_info['username']
 
 # Load preferences.
-preferences = json.loads(Path('utilities/preferences.json').read_text())
+preferences = json.loads(Path('user_info/preferences.json').read_text())
 use_name = preferences['Use Name']
 
 # Print an introduction.

@@ -17,7 +17,7 @@ Running and Troubleshooting:
 # Put some stuff here about actually running the program.
 
 How to Change the Settings of Pixel Realm:
-There is a "preferences.json" file in the "utilities" folder.
+There is a "preferences.json" file in the "user_info" folder.
 This file contains multiple options to change and optimize your
 experience with Pixel Realm. When you open the file, it might ask you 
 what app you want to open it with. You should open it with your text

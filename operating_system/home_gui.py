@@ -10,7 +10,7 @@ from system.login import main as login_main
 import system.assets as assets
 
 # Load in the preferences file.
-path = Path('utilities/preferences.json')
+path = Path('user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
