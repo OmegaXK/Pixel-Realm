@@ -1,7 +1,7 @@
 Pixel Realm Credits
 
 
-Most coding by Collin Maryniak. (https://youtube.com/@Omega_XK)
+Most programming by Collin Maryniak. (https://youtube.com/@Omega_XK)
 Additional coding by T.G.M. (https://youtube.com/@rexymon)
 My IDE: Visual Studio Code (VS Code)
 VS Code download: https://code.visualstudio.com/download
@@ -9,7 +9,8 @@ VS Code download: https://code.visualstudio.com/download
 
 My Resources:
 Image editor: https://pixlr.com/x/
-Image croper and resizer: https://picresize.com/
+Image editor but better: https://www.getpaint.net/download.html
+Image cropper and resizer: https://picresize.com/
 Image background remover: https://www.remove.bg/
 RGB color picker: https://www.rapidtables.com/web/color/RGB_Color.html
 HTML Favicon generator: https://realfavicongenerator.net/
@@ -22,8 +23,8 @@ Link: https://stackoverflow.com
 
 
 Image Credits:
-(A majority of the images were made by me in Canva, so the ones that
-were not made by me will be listed here. (Canva link above))
+(A majority of the images were made by me in Canva, so only the ones 
+that were not made by me will be listed here. (Canva link above))
 
 Cracky Bird Background:
 Credit: https://opengameart.org/content/flappy-bird-background

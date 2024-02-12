@@ -1,16 +1,13 @@
 Thank you for downloading Pixel Realm!
 I would highly recomend reading this, as it will help your experience 
-with Pixel Realm be as smooth as possible.
+with Pixel Realm as smooth as possible.
 
 About Pixel Realm:
-Pixel Realm is an independently developed gaming platform developed by
+Pixel Realm is an independently developed gaming platform created by
 the Omega development team, based out of Pennsylvania in the US. With
 Pixel Realm, you can enjoy a variety of different games and other
-applications, all compressed into one neat window. Pixel Realm was
-programmed mainly using the Python coding language. Pixel Realm was also
-designed to provide an enjoyable gaming experience even on devices with
-restricted settings, which will hopefully allow a greater array of
-the population to enjoy peak gaming. Thank you. 
+applications, all compressed into one neat window. We really appreciate 
+your download and support of this app. Thank you.
 - C L M and the Pixel Realm team.
 
 Running and Troubleshooting:
@@ -21,7 +18,7 @@ There is a "preferences.json" file in the "user_info" folder.
 This file contains multiple options to change and optimize your
 experience with Pixel Realm. When you open the file, it might ask you 
 what app you want to open it with. You should open it with your text
-editor (notepad for Windows, and TextEdit for Mac). The file contains 
+editor (NotePad for Windows, and TextEdit for Mac). The file contains 
 multiple "keys", which are on the left side of the file. These keys tell 
 you what they are modifying. After the key is a colon (:), which 
 seperates it from the "value", which is on the right side. If the value 
@@ -51,3 +48,15 @@ command-C on Mac). Next, open the "preferences.json" file with your text
 editor, and press control-A again. Now press delete or backspace to
 delete the contents of the file. Finally press control-V to paste the 
 default settings back into the file.
+
+Extra Notes:
+
+1. Do not modify the file called "donotmodify_defaults.txt". This file
+is essential for the reset program to work, and if it is modified, the
+reset program will crash and you will not be able to reset Pixel Realm,
+which is a pretty big issue that's best to try and avoid completely. Do 
+not modify this file!!
+
+2. If you accidently type something in the "preferences.json" file that 
+causes an error, resetting Pixel Realm should fix it. You can find more 
+information about resetting Pixel Realm above.
