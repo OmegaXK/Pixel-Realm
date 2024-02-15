@@ -1,0 +1,16 @@
+
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: 110px;
+}
+
+input {
+    width: 600px;
+    height: 200px;
+    color: blue;
+    font-size: 80px;
+    background-color: green;
+}
