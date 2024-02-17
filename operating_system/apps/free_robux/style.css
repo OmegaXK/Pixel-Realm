@@ -1,3 +1,4 @@
+/* CSS For the Free Robux Page */
 
 body {
     text-align: center;
@@ -7,10 +8,15 @@ h1 {
     font-size: 110px;
 }
 
+p-1 {
+    font-size: 100px;
+}
+
 input {
     width: 600px;
     height: 200px;
     color: blue;
-    font-size: 80px;
+    font-size: 90px;
     background-color: green;
+    font-family: "Times ";
 }

