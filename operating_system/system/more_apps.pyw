@@ -71,10 +71,13 @@ def main():
     crackazon = App('apps/useful_apps/crackazon.py', images.crackazon_logo, STARTX + GAPX * 2, 70)
     crackle_maps = App('apps/useful_apps/crackle_maps.pyw', images.crackle_maps_logo, STARTX + GAPX * 2, 70 + GAPY)
     crack_mail = App('apps/useful_apps/crack_mail.py', images.crack_mail_logo, STARTX + GAPX, 70 + GAPY * 2)
+
+    # Other apps.
+    free_robux = App('apps/free_robux/open.pyw', images.free_robux_logo, STARTX + GAPX * 2, 70 + GAPY * 2)
     
     # Create a list of all the apps.
     apps = [crack_chat, crack_ai, crackazon, crack_tube, be_crack, crackle_maps,
-            mine_crack, crack_mail]
+            mine_crack, crack_mail, free_robux]
 
     run_gui()
 

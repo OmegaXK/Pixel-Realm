@@ -102,6 +102,10 @@ class Images():
         self.crack_mail_logo = pygame.transform.scale(self.crack_mail_logo,
                                                       (APPWIDTH, APPHEIGHT))
         
+        self.free_robux_logo = pygame.image.load('assets/images/free_robux_logo.png')
+        self.free_robux_logo = pygame.transform.scale(self.free_robux_logo,
+                                                      (APPWIDTH, APPHEIGHT))
+        
 
 class Sounds:
     """A class to represent the sounds."""
