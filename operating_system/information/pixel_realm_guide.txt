@@ -60,3 +60,14 @@ not modify this file!!
 2. If you accidently type something in the "preferences.json" file that 
 causes an error, resetting Pixel Realm should fix it. You can find more 
 information about resetting Pixel Realm above.
+
+3. For legal reasons, I need to inform you that the Free Robux app does 
+not actually give you any free robux. It asks for your username and 
+password, but the program does not actually do anything with that
+information. It is just a joke app that I made to make fun of the free
+robux scams that are all over the internet. Your information is in no
+danger by using this app, but please do not try to use it to get free 
+robux, because it will not work. If you are a programmer, than you can 
+look at the source code and see that it does not actually do anything
+with your information. We are not responsible for any damage that you do
+to your account by using this app. Thank you for understanding.
