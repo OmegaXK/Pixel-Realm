@@ -1,5 +1,6 @@
 """Open up the Free Robux website in the user's browser."""
 
+# Imports.
 import webbrowser, os
 
 # Retrieve the absolute path of the file.

@@ -114,3 +114,5 @@ class Sounds:
         """Initialize the sounds."""
 
         self.startup = pygame.mixer.Sound('assets/sounds/startup.wav')
+
+        self.open_app = pygame.mixer.Sound('assets/sounds/open_app.wav')

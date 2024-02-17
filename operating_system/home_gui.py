@@ -27,7 +27,7 @@ APPHEIGHT = 100
 
 def main():
     """Main code for the OS GUI."""
-    global MAINCLOCK, DISPLAYSURF, images, sounds, apps
+    global MAINCLOCK, DISPLAYSURF, images, sounds, apps, disable_sound
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -150,6 +150,9 @@ class App():
         """Check if the user clicks the app."""
 
         if self.rect.collidepoint(mouse_pos):
+            if not disable_sound:
+                sounds.open_app.play()
+
             self.open()
 
     def open(self):
