@@ -14,8 +14,13 @@ path = Path('user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
-WINDOWWIDTH = 960
-WINDOWHEIGHT = 540
+if preferences['Big Screen'].lower() == "true":
+    WINDOWWIDTH = 960
+    WINDOWHEIGHT = 540 * 1.5
+else:
+    WINDOWWIDTH = 960 
+    WINDOWHEIGHT = 540
+
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
 

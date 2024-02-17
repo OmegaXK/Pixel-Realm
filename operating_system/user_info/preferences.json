@@ -1,6 +1,7 @@
 {
-    "audio": "True",
+    "audio": "False",
     "FPS": "60",
     "Use Name": "True",
-    "Background Music": "False"
+    "Background Music": "False",
+    "Big Screen": "False"
 }

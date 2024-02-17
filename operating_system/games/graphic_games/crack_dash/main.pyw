@@ -12,7 +12,7 @@ from pygame.locals import *
 import data.assets as assets
 
 # Load in the preferences file.
-path = Path(f'user_info/preferences.json')
+path = Path('user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
@@ -67,7 +67,8 @@ def main():
     pygame.mixer.music.load(f'{PATH}/sounds/stereo_crackness.mp3')
 
     if music:
-        pygame.mixer.music.play(-1, 0.0)
+        if AUDIO:
+            pygame.mixer.music.play(-1, 0.0)
 
     # Run the game.
     while True:
