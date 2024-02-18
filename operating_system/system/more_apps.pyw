@@ -186,9 +186,11 @@ def start_file(filepath):
 def terminate():
     """Quit the program."""
     
+    print("\nMore Apps - Close")
     pygame.quit()
     sys.exit()
 
 
 # Run the program.
+print("\nMore Apps - Open")
 main()

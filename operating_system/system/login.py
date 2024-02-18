@@ -7,6 +7,7 @@ from pathlib import Path
 from time import sleep
 import json
 
+
 def sign_up():
     """Creates a new account for the user."""
     
@@ -36,7 +37,7 @@ def sign_up():
     sleep(1)
     print("\nYour account was succsesfully created.")
     print("You can now login.")
-    sleep(1)
+    sleep(1.5)
 
     return
 

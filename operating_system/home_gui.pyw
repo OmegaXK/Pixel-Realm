@@ -184,11 +184,12 @@ def terminate():
     """Quit the program."""
     pygame.quit()
 
-    print('\nTerminate')
+    print('\nPixel Realm - Terminate')
     sys.exit()
 
 
 if __name__ == "__main__":
     # If the user logs in succsesfully, the GUI opens.
     if login_main() == True:
+        print("\nPixel Realm - Open")
         main()
