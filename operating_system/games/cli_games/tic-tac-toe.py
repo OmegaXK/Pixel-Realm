@@ -17,7 +17,7 @@ def inputPlayerLetter():
     # Returns a list with the player's letter as the first item, and the computer's letter as the second.
     letter = ''
     while not (letter == 'X' or letter == 'O'):
-        print('Do you want to be X or O?')
+        print('\n\nDo you want to be X or O?')
         letter = input().upper()
 
     # the first element in the list is the player's letter, the second is the computer's letter.
@@ -63,7 +63,7 @@ def getPlayerMove(board):
     # Let the player type in their move.
     move = ' '
     while move not in '1 2 3 4 5 6 7 8 9'.split() or not isSpaceFree(board, int(move)):
-        print('What is your next move? (1-9)')
+        print('\nWhat is your next move? (1-9)')
         move = input()
     return int(move)
 
