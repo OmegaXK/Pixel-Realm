@@ -1,8 +1,7 @@
 Pixel Realm Credits
 
 
-Most programming by Collin Maryniak. (https://youtube.com/@Omega_XK)
-Additional coding by T.G.M. (https://youtube.com/@rexymon)
+Lead Developer: Collin Maryniak (https://youtube.com/@Omega_XK)
 My IDE: Visual Studio Code (VS Code)
 VS Code download: https://code.visualstudio.com/download
 
@@ -50,6 +49,27 @@ Original Stereo Madness: https://www.newgrounds.com/audio/listen/500476
 Remix made by Mx5Knight. (https://www.youtube.com/watch?v=N-QM5HqBAGA)
 Remix Newgrounds link: https://www.newgrounds.com/audio/listen/1260797
 
+
+Programming Languages Used:
+Python (https://python.org)
+HTML
+CSS 
+JavaScript
+JSON
+
+
+Additional libraries used:
+PyGame
+PyQt5
+PyQtWebEngine
+
+
+Beta Testers and Contributers:
+T.G.M (youtube.com/@rexymon)
+Chaoz Defender ()
+helpLost (https://github.com/helplost)
+
+
 Special Shoutouts:
 
 Shoutout to Stack Overflow for solutions to most issues I ran into.
@@ -70,4 +90,4 @@ helpful when it comes to coding and/or working in a terminal. GitHub
 copilot also has suggestions while you code that are so much more
 helpful than you think.
 ChatGPT: https://chat.openai.com
-GitHub Copilot: https://github.com/features/copilot
+GitHub Copilot (10$/month): https://github.com/features/copilot
