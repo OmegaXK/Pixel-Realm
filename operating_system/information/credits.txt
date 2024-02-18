@@ -18,10 +18,6 @@ Free sound effects: https://freesound.org/
 Canva: https://canva.com
 
 
-Special shoutout to Stack Overflow for solutions to most issues I ran into.
-Link: https://stackoverflow.com
-
-
 Image Credits:
 (A majority of the images were made by me in Canva, so only the ones 
 that were not made by me will be listed here. (Canva link above))
@@ -32,7 +28,7 @@ Download: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosKwFBqf0vfexg8
 
 
 Sound Credits:
-(Some of the sounds were downloaded from FreeSound (link above))
+(Most of the sounds were downloaded from FreeSound (link above))
 
 Cracky Bird Game Over Sound:
 This sound was downloaded from the Scratch (https://scratch.mit.edu)
@@ -41,7 +37,6 @@ scratch sound menu.
 
 
 Music Credits:
-Huge shoutout to Kevin MacLeod.
 
 Pixel Realm Background Music:
 Fluffing a Duck Kevin MacLeod (incompetech.com)
@@ -54,3 +49,25 @@ Remix of Stereo Madness by ForevorBound.
 Original Stereo Madness: https://www.newgrounds.com/audio/listen/500476
 Remix made by Mx5Knight. (https://www.youtube.com/watch?v=N-QM5HqBAGA)
 Remix Newgrounds link: https://www.newgrounds.com/audio/listen/1260797
+
+Special Shoutouts:
+
+Shoutout to Stack Overflow for solutions to most issues I ran into.
+Link: https://stackoverflow.com
+
+Shoutout to Kevin Macload for the free, non-copyrighted banger songs.
+Support Kevin Macload: https://www.patreon.com/kmacleod
+
+Shoutout to Canva for being an absoulute life-saver when it comes to 
+making custom images. It is seriously an amazing website that you should
+consider checking out. Canva can be used for image editing, video
+editing, slideshow presentations, and more.
+Link: https://canva.com
+
+ChatGPT and GitHub copilot are both AIs that I use for programming help,
+and they can be really clutch sometimes. They are both especially
+helpful when it comes to coding and/or working in a terminal. GitHub 
+copilot also has suggestions while you code that are so much more
+helpful than you think.
+ChatGPT: https://chat.openai.com
+GitHub Copilot: https://github.com/features/copilot

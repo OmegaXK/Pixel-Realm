@@ -1,6 +1,10 @@
 Thank you for downloading Pixel Realm!
-I would highly recomend reading this, as it will help your experience 
-with Pixel Realm as smooth as possible.
+
+- I would highly recomend reading this, as it will help your experience 
+with Pixel Realm as smooth as possible. 
+- If you had to look at one part of this guide, look at the section on 
+changing the settings of Pixel Realm. Changing your settings is very 
+important to getting the best possible pixel realm experience.
 
 About Pixel Realm:
 Pixel Realm is an independently developed gaming platform created by

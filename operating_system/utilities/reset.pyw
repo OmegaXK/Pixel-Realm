@@ -154,7 +154,7 @@ def reset_preferences():
     defaults = json.loads(path.read_text())
 
     # Load in the current settings.
-    path = Path("utilities/preferences.json")
+    path = Path("user_info/preferences.json")
 
     # Replace the current settings with the defaults.
     path.write_text(json.dumps(defaults, indent=4))
