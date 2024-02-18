@@ -1,6 +1,6 @@
-#welp here we go
+# Welp here we go.
 
-#var
+# Var.
 money = 0
 rock = 0
 monkey = 0
@@ -12,19 +12,22 @@ fat = 0
 pc = 0
 money_per_click = 1
 
-#enter click code
-print('\nEnter Bar Clicker, coded by T. G. M.')
+# Intro message.
+print('\n\nEnter Bar Clicker, coded by T. G. M.')
 print('Type in "shop" to enter the shop. Type in "quit" to exit the game.')
 
 print('\nPress enter to start')
 input()
 
-#store
+# Main loop.
 while True:
     responce = input('\nEnter Clicker:')
+    responce = responce.lower()
+
+    # Store.
     if responce == 'shop':
         print('\n\nWelcome to the shop. If you want to leave just press enter.')
-        print('to buy somthing just type the firs word of the product')
+        print('To buy something, type in the full name of the product.')
         print('Rock - costs 10$ - 1$ per click')
         print('monkey - costs 35$ - 2$ per click')
         print('gernade - costs 157$ - 5$ per click')
@@ -84,10 +87,10 @@ while True:
 
     money = money + money_per_click
 
-    #rounding out
+    # Round out
     round(money)
 
-   #printing numbers
+    # Print numbers
     print('\n\nmoney')
     print(round(money))
     print('rock')
@@ -107,6 +110,6 @@ while True:
     print('python console')
     print(pc)
 
-#quit code
+# Quit code.
     if responce == 'quit':
         break
