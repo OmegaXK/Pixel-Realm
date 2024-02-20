@@ -1,12 +1,17 @@
 Pixel Realm Credits
 
 
-Lead Developer: Collin Maryniak (https://youtube.com/@Omega_XK)
-My IDE: Visual Studio Code (VS Code)
-VS Code download: https://code.visualstudio.com/download
+Lead Developer: Collin Maryniak
+Email: omegaxk314@gmail.com
+YouTube: https://youtube.com/@Omega_XK
+Twitch: https://twitch.com/omega_xk1
+GitHub: https://github.com/OmegaXK
+Discord: omega_xk
 
 
 My Resources:
+My IDE: Visual Studio Code (VS Code)
+VS Code download: https://code.visualstudio.com/download
 Image editor: https://pixlr.com/x/
 Image editor but better: https://www.getpaint.net/download.html
 Image cropper and resizer: https://picresize.com/
@@ -27,7 +32,7 @@ Download: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRosKwFBqf0vfexg8
 
 
 Sound Credits:
-(Most of the sounds were downloaded from FreeSound (link above))
+(Some of the sounds were downloaded from FreeSound (link above))
 
 Cracky Bird Game Over Sound:
 This sound was downloaded from the Scratch (https://scratch.mit.edu)
@@ -57,7 +62,6 @@ CSS
 JavaScript
 JSON
 
-
 Additional libraries used:
 PyGame
 PyQt5
@@ -65,8 +69,8 @@ PyQtWebEngine
 
 
 Beta Testers and Contributers:
-T.G.M (youtube.com/@rexymon)
-Chaoz Defender ()
+T.G.M (https://youtube.com/@rexymon)
+Chaoz Defender (#O903)
 helpLost (https://github.com/helplost)
 
 
