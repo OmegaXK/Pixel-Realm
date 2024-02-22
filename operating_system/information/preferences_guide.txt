@@ -1,5 +1,9 @@
-How to modify the Pixel Realm preferences.
+How to modify the Pixel Realm preferences:
 
+Open the "user_info" folder and navigate to "preferences.json". Open the 
+file with your text editor (NotePad for windows, TextEDIT for Mac.)
+
+Keep in mind:
 ! Modify only the values on the right-hand side of the file.
 ! Make sure all of the values are in quotation marks.
 ! If you make a mistake when modifying the file, reset Pixel Realm and 
@@ -13,7 +17,7 @@ like normal.
 2. FPS 
 Don't change the FPS unless you have a really bad computer that can't 
 run the games on 60 FPS. In that case, change the FPS to something
-smaller (I. E. 30).
+smaller (I. E. 45).
 
 3. Use Name 
 If True, the Crack Chat app will use your username in it's responses. If 
@@ -28,3 +32,8 @@ If True, Pixel Realm will have the regular background. If False, Pixel
 Realm will have a simple gray background. If the regular background is
 too bright or distracting, it is probably a good idea to set this one to
 False.
+
+6. More Apps Background 
+This is the color of the background of the More Apps window. You can
+choose the following colors: Red, Orange, Yellow, Green, Blue, Purple,
+Gray.

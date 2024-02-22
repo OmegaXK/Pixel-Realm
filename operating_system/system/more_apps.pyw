@@ -32,18 +32,20 @@ GAPY = 160
 STARTX = 108
 
 # Colors.
-GRAY = (160, 160, 160) # Light gray color.
-RED = (255, 0, 0)
+BLACK = (0, 0, 0)
+GRAY = (160, 160, 160)
+RED = (210, 0, 0)
 ORANGE = (255, 145, 0)
-YELLOW = (247, 255, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
+YELLOW = (210, 210, 0)
+GREEN = (0, 210, 0)
+BLUE = (0, 0, 210)
 PURPLE = (154, 0, 255)
 
 
 def main():
     """Main code for the More Apps window."""
     global MAINCLOCK, DISPLAYSURF, images, sounds, apps, disable_sound
+    global BGCOLOR
 
     # Initialize pygame and set up a clock.
     pygame.init()
@@ -58,6 +60,8 @@ def main():
         disable_sound = False
     else:
         disable_sound = True
+
+    BGCOLOR = get_bg_color(preferences["More Apps Background"])
 
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
@@ -158,6 +162,27 @@ class App():
 
         # Open the app.
         start_file(self.path)
+
+
+def get_bg_color(color):
+    """Return the proper color."""
+
+    color = str(color.lower())
+
+    if color == "red":
+        return RED 
+    elif color == "orange":
+        return ORANGE 
+    elif color == "yellow":
+        return YELLOW 
+    elif color == "green":
+        return GREEN 
+    elif color == "blue":
+        return BLUE 
+    elif color == "purple":
+        return PURPLE 
+    elif color == "gray":
+        return GRAY
 
 
 def draw_pr_text():
