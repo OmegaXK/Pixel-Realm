@@ -14,15 +14,14 @@ path = Path('user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
-if preferences['Big Screen'].lower() == "true":
-    WINDOWWIDTH = 960
-    WINDOWHEIGHT = 540 * 1.5
-else:
-    WINDOWWIDTH = 960 
-    WINDOWHEIGHT = 540
-
+WINDOWWIDTH = 960 
+WINDOWHEIGHT = 540
 CENTERX = WINDOWWIDTH / 2
 CENTERY = WINDOWHEIGHT / 2
+
+# Colors.
+BLACK = (0, 0, 0)
+GRAY = (120, 120, 120)
 
 # Other constants.
 FPS = int(preferences["FPS"])
@@ -121,7 +120,11 @@ def run_gui():
                     app.check_click(event.pos)
 
         # Draw the desktop wallpaper.
-        DISPLAYSURF.blit(images.desktop_wallpaper, (0, 0))
+        if preferences['PR Background'].lower() == "true":
+            DISPLAYSURF.blit(images.desktop_wallpaper, (0, 0))
+        else:
+            DISPLAYSURF.fill(GRAY)
+            draw_pr_text()
 
         # Draw all of the apps.
         for app in apps:
@@ -178,6 +181,16 @@ def start_file(filepath):
         os.startfile(file_path)
     else:                                   # linux variants
         subprocess.call(('xdg-open', filepath))
+
+
+def draw_pr_text():
+    """Draw some basic text saying Pixel Realm."""
+
+    font = pygame.font.Font('freesansbold.ttf', 80)
+    textsurf = font.render("Pixel  Realm", True, BLACK)
+    textrect = textsurf.get_rect()
+    textrect.topleft = 65, 50
+    DISPLAYSURF.blit(textsurf, textrect)
 
 
 def terminate():

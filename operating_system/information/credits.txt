@@ -1,8 +1,9 @@
 Pixel Realm Credits
 
 
-Lead Developer: Collin Maryniak
+Lead Developer: Omega_XK
 Email: omegaxk314@gmail.com
+Website: https://OmegaXK.pythonanywhere.com
 YouTube: https://youtube.com/@Omega_XK
 Twitch: https://twitch.com/omega_xk1
 GitHub: https://github.com/OmegaXK
@@ -70,7 +71,7 @@ PyQtWebEngine
 
 Beta Testers and Contributers:
 T.G.M (https://youtube.com/@rexymon)
-Chaoz Defender (#O903)
+Chaoz Defender (o903)
 helpLost (https://github.com/helplost)
 
 

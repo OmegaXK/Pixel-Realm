@@ -32,8 +32,13 @@ GAPY = 160
 STARTX = 108
 
 # Colors.
-BGCOLOR = (160, 160, 160) # Light gray color.
-BLACK = (0, 0, 0)
+GRAY = (160, 160, 160) # Light gray color.
+RED = (255, 0, 0)
+ORANGE = (255, 145, 0)
+YELLOW = (247, 255, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+PURPLE = (154, 0, 255)
 
 
 def main():
