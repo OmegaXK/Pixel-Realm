@@ -71,8 +71,9 @@ PyQtWebEngine
 
 Beta Testers and Contributers:
 T.G.M (https://youtube.com/@rexymon)
-Chaoz Defender (o903)
+Chaoz Defender (Discord@o903)
 helpLost (https://github.com/helplost)
+TboneW (Discord@tbonew)
 
 
 Special Shoutouts:
@@ -96,3 +97,8 @@ copilot also has suggestions while you code that are so much more
 helpful than you think.
 ChatGPT: https://chat.openai.com
 GitHub Copilot (10$/month): https://github.com/features/copilot
+
+
+! If you are not credited, but have made contributions to the project,
+please email me (omegaxk314@gmail.com), and I will add you, given you 
+have actually contributed to the app.

@@ -32,7 +32,7 @@ to a different number if you want to change this setting. If you want
 more guidance on changing your preferences, take a look at the 
 "preferences_guide.txt" file in the "information" folder.
 
-How to Reset Pixel Realm:
+How to Fix Pixel Realm (PR Reset):
 Resetting Pixel Realm restores all default settings, resets all of the 
 data we have stored about you, and deletes your current account. You 
 might want to consider resetting Pixel Realm if there is a bug in the 
@@ -41,7 +41,8 @@ reset Pixel Realm, open up the "utilities" folder and run the file
 called "reset.pyw". It will prompt you to press the confirm button to 
 confirm that you want to reset Pixel Realm. Press this button, and wait 
 for the wizard to reset everything. The program will close automatically
-and give you a "Reset Complete" message.
+and give you a "Reset Complete" message. If resetting doesn't work,
+uninstall Pixel Realm and then redownload it.
 
 How to Restore Default Settings Without Resetting (very technical):
 In the "utilities" folder, you can find a file called "defaults.json".
@@ -75,3 +76,12 @@ robux, because it will not work. If you are a programmer, than you can
 look at the source code and see that it does not actually do anything
 with your information. We are not responsible for any damage that you do
 to your account by using this app. Thank you for understanding.
+
+4. If there are any bugs in the program that are caused by the USER
+making a mistake when modifying game files, than that is not my fault
+and you can only blame yourself from messing up the program. If this 
+happenes, reset Pixel Realm. If that doesn't work, redownload the app.
+
+5. The account system is completely local. Your account will not save 
+when uninstalling or resetting Pixel Realm. Your preferences are also
+local and will not save upon a reset or reinstall.

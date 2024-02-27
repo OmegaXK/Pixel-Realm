@@ -6,6 +6,7 @@ file with your text editor (NotePad for windows, TextEDIT for Mac.)
 Keep in mind:
 ! Modify only the values on the right-hand side of the file.
 ! Make sure all of the values are in quotation marks.
+! Make sure to save your changes with control-s (command-s on mac).
 ! If you make a mistake when modifying the file, reset Pixel Realm and 
 it should fix the error.
 
@@ -30,10 +31,9 @@ song will play while you are running Pixel Realm.
 5. PR Background 
 If True, Pixel Realm will have the regular background. If False, Pixel 
 Realm will have a simple gray background. If the regular background is
-too bright or distracting, it is probably a good idea to set this one to
-False.
+too bright or distracting, it is probably a good idea to turn it off.
 
 6. More Apps Background 
 This is the color of the background of the More Apps window. You can
-choose the following colors: Red, Orange, Yellow, Green, Blue, Purple,
-Gray.
+choose from the following colors: Red, Orange, Yellow, Green, Blue, 
+Purple, Gray. The default is Gray.
