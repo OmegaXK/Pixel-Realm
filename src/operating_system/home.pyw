@@ -1,5 +1,6 @@
 """The main file for the Pixel Realm OS GUI."""
 
+# Imports.
 import os, sys, platform, subprocess, json
 from pathlib import Path
 
@@ -9,8 +10,11 @@ from pygame.locals import *
 from system.login import main as login_main
 import system.assets as assets
 
+# Path garbage.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+
 # Load in the preferences file.
-path = Path('user_info/preferences.json')
+path = Path(f'{resource_path}/user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
@@ -27,6 +31,15 @@ GRAY = (120, 120, 120)
 FPS = int(preferences["FPS"])
 APPWIDTH = 100
 APPHEIGHT = 100
+
+
+def open_home():
+    """Open the home page."""
+
+    # If the user logs in succsesfully, the GUI opens.
+    if login_main() == True:
+        print("\nPixel Realm - Open")
+        main()
 
 
 def main():
@@ -59,21 +72,21 @@ def main():
 
     # Load in the apps.
     # Basic OS apps.
-    browser = App('apps/system_apps/browser.pyw', images.browser_logo, 90, 450)
-    notepad = App('apps/system_apps/notepad.pyw', images.notepad_logo, 210, 450)
-    explorer = App('apps/system_apps/explorer.pyw', images.explorer_logo, 330, 450)
-    settings = App('system/settings.py', images.settings_logo, 450, 450)
-    more_apps = App('system/more_apps.pyw', images.more_apps_logo, 570, 450)
+    browser = App(f'{resource_path}/apps/system_apps/browser.pyw', images.browser_logo, 90, 450)
+    notepad = App(f'{resource_path}/apps/system_apps/notepad.pyw', images.notepad_logo, 210, 450)
+    explorer = App(f'{resource_path}/apps/system_apps/explorer.pyw', images.explorer_logo, 330, 450)
+    settings = App(f'{resource_path}/system/settings.py', images.settings_logo, 450, 450)
+    more_apps = App(f'{resource_path}/system/more_apps.pyw', images.more_apps_logo, 570, 450)
 
     # Game apps.
-    rps = App('games/cli_games/rock-paper-scissors.py', 
+    rps = App(f'{resource_path}/games/cli_games/rock-paper-scissors.py', 
               images.rps_logo, 690, 60)
-    ttt = App('games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 185)
+    ttt = App(f'{resource_path}/games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 185)
     cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
                       images.cracky_bird_logo, 690, 310)
-    enter = App('games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 185)
-    hangman = App('games/cli_games/hangman.py', images.hangman_logo, 810, 60)
-    crack_dash = App('games/graphic_games/crack_dash/main.pyw', 
+    enter = App(f'{resource_path}/games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 185)
+    hangman = App(f'{resource_path}/games/cli_games/hangman.py', images.hangman_logo, 810, 60)
+    crack_dash = App(f'{resource_path}/games/graphic_games/crack_dash/main.pyw', 
                      images.crack_dash_logo, 810, 310)
 
     # Create a list of all the apps.
@@ -85,7 +98,7 @@ def main():
         sounds.startup.play()
 
     # Start the music.
-    pygame.mixer.music.load('assets/sounds/background_music.mp3')
+    pygame.mixer.music.load(f'{resource_path}/assets/sounds/background_music.mp3')
 
     if bg_music:
         pygame.mixer.music.play(-1, 0.0)
@@ -202,7 +215,4 @@ def terminate():
 
 
 if __name__ == "__main__":
-    # If the user logs in succsesfully, the GUI opens.
-    if login_main() == True:
-        print("\nPixel Realm - Open")
-        main()
+    open_home()
