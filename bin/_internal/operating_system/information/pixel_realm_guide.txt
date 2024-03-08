@@ -37,12 +37,12 @@ Resetting Pixel Realm restores all default settings, resets all of the
 data we have stored about you, and deletes your current account. You 
 might want to consider resetting Pixel Realm if there is a bug in the 
 code and you get an error, or if you want to reset your account. To
-reset Pixel Realm, open up the "utilities" folder and run the file
-called "reset.pyw". It will prompt you to press the confirm button to 
-confirm that you want to reset Pixel Realm. Press this button, and wait 
-for the wizard to reset everything. The program will close automatically
-and give you a "Reset Complete" message. If resetting doesn't work,
-uninstall Pixel Realm and then redownload it.
+reset Pixel Realm, click on Reset Pixel Realm button on the home page.
+It will prompt you to press the confirm button to confirm that you want 
+to reset Pixel Realm. Press this button, and wait for the wizard to 
+reset everything. The program will close automatically and give you a 
+"Reset Complete" message. If resetting doesn't work, uninstall Pixel 
+Realm and then redownload it.
 
 How to Restore Default Settings Without Resetting (very technical):
 In the "utilities" folder, you can find a file called "defaults.json".

@@ -7,6 +7,10 @@ from pathlib import Path
 import pygame 
 from pygame.locals import *
 
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system/utilities/', 'operating_system/')
+
 # Constants.
 WINDOWWIDTH = 600
 WINDOWHEIGHT = 600
@@ -150,11 +154,11 @@ def reset_preferences():
 
     # Load in the default settings. 
     # Hopefully these weren't modified lol.
-    path = Path("information/donotmodify_defaults.txt")
+    path = Path(f"{rp}information/donotmodify_defaults.txt")
     defaults = json.loads(path.read_text())
 
     # Load in the current settings.
-    path = Path("user_info/preferences.json")
+    path = Path(f"{rp}user_info/preferences.json")
 
     # Replace the current settings with the defaults.
     path.write_text(json.dumps(defaults, indent=4))
@@ -165,11 +169,11 @@ def reset_data():
     """Reset the user's data."""
     
     # Start with Cracky Bird.
-    path = Path('games/graphic_games/cracky_bird/data/personal_best.txt')
+    path = Path(f'{rp}games/graphic_games/cracky_bird/data/personal_best.txt')
     path.write_text("0")
 
     # Now do Crack Dash.
-    path = Path('games/graphic_games/crack_dash/data/personal_best.txt')
+    path = Path(f'{rp}games/graphic_games/crack_dash/data/personal_best.txt')
     path.write_text("0")
 
     return
@@ -179,7 +183,7 @@ def reset_account():
     """Reset the user's current account."""
 
     # Load in the path.
-    path = Path('user_info/user_info.json')
+    path = Path(f'{rp}user_info/user_info.json')
 
     # Check if the user doesn't have an account.
     if not path.exists():
