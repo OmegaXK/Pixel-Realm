@@ -9,8 +9,7 @@ import json, os
 
 # Load in the path.
 resource_path = os.path.join(os.path.dirname(__file__), '')
-resource_path.replace('system', '')
-print(resource_path)
+resource_path = resource_path.replace('operating_system/system/', 'operating_system/')
 
 def sign_up():
     """Creates a new account for the user."""
