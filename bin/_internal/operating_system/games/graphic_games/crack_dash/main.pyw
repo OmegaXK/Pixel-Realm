@@ -3,7 +3,7 @@
 # Path: games/graphic_games/crack_dash
 
 # Imports.
-import random, json 
+import random, json, os
 from pathlib import Path
 
 import pygame
@@ -11,8 +11,12 @@ from pygame.locals import *
 
 import data.assets as assets
 
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system//games/graphic_games/crack_dash', 'operating_system')
+
 # Load in the preferences file.
-path = Path('user_info/preferences.json')
+path = Path(f'{rp}user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants.
@@ -28,7 +32,8 @@ JUMPHEIGHT = 18
 # General constants.
 FPS = int(preferences["FPS"])
 GRAVITY = -1.5
-PATH = "games/graphic_games/crack_dash/"
+PATH = f"{rp}games/graphic_games/crack_dash/"
+print(PATH)
 
 # Colors.
 BLACK = (0, 0, 0)

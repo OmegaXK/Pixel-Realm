@@ -84,7 +84,7 @@ def main():
     rps = App(f'{resource_path}/games/cli_games/rock-paper-scissors.py', 
               images.rps_logo, 690, 60)
     ttt = App(f'{resource_path}/games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 185)
-    cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
+    cracky_bird = App(f'{resource_path}games/graphic_games/cracky_bird/main.pyw', 
                       images.cracky_bird_logo, 690, 310)
     enter = App(f'{resource_path}/games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 185)
     hangman = App(f'{resource_path}/games/cli_games/hangman.py', images.hangman_logo, 810, 60)

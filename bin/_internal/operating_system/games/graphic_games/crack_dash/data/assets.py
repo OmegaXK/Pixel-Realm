@@ -1,15 +1,19 @@
 """The general functions and classes for Crack Dash."""
 
-import sys 
+import sys, os
 
 import pygame
 from pygame.locals import *
 
 # Constants.
-PATH = "games/graphic_games/crack_dash/"
 CUBEWIDTH = 65
 CUBEHEIGHT = CUBEWIDTH
 
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system/games/graphic_games/crack_dash/data', 'operating_system/')
+
+PATH = f"{rp}games/graphic_games/crack_dash/"
 
 # Functions.
 def terminate():
