@@ -9,7 +9,8 @@ from pygame.locals import *
 
 # Set up the path.
 resource_path = os.path.join(os.path.dirname(__file__), '')
-rp = resource_path.replace('operating_system/utilities/', 'operating_system/')
+rp = resource_path.replace('operating_system//utilities/', 'operating_system/')
+print(rp)
 
 # Constants.
 WINDOWWIDTH = 600
@@ -92,6 +93,7 @@ def reset():
     pygame.time.wait(2000)
 
     # Return and quit the program.
+    print('\nPixel Realm - Reset')
     return
 
 

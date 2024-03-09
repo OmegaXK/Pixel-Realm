@@ -78,7 +78,8 @@ def main():
     notepad = App(f'{resource_path}/apps/system_apps/notepad.pyw', images.notepad_logo, 210, 450)
     explorer = App(f'{resource_path}/apps/system_apps/explorer.pyw', images.explorer_logo, 330, 450)
     settings = App(f'{resource_path}/system/settings.py', images.settings_logo, 450, 450)
-    more_apps = App(f'{resource_path}/system/more_apps.pyw', images.more_apps_logo, 570, 450)
+    reset = App(f'{resource_path}/utilities/reset.pyw', images.reset_logo, 570, 450)
+    more_apps = App(f'{resource_path}/system/more_apps.pyw', images.more_apps_logo, 690, 450)
 
     # Game apps.
     rps = App(f'{resource_path}/games/cli_games/rock-paper-scissors.py', 
@@ -93,7 +94,7 @@ def main():
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, hangman, more_apps, crack_dash]
+            enter, hangman, more_apps, crack_dash, reset]
 
     # Play the startup sound.
     if not disable_sound:
@@ -177,6 +178,10 @@ class App():
                 sounds.open_app.play()
 
             self.open()
+            
+            if 'reset.pyw' in self.path:
+                # Quit after running reset.
+                terminate()
 
     def open(self):
         """Open the app."""

@@ -111,6 +111,10 @@ class Images():
         self.free_robux_logo = pygame.transform.scale(self.free_robux_logo,
                                                       (APPWIDTH, APPHEIGHT))
         
+        self.reset_logo = pygame.image.load(f'{rp}assets/images/reset_logo.png')
+        self.reset_logo = pygame.transform.scale(self.reset_logo,
+                                                      (APPWIDTH, APPHEIGHT))
+        
 
 class Sounds:
     """A class to represent the sounds."""
