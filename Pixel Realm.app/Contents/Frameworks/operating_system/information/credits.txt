@@ -63,7 +63,7 @@ CSS
 JavaScript
 JSON
 
-Additional libraries used:
+Third Party Libraries Used:
 PyGame
 PyQt5
 PyQtWebEngine
@@ -78,10 +78,10 @@ TboneW (Discord@tbonew)
 
 Special Shoutouts:
 
-Shoutout to Stack Overflow for solutions to most issues I ran into.
+Shoutout to Stack Overflow for solutions to a lot of issues I ran into.
 Link: https://stackoverflow.com
 
-Shoutout to Kevin Macload for the free, non-copyrighted banger songs.
+Shoutout to Kevin Macload for the free, non-copyrighted songs.
 Support Kevin Macload: https://www.patreon.com/kmacleod
 
 Shoutout to Canva for being an absoulute life-saver when it comes to 
