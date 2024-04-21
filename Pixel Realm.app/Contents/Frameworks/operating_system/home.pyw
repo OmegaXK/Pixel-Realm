@@ -9,10 +9,7 @@ from pygame.locals import *
 
 from system.login import main as login_main
 import system.assets as assets
-
-# Tests.
-# import webbrowser
-# webbrowser.open_new_tab('https://google.com')
+ 
 
 # Path garbage.
 resource_path = os.path.join(os.path.dirname(__file__), '')

@@ -3,16 +3,12 @@
 <plist version="1.0">
 
 <dict>
-
     <key>CFBundleExecutable</key>
     <string>PixelRealm</string>
-
     <key>CFBundleName</key>
     <string>Pixel Realm</string>
-
     <key>CFBundleIconFile</key>
     <string>pixel_realm.icns</string>
-
 </dict>
 
 </plist>

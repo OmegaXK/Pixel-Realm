@@ -1,3 +1,1 @@
-Don't worry about this, it's for development purposes.
-
 /Users/1002006/Documents/GitHub/Pixel-Realm/Pixel Realm.app/Contents/Frameworks/operating_system/
