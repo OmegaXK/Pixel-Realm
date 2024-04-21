@@ -1,0 +1,93 @@
+Thank you for downloading Pixel Realm!
+
+1. I would highly recomend reading this, as it will help your experience 
+with Pixel Realm as smooth as possible. 
+
+2. If you had to look at one part of this guide, look at the section on 
+changing the settings of Pixel Realm. Changing your settings is very 
+important to getting the best possible pixel realm experience.
+
+
+About Pixel Realm:
+Pixel Realm is an independently developed gaming platform created by
+Omega_XK. Pixel Realm is a collection of games and applications, all 
+condensed into one neat window.
+
+
+Running and Troubleshooting:
+# Put some stuff here about actually running the program.
+
+
+How to Change the Settings of Pixel Realm:
+There is a "preferences.json" file in the "user_info" folder.
+This file contains multiple options to change and optimize your
+experience with Pixel Realm. When you open the file, it might ask you 
+what app you want to open it with. You should open it with your text
+editor (NotePad for Windows, and TextEdit for Mac). The file contains 
+multiple "keys", which are on the left side of the file. These keys tell 
+you what they are modifying. After the key is a colon (:), which 
+seperates it from the "value", which is on the right side. If the value 
+contains "True" or "False", then you can change it to the other option 
+if you want. Make sure to capitalize True and False, or else the code 
+will not work. If the value is a number, then you can change the number 
+to a different number if you want to change this setting. If you want 
+more guidance on changing your preferences, take a look at the 
+"preferences_guide.txt" file in the "information" folder.
+
+
+How to Reset Pixel Realm (Fixes Errors):
+Resetting Pixel Realm restores all default settings, resets all of the 
+data we have stored about you, and deletes your current account. You 
+might want to consider resetting Pixel Realm if there is a bug in the 
+code and you get an error, or if you want to reset your account. To
+reset Pixel Realm, click on Full Reset button on the home page. It will 
+prompt you to press the confirm button to confirm that you want to reset 
+Pixel Realm. Press this button, and wait for the wizard to reset 
+everything. The program will close automatically and give you a "Reset 
+Complete" message. Resetting will kick you out of Pixel Realm, and you 
+will need to create a new account to get back in. If resetting doesn't 
+work, delete Pixel Realm and then redownload it.
+
+
+How to Restore Default Settings Without Resetting (very technical):
+In the "utilities" folder, you can find a file called "defaults.json".
+Open up this file with your text editor (notepad on Windows, TextEdit 
+for Mac). Once you have opened the file, press control-A (command-A on
+Mac) and it should highlight the entire file. Now press control-C (
+command-C on Mac). Next, open the "preferences.json" file with your text 
+editor, and press control-A again. Now press delete or backspace to
+delete the contents of the file. Finally press control-V to paste the 
+default settings back into the file.
+
+
+Extra Notes:
+
+1. Do not modify the file called "donotmodify_defaults.txt". This file
+is essential for the reset program to work, and if it is modified, the
+reset program will crash and you will not be able to reset Pixel Realm,
+which is a pretty big issue that's best to try and avoid completely. Do 
+not modify this file!!
+
+2. If you accidently type something in the "preferences.json" file that 
+causes an error, resetting Pixel Realm should fix it. You can find more 
+information about resetting Pixel Realm above.
+
+3. For legal reasons, I need to inform you that the Free Robux app does 
+not actually give you any free robux. It asks for your username and 
+password, but the program does not actually do anything with that
+information. It is just a joke app that I made to make fun of the free
+robux scams that are all over the internet. Your information is in no
+danger by using this app, but please do not try to use it to get free 
+robux, because it will not work. If you are a programmer, than you can 
+look at the source code and see that it does not actually do anything
+with your information. We are not responsible for any damage that you do
+to your account by using this app. Thank you for understanding.
+
+4. If there are any bugs in the program that are caused by the USER
+making a mistake when modifying game files, than that is not my fault
+and you can only blame yourself from messing up the program. If this 
+happenes, reset Pixel Realm. If that doesn't work, redownload the app.
+
+5. The account system is completely local. Your account will not save 
+when uninstalling or resetting Pixel Realm. Your preferences are also
+local and will not save upon a reset or reinstall.
