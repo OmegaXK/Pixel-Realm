@@ -1,20 +1,22 @@
 Thank you for downloading Pixel Realm!
 
-- I would highly recomend reading this, as it will help your experience 
+1. I would highly recomend reading this, as it will help your experience 
 with Pixel Realm as smooth as possible. 
-- If you had to look at one part of this guide, look at the section on 
+
+2. If you had to look at one part of this guide, look at the section on 
 changing the settings of Pixel Realm. Changing your settings is very 
 important to getting the best possible pixel realm experience.
+
 
 About Pixel Realm:
 Pixel Realm is an independently developed gaming platform created by
 Omega_XK. Pixel Realm is a collection of games and applications, all 
-condensed into one neat window. Pixel Realm is a completely open source
-application. Thank you.
-- Omega_XK
+condensed into one neat window.
+
 
 Running and Troubleshooting:
 # Put some stuff here about actually running the program.
+
 
 How to Change the Settings of Pixel Realm:
 There is a "preferences.json" file in the "user_info" folder.
@@ -32,17 +34,20 @@ to a different number if you want to change this setting. If you want
 more guidance on changing your preferences, take a look at the 
 "preferences_guide.txt" file in the "information" folder.
 
-How to Fix Pixel Realm (PR Reset):
+
+How to Reset Pixel Realm (Fixes Errors):
 Resetting Pixel Realm restores all default settings, resets all of the 
 data we have stored about you, and deletes your current account. You 
 might want to consider resetting Pixel Realm if there is a bug in the 
 code and you get an error, or if you want to reset your account. To
-reset Pixel Realm, open up the "utilities" folder and run the file
-called "reset.pyw". It will prompt you to press the confirm button to 
-confirm that you want to reset Pixel Realm. Press this button, and wait 
-for the wizard to reset everything. The program will close automatically
-and give you a "Reset Complete" message. If resetting doesn't work,
-uninstall Pixel Realm and then redownload it.
+reset Pixel Realm, click on Full Reset button on the home page. It will 
+prompt you to press the confirm button to confirm that you want to reset 
+Pixel Realm. Press this button, and wait for the wizard to reset 
+everything. The program will close automatically and give you a "Reset 
+Complete" message. Resetting will kick you out of Pixel Realm, and you 
+will need to create a new account to get back in. If resetting doesn't 
+work, delete Pixel Realm and then redownload it.
+
 
 How to Restore Default Settings Without Resetting (very technical):
 In the "utilities" folder, you can find a file called "defaults.json".
@@ -53,6 +58,7 @@ command-C on Mac). Next, open the "preferences.json" file with your text
 editor, and press control-A again. Now press delete or backspace to
 delete the contents of the file. Finally press control-V to paste the 
 default settings back into the file.
+
 
 Extra Notes:
 

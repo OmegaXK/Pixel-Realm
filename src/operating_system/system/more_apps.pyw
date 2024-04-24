@@ -11,8 +11,13 @@ from pygame.locals import *
 
 import assets
 
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system//system/', 'operating_system/')
+print(rp)
+
 # Load in the preferences file.
-path = Path('user_info/preferences.json')
+path = Path(f'{rp}user_info/preferences.json')
 preferences = json.loads(path.read_text())
 
 # Window constants. (Same as main GUI)
@@ -70,19 +75,19 @@ def main():
 
     # Load in the apps.
     # Entertainment apps.
-    crack_chat = App('apps/entertainment/crack_chat.py', images.crack_chat_logo, STARTX, 70)
-    crack_tube = App('apps/entertainment/crack_tube.pyw', images.crack_tube_logo, STARTX, 70 + GAPY)
-    be_crack = App('apps/entertainment/be_crack.pyw', images.be_crack_logo, STARTX + GAPX, 70 + GAPY)
-    mine_crack = App('apps/entertainment/mine_crack.pyw', images.mine_crack_logo, STARTX, 70 + GAPY * 2)
+    crack_chat = App(f'{rp}apps/entertainment/crack_chat.py', images.crack_chat_logo, STARTX, 70)
+    crack_tube = App(f'{rp}apps/entertainment/crack_tube.pyw', images.crack_tube_logo, STARTX, 70 + GAPY)
+    be_crack = App(f'{rp}apps/entertainment/be_crack.pyw', images.be_crack_logo, STARTX + GAPX, 70 + GAPY)
+    mine_crack = App(f'{rp}apps/entertainment/mine_crack.pyw', images.mine_crack_logo, STARTX, 70 + GAPY * 2)
 
     # Useful apps.
-    crack_ai = App('apps/useful_apps/crackai.pyw', images.crackai_logo, STARTX + GAPX, 70)
-    crackazon = App('apps/useful_apps/crackazon.py', images.crackazon_logo, STARTX + GAPX * 2, 70)
-    crackle_maps = App('apps/useful_apps/crackle_maps.pyw', images.crackle_maps_logo, STARTX + GAPX * 2, 70 + GAPY)
-    crack_mail = App('apps/useful_apps/crack_mail.py', images.crack_mail_logo, STARTX + GAPX, 70 + GAPY * 2)
+    crack_ai = App(f'{rp}apps/useful_apps/crackai.pyw', images.crackai_logo, STARTX + GAPX, 70)
+    crackazon = App(f'{rp}apps/useful_apps/crackazon.py', images.crackazon_logo, STARTX + GAPX * 2, 70)
+    crackle_maps = App(f'{rp}apps/useful_apps/crackle_maps.pyw', images.crackle_maps_logo, STARTX + GAPX * 2, 70 + GAPY)
+    crack_mail = App(f'{rp}apps/useful_apps/crack_mail.py', images.crack_mail_logo, STARTX + GAPX, 70 + GAPY * 2)
 
     # Other apps.
-    free_robux = App('apps/free_robux/open.pyw', images.free_robux_logo, STARTX + GAPX * 2, 70 + GAPY * 2)
+    free_robux = App(f'{rp}apps/free_robux/open.pyw', images.free_robux_logo, STARTX + GAPX * 2, 70 + GAPY * 2)
     
     # Create a list of all the apps.
     apps = [crack_chat, crack_ai, crackazon, crack_tube, be_crack, crackle_maps,

@@ -1,10 +1,14 @@
 """A ripoff of Apple Maps called Crackle Maps."""
 
 # Imports.
-import sys 
+import sys, os
 
 import pygame 
 from pygame.locals import *
+
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system/apps/useful_apps', 'operating_system/')
 
 # Constants.
 WINDOWWIDTH = 800
@@ -16,7 +20,7 @@ def main():
     global DISPLAYSURF, bg_img
 
     # Load in the background image.
-    bg_img = pygame.image.load("apps/useful_apps/crack_map.png")
+    bg_img = pygame.image.load(f"{rp}apps/useful_apps/crack_map.png")
     bg_img = pygame.transform.scale(bg_img, (WINDOWWIDTH, WINDOWHEIGHT))
 
     # Set up the window.

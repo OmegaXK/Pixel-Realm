@@ -9,9 +9,12 @@ from pygame.locals import *
 
 from system.login import main as login_main
 import system.assets as assets
+ 
 
 # Path garbage.
 resource_path = os.path.join(os.path.dirname(__file__), '')
+path = Path(f'{resource_path}/information/path.txt')
+path.write_text(resource_path)
 
 # Load in the preferences file.
 path = Path(f'{resource_path}/user_info/preferences.json')
@@ -76,13 +79,14 @@ def main():
     notepad = App(f'{resource_path}/apps/system_apps/notepad.pyw', images.notepad_logo, 210, 450)
     explorer = App(f'{resource_path}/apps/system_apps/explorer.pyw', images.explorer_logo, 330, 450)
     settings = App(f'{resource_path}/system/settings.py', images.settings_logo, 450, 450)
-    more_apps = App(f'{resource_path}/system/more_apps.pyw', images.more_apps_logo, 570, 450)
+    reset = App(f'{resource_path}/utilities/reset.pyw', images.reset_logo, 570, 450)
+    more_apps = App(f'{resource_path}/system/more_apps.pyw', images.more_apps_logo, 690, 450)
 
     # Game apps.
     rps = App(f'{resource_path}/games/cli_games/rock-paper-scissors.py', 
               images.rps_logo, 690, 60)
     ttt = App(f'{resource_path}/games/cli_games/tic-tac-toe.py', images.ttt_logo, 690, 185)
-    cracky_bird = App('games/graphic_games/cracky_bird/main.pyw', 
+    cracky_bird = App(f'{resource_path}games/graphic_games/cracky_bird/main.pyw', 
                       images.cracky_bird_logo, 690, 310)
     enter = App(f'{resource_path}/games/cli_games/enter_bar_clicker.py', images.enter_logo, 810, 185)
     hangman = App(f'{resource_path}/games/cli_games/hangman.py', images.hangman_logo, 810, 60)
@@ -91,7 +95,7 @@ def main():
 
     # Create a list of all the apps.
     apps = [browser, notepad, explorer, settings, rps, ttt, cracky_bird,
-            enter, hangman, more_apps, crack_dash]
+            enter, hangman, more_apps, crack_dash, reset]
 
     # Play the startup sound.
     if not disable_sound:
@@ -175,6 +179,10 @@ class App():
                 sounds.open_app.play()
 
             self.open()
+            
+            if 'reset.pyw' in self.path:
+                # Quit after running reset.
+                terminate()
 
     def open(self):
         """Open the app."""

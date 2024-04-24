@@ -1,10 +1,14 @@
 """A joke app that tells you it's time for Crack."""
 
 # Imports.
-import sys, random
+import sys, random, os
 
 import pygame 
 from pygame.locals import *
+
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system/apps/entertainment', 'operating_system/')
 
 # Constants.
 WINDOWWIDTH = 800
@@ -29,7 +33,7 @@ def main():
     # Set up the window.
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     pygame.display.set_caption("Be Crack")
-    pygame.display.set_icon(pygame.image.load('apps/entertainment/be_crack_logo.png'))
+    pygame.display.set_icon(pygame.image.load(f'{rp}apps/entertainment/be_crack_logo.png'))
 
     # Run the main loop.
     run_app()

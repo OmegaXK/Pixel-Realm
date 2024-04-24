@@ -3,9 +3,9 @@
 # Imports.
 import webbrowser, os
 
-# Retrieve the absolute path of the file.
-filepath = os.path.abspath('home.html')
-filepath = filepath.replace('home.html', 'apps/free_robux/index.html')
+# Get the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+filepath = f'{resource_path}/index.html'
 
 # Open the website.
 webbrowser.open('file://' + filepath)

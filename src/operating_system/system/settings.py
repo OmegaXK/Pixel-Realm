@@ -1,8 +1,13 @@
 """The program that lets the user change their settings."""
 
+# Imports.
 from pathlib import Path
 from time import sleep
-import json, sys
+import json, sys, os
+
+# Set up the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system//system/', 'operating_system/')
 
 
 def main():
@@ -10,7 +15,7 @@ def main():
 
     while True:
         # Load in the user's data.
-        path = Path('user_info/user_info.json')
+        path = Path(f'{rp}user_info/user_info.json')
         user_data = json.loads(path.read_text())
 
         # Define the user's data.
@@ -59,7 +64,7 @@ def save_new_data(username, email, password):
     """Save the user's recent data."""
 
     # Load in the path.
-    path = Path('user_info/user_info.json')
+    path = Path(f'{rp}user_info/user_info.json')
 
     # Create a dictionary for the user's information.
     user_info = {"username": username, "email": email, "password": password}

@@ -2,18 +2,21 @@
 
 # Imports.
 from pathlib import Path
-import json
-import random, time
+import json, random, time, os
+
+# Set up path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+rp = resource_path.replace('operating_system/apps/entertainment', 'operating_system/')
 
 # Load insults.
-insults = json.loads(Path('apps/entertainment/insults.json').read_text())
+insults = json.loads(Path(f'{rp}apps/entertainment/insults.json').read_text())
 
 # Load user info.
-user_info = json.loads(Path('user_info/user_info.json').read_text())
+user_info = json.loads(Path(f'{rp}user_info/user_info.json').read_text())
 name = user_info['username']
 
 # Load preferences.
-preferences = json.loads(Path('user_info/preferences.json').read_text())
+preferences = json.loads(Path(f'{rp}user_info/preferences.json').read_text())
 use_name = preferences['Use Name']
 
 # Print an introduction.

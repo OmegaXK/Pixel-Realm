@@ -5,8 +5,11 @@ Pixel Realm OS."""
 
 from pathlib import Path
 from time import sleep
-import json
+import json, os
 
+# Load in the path.
+resource_path = os.path.join(os.path.dirname(__file__), '')
+resource_path = resource_path.replace('operating_system/system/', 'operating_system/')
 
 def sign_up():
     """Creates a new account for the user."""
@@ -30,7 +33,7 @@ def sign_up():
     user_info = {"username": username, "email": email, "password": password}
 
     # Create a new file for the user's information.
-    path = Path('user_info/user_info.json')
+    path = Path(f'{resource_path}/user_info/user_info.json')
     path.write_text(json.dumps(user_info))
 
     # Let the user know that their account was created.
@@ -46,7 +49,7 @@ def login():
     """Lets the user login to their account."""
 
     # Open the file that contains the user's information.
-    path = Path('user_info/user_info.json')
+    path = Path(f'{resource_path}/user_info/user_info.json')
 
     # Check if the player actually has an account.
     if not path.exists():
