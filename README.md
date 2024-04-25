@@ -22,9 +22,9 @@ Pixel Realm is a terminal based application, which makes it difficult to use. I 
 
 3. Download Pixel Realm from this link ().
 
-4. Open up your file explorer to the path you downloaded it to, and extract the zip file into a directory on your computer.
+4. Open up your file explorer to the path you downloaded Pixel Realm to, and extract the zip file into a directory on your computer.
 
-5. Open up the Pixel Realm folder, and navigate to the "src" directory.
+5. Open up the Pixel Realm folder that you just extracted, and navigate to the "src" directory.
 
 6. Copy or memorize the path to the file called "startup.py".
     - Windows: right click the file and click "copy as pathname"
