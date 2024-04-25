@@ -10,23 +10,35 @@ Pixel Realm is a terminal based application, which makes it difficult to use. I 
 
 1. Download and install the latest version of Python from the Python website (https://python.org).
 
-2. Download Pixel Realm from this link ().
+2. Open up your command prompt or terminal and run the following commands:
+    - Windows: 
+        - pip install pygame
+        - pip install PyQt5
+        - pip install PyQtWebEngine
+    - Mac
+        - pip3 install pygame
+        - pip3 install PyQt5
+        - pip3 install PyQtWebEngine
 
-3. Open up your file explorer to the path you downloaded it to, and extract the zip file into a directory on your computer.
+3. Download Pixel Realm from this link ().
 
-4. Open up the Pixel Realm folder, and navigate to the "src" directory.
+4. Open up your file explorer to the path you downloaded it to, and extract the zip file into a directory on your computer.
 
-5. Copy or memorize the path to the file called "startup.py".
+5. Open up the Pixel Realm folder, and navigate to the "src" directory.
 
-6. Open up your command prompt (Windows) or terminal (Mac).
+6. Copy or memorize the path to the file called "startup.py".
+    - Windows: right click the file and click "copy as pathname"
+    - Mac: Right click the file, hold down the option key, and then select "copy startup.py as pathname"
 
-7. Run the following command:
+7. Open up your command prompt (Windows) or terminal (Mac).
+
+8. Run the following command:
 - Make sure to replace "/path/to/startup.py" with the actual path to startup.py from earlier.
 
     - Windows: python /path/to/startup.py
     - Mac: python3 /path/to/startup.py
 
-8. Create an account and login to that account.
+9. Create an account and login to that account.
 
 # More Info
 
