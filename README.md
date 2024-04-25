@@ -20,7 +20,7 @@ Pixel Realm is a terminal based application, which makes it difficult to use. I 
         - pip3 install PyQt5
         - pip3 install PyQtWebEngine
 
-3. Download Pixel Realm from this link ().
+3. Download the source code for the latest version of Pixel Realm from this link (https://github.com/OmegaXK/Pixel-Realm/releases).
 
 4. Open up your file explorer to the path you downloaded Pixel Realm to, and extract the zip file into a directory on your computer.
 
