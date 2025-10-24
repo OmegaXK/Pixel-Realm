@@ -23,6 +23,11 @@ Free sound effects: https://freesound.org/
 Canva: https://canva.com
 
 
+Game Credits:
+"Minecrack" is just an HTML minecraft 1.12.2 clone called Eaglercraft.
+Official site / credits: https://eaglercraft.com
+
+
 Image Credits:
 (A majority of the images were made by me in Canva, so only the ones 
 that were not made by me will be listed here. (Canva link above))
@@ -71,9 +76,9 @@ PyQtWebEngine
 
 Beta Testers and Contributers:
 T.G.M (https://youtube.com/@rexymon)
-Chaoz Defender (Discord@o903)
+Chaoz Defender (Discord @o903)
 helpLost (https://github.com/helplost)
-TboneW (Discord@tbonew)
+TboneW (Discord @tbonew)
 
 
 Special Shoutouts:
@@ -85,16 +90,16 @@ Shoutout to Kevin Macload for the free, non-copyrighted songs.
 Support Kevin Macload: https://www.patreon.com/kmacleod
 
 Shoutout to Canva for being an absoulute life-saver when it comes to 
-making custom images. It is seriously an amazing website that you should
-consider checking out. Canva can be used for image editing, video
-editing, slideshow presentations, and more.
+making custom images. It is seriously so underrated for making videos,
+images, slideshows, etc. Very easy to use as well.
 Link: https://canva.com
 
 ChatGPT and GitHub copilot are both AIs that I use for programming help,
 and they can be really clutch sometimes. They are both especially
 helpful when it comes to coding and/or working in a terminal. GitHub 
 copilot also has suggestions while you code that are so much more
-helpful than you think.
+helpful than you think. I don't own Github Copilot anymore but if you are
+working on something big and need AI help with it, I recomend it.
 ChatGPT: https://chat.openai.com
 GitHub Copilot (10$/month): https://github.com/features/copilot
 
