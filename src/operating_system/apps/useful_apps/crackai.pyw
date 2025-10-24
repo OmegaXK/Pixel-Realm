@@ -1,4 +1,3 @@
-
 """Code for Crack AI."""
 
 import random, time, os, json
