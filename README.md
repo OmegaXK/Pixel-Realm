@@ -40,7 +40,7 @@ Pixel Realm is a terminal based application, which makes it difficult to use. I 
     - Windows: python /path/to/startup.py
     - Mac: python3 /path/to/startup.py
 
-9. Create an account and login to that account.
+10. Create an account and login to that account.
 
 # More Info
 
