@@ -24,23 +24,21 @@ Pixel Realm is a terminal based application, which makes it difficult to use. I 
 
 4. Open up your file explorer to the path you downloaded Pixel Realm to, and extract the zip file into a directory on your computer.
 
-5. Open up the Pixel Realm folder that you just extracted, and navigate to src/operating_system/apps/entertainment and then extract the Eaglercraft zip.
+5. Go back to the Pixel Realm folder, and navigate to the "src" directory.
 
-6. Go back to the Pixel Realm folder, and navigate to the "src" directory.
-
-7. Copy or memorize the path to the file called "startup.py".
+6. Copy or memorize the path to the file called "startup.py".
     - Windows: right click the file and click "copy as pathname"
     - Mac: Right click the file, hold down the option key, and then select "copy startup.py as pathname"
 
-8. Open up your command prompt (Windows) or terminal (Mac).
+7. Open up your command prompt (Windows) or terminal (Mac).
 
-9. Run the following command:
+8. Run the following command:
 - Make sure to replace "/path/to/startup.py" with the actual path to startup.py from earlier.
 
     - Windows: python /path/to/startup.py
     - Mac: python3 /path/to/startup.py
 
-10. Create an account and login to that account.
+9. Create an account and login to that account.
 
 # More Info
 
