@@ -12,7 +12,6 @@ from pygame.locals import *
 # Set up the path.
 resource_path = os.path.join(os.path.dirname(__file__), '')
 rp = resource_path.replace('operating_system/games/graphic_games/cracky_bird', 'operating_system/')
-print(rp)
 
 # Load in the preferences file.
 path = Path(f'{rp}user_info/preferences.json')
