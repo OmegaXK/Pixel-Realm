@@ -1,5 +1,4 @@
 // Code to prompt the user for their login information.
-// Then redirect them to the Roblox website.
 
 function get_info() {
     // Ask the user for their username.
@@ -30,11 +29,7 @@ function main() {
     let user_data = load_info();
     console.log(user_data);
 
-    // Break it to the user that they're not getting robux.
-    let message = "You just got trolled! You're not getting any free Robux! :P";
+    // Let the user know that their robux is on the way.
+    let message = "Thank you for using Free Robux. Your robux will arrive shortly.";
     alert(message);
-
-    // Redirect the user to the Roblox website.
-    let url = "https://www.roblox.com/";
-    window.location.href = url;
 }
