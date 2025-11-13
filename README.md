@@ -1,6 +1,6 @@
 # Pixel Realm
 
-Pixel Realm is an independently developed gaming application. Pixel Realm contains parodies of real apps and games that are meant to be absolute jokes, but are still fun to play.
+Pixel Realm is the world's greatest gaming application, full of fun and extremely original content.
 
 # Disclaimer
 
