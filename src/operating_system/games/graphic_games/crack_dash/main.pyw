@@ -33,7 +33,6 @@ JUMPHEIGHT = 18
 FPS = int(preferences["FPS"])
 GRAVITY = -1.5
 PATH = f"{rp}games/graphic_games/crack_dash/"
-print(PATH)
 
 # Colors.
 BLACK = (0, 0, 0)
