@@ -13,10 +13,35 @@ p-1 {
 }
 
 input {
+    text-align: center;
     width: 600px;
     height: 200px;
-    color: blue;
+    color: gold;
     font-size: 90px;
     background-color: green;
     font-family: "Times ";
+}
+
+#robuxDiv {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#robloxLink {
+    font-size: 30px;
+}
+
+@media (max-width: 450px) {
+
+    input {
+        padding-left: 70px;
+    }
+
+    #robuxDiv {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
 }
