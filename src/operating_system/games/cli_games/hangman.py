@@ -35,7 +35,7 @@ HANGMAN_PICS = ['''
  /|\  |
  / \  |
      ===''']
-words = 'ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle ferret fox frog goat goose hawk lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pigeon python rabbit ram rat raven rhino salmon seal shark sheep skunk sloth snake spider stork swan tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split()
+words = 'mrbeast thickofit ksi loganpaul lunchly prime skibidi hawktuah hailywelch talktuah chickenjockey lavachicken lowtaperfade omegaxk thatguymakes adeume meow josh italianbrainrot growagarden stealabrainrot plantsvsbrainrots touching rizz ohio toilet rizzing gyatt sixseven sixsevenn sixsevenn memecoin chillguy kneesurgery diddy diddyblud whatisthisdiddybluddoinonthecalculator imgonnatouchyou sixsevencoin backrooms iamsteve therizzler sigmaboy eatingthedogs sixone fourone trumpandepstein chickenstars clanker freeshlep obamahavedih dih flamingdih tungtungtungsahur rhymeswithgrug releasethebaby aurafarming mewingstreak'.split()
 
 def getRandomWord(wordList):
     # This function returns a random string from the passed list of strings.
